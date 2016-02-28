@@ -1,57 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-    <title>Dinesh Vatvani | Theme&nbsp;testing</title>
-    <link rel="shortcut icon" type="image/png" href="http://localhost:8000/favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="http://localhost:8000/favicon.ico">
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/screen.css" type="text/css" />
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/print.css" type="text/css" media="print" />
-    <meta name="generator" content="Pelican" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dinesh Vatvani, Insert tagline here">
 
-    <meta name="keywords" content="Testing,Themes" />
+
+        <title>Theme testing // Dinesh Vatvani // Insert tagline here</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/pure.css">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="http://localhost:8000">Home</a></li>
-                <li><a href="http://localhost:8000/pages/about.html">About</a></li>
-            </ul>
-        </nav>
-        <div class="header_box">
-            <h1><a href="http://localhost:8000">Dinesh Vatvani</a></h1>
-        </div>
-    </header>
-    <div id="wrapper">
-        <div id="content">            <h4 class="date">Feb 28, 2016</h4>
-
-            <article class="post">
-                <h2 class="title">
-                    <a href="http://localhost:8000/theme-test.html" rel="bookmark" title="Permanent Link to &quot;Theme&nbsp;testing&quot;">Theme&nbsp;testing</a>
-                </h2>
-
-                <p>This is a test post. I&#8217;ll be using this to select the best theme for the&nbsp;blog.</p>
-                <div class="clear"></div>
-
-                <div class="info">
-                    <a href="http://localhost:8000/theme-test.html">posted at 19:30</a>
-                    &nbsp;&middot;&nbsp;<a href="http://localhost:8000/category/blog.html" rel="tag">Blog</a>
-                    &nbsp;&middot;
-                    &nbsp;<a href="http://localhost:8000/tag/testing.html" class="tags">Testing</a>
-                    &nbsp;<a href="http://localhost:8000/tag/themes.html" class="tags">Themes</a>
-                </div>
-            </article>
-            <div class="clear"></div>
-            <footer>
-                <p>
-                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
-                &middot;
-                Powered by <a href="http://getpelican.com">Pelican</a>
-            </footer>
-        </div>
-        <div class="clear"></div>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://localhost:8000/author/dinesh-vatvani.html" title="See posts by Dinesh Vatvani">
+                </a>
+                <h2 class="article-info">Dinesh Vatvani</h2>
+                <small class="about-author"></small>
+                <h5>Published</h5>
+                <p>Sun 28 February 2016</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
     </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Theme&nbsp;testing</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://localhost:8000/tag/testing.html">Testing</a>
+                                <a class="post-category" href="http://localhost:8000/tag/themes.html">Themes</a>
+                        </p>
+                </header>
+            </section>
+            <p>This is a test post. I&#8217;ll be using this to select the best theme for the&nbsp;blog.</p>
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Dinesh Vatvani &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
 </body>
 </html>

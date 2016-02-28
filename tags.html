@@ -1,42 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Dinesh Vatvani</title>
-    <link rel="shortcut icon" type="image/png" href="http://localhost:8000/favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="http://localhost:8000/favicon.ico">
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/screen.css" type="text/css" />
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="http://localhost:8000/theme/css/print.css" type="text/css" media="print" />
-    <meta name="generator" content="Pelican" />
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="http://localhost:8000">Home</a></li>
-                <li><a href="http://localhost:8000/pages/about.html">About</a></li>
-            </ul>
-        </nav>
-        <div class="header_box">
-            <h1><a href="http://localhost:8000">Dinesh Vatvani</a></h1>
-        </div>
-    </header>
-    <div id="wrapper">
-        <div id="content"><ul>
-        <li><a href="http://localhost:8000/tag/themes.html">Themes</a></li>
-        <li><a href="http://localhost:8000/tag/testing.html">Testing</a></li>
-</ul>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dinesh Vatvani, Insert tagline here">
 
-            <div class="clear"></div>
-            <footer>
-                <p>
-                <a href="https://github.com/jody-frankowski/blue-penguin">Blue Penguin</a> Theme
-                &middot;
-                Powered by <a href="http://getpelican.com">Pelican</a>
-            </footer>
-        </div>
-        <div class="clear"></div>
-    </div>
+
+        <title>Dinesh Vatvani - Tags</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/pure.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Tags for Dinesh Vatvani</h1>        <li><a href="http://localhost:8000/tag/testing.html">Testing</a> (1)</li>
+        <li><a href="http://localhost:8000/tag/themes.html">Themes</a> (1)</li>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
 </body>
 </html>
