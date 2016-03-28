@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
+
+
+    <link href="http://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+<meta name="author" content="Dinesh Vatvani" />
+<meta name="description" content="This is my approach to solving the 8 Queens puzzle with Python." />
+<meta name="keywords" content="Python, Puzzles">
+<meta property="og:site_name" content="Dinesh Vatvani"/>
+<meta property="og:title" content="Solving the 8 Queens problem with python"/>
+<meta property="og:description" content="This is my approach to solving the 8 Queens puzzle with Python."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://dvatvani.github.io/8-Queens.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-03-28 00:45:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://dvatvani.github.io/author/dinesh-vatvani.html">
+<meta property="article:section" content="Problem solving"/>
+<meta property="article:tag" content="Python"/>
+<meta property="article:tag" content="Puzzles"/>
+<meta property="og:image" content="/static/Logo/radial_barh.png">
+  <title>Dinesh Vatvani &ndash; Solving the 8 Queens problem with python</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://dvatvani.github.io">
+        <img src="/static/Logo/radial_barh.png" alt="Dinesh Vatvani" title="Dinesh Vatvani">
+      </a>
+      <h1><a href="http://dvatvani.github.io">Dinesh Vatvani</a></h1>
+      <p>A data analysis blog</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://dvatvani.github.io/pages/about.html#about">About</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-github-square" href="https://github.com/dvatvani" target="_blank"><i class="fa fa-github-square"></i></a></li>
+        <li><a class="sc-twitter-square" href="https://twitter.com/thehuntinghawk" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a class="sc-rss-square" href="http://dvatvani.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss-square"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="http://dvatvani.github.io">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="http://dvatvani.github.io/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="8-Queens">Solving the 8 Queens problem with python</h1>
+    <p>Posted on Mon 28 March 2016 in <a href="http://dvatvani.github.io/category/problem-solving.html">Problem solving</a></p>
+  </header>
+  <div>
+    <p>This is my approach to solving the 8 Queens puzzle with Python. </p>
+<p>For anyone unfamiliar with the 8 Queens puzzle, it is the problem of placing eight queens on a standard (8x8) chessboard such that no queen is in a position that can attack any other. This post will have the solutions to the puzzle, so if you'd like to attempt to solve it on your own, now would be a good time to stop reading this post.</p>
+<p>I was first made aware of the existence of this puzzle in a pub one evening with some friends. One of my friends started trying to solve the puzzle manually and found a solution in about 10 minutes. This inspired me to attempt to tackle the problem with Python to see if I would have been able to find a solution faster. I took me around 15 minutes to solve the puzzle using python, but found 92 solutions (there are 12 if you eliminate symmetrically related solutions). </p>
+<p>This original code I wrote to solve the problem looked like this:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span><span class="p">,</span> <span class="n">combinations</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;How big is your chess board?&#39;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">is_diagonal</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">point2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y2</span> <span class="o">=</span> <span class="n">point2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">gradient</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">gradient</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">gradient</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">list_of_permutations</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">permuation</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">permuation</span>
+    <span class="n">all_permutations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">list_of_permutations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">all_permutations</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">possible_solution</span> <span class="ow">in</span> <span class="n">list_of_permutations</span><span class="p">:</span>
+    <span class="n">solutions</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">piece1</span><span class="p">,</span> <span class="n">piece2</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">(</span><span class="n">possible_solution</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">solutions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">is_diagonal</span><span class="p">(</span><span class="n">piece1</span><span class="p">,</span> <span class="n">piece2</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="bp">True</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">solutions</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">possible_solution</span><span class="p">)</span>
+</pre></div>
+
+
+<p>I've since expanded it to make it easier to understand, abstracting some useful functions and added some code to remove equivalent solutions and help visualise the solutions, but the code above contains the main logic that runs at the heart of the approach I took. The expanded version of the code can be found <a href="http://dvatvani.github.io/static/8-Queens/8_Queens_problem.ipynb">here</a>.</p>
+<p>Let's break it down a little bit to explain what's happening. </p>
+<p>We know that no two queens can attack each other. This means that there must be 1 queen per row. Similarly, there must be 1 queen per column. In this approach, we're going to take 8 queens, assign them to the rows 1-8 and determine what columns they must each be in in order for the puzzle criteria to be satisfied. Since there are 8 queens and 8 column positions, there are 40,320 (nPr with n=r=8) ways to arrange 8 queens on a chessboard such that there is one queen per row and 1 queen per column. Since we already know what none of the queens will be attacking any other horizontally or vertically, all we need to do is to check each of the 40,320 arrangements to see if any queen is diagonally threatening any other. This takes about a second to run in total (1.06 seconds on my mid-range 5-year-old Desktop computer) for all 40,320 possible queen arrangements and returns 92 solutions that fit the criteria of having no queen attacking any other. Some of these will be symmetrically related. For example, here are 8 solutions from the set of 92 that are related to each other through 90 or 180 degree rotations; or mirror planes (i.e. they are horizontal, vertical or diagonal mirror images of each other).</p>
+<p><img alt="symmetry_equivalent_solutions_example" src="http://dvatvani.github.io/static/8-Queens/symmetry_equivalent_solutions.png" /></p>
+<p>When we remove the solutions that are related, we are left with the 12 unique solutions for the 8x8 board case, shown below:</p>
+<p><img alt="unique_solutions" src="http://dvatvani.github.io/static/8-Queens/unique_solutions.png" /></p>
+<p>The Jupyter notebook containing the current version of the code is available <a href="http://dvatvani.github.io/static/8-Queens/8_Queens_problem.ipynb">here</a></p>
+<p><em>Thanks to my friends:</em></p>
+<ul>
+<li><em>Daniele Tomerini for introducing me to this puzzle</em></li>
+<li><em>Hugh Thompson, whose attempts at solving this puzzle manually inspired me to tackle it using python</em></li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://dvatvani.github.io/tag/python.html">Python</a>
+      <a href="http://dvatvani.github.io/tag/puzzles.html">Puzzles</a>
+    </p>
+  </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dvatvani';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
+
+    <footer>
+        <p>&copy; Dinesh Vatvani </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75651339-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Solving the 8 Queens problem with python",
+  "headline": "Solving the 8 Queens problem with python",
+  "datePublished": "2016-03-28 00:45:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Dinesh Vatvani",
+    "url": "http://dvatvani.github.io/author/dinesh-vatvani.html"
+  },
+  "image": "/static/Logo/radial_barh.png",
+  "url": "http://dvatvani.github.io/8-Queens.html",
+  "description": "This is my approach to solving the 8 Queens puzzle with Python."
+}
+</script></body>
+</html>
