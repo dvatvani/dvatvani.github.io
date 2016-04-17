@@ -24,11 +24,11 @@
 &lt;p&gt;It can be interesting to break down the chapter ratings by the point of view characters to see how the various plot lines progress in terms of maintaining reader&amp;nbsp;interest.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Chapter ratings by POV character" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_ratings_by_POV_character_-_all_books.png" /&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Daenerys : With the exception of one strong chapter, Daenerys&amp;#8217; chapters in the final book are not very&amp;nbsp;good.&lt;/li&gt;
-&lt;li&gt;Ned : As we all know, he was a short lived character, but his chapters were consistently&amp;nbsp;great&lt;/li&gt;
-&lt;li&gt;Brienne : Many people complain about Brienne&amp;#8217;s chapters in &lt;code&gt;AFFC&lt;/code&gt;. It&amp;#8217;s interesting to see that Brienne&amp;#8217;s chapters start out being dull, but appear to get more interesting as the book&amp;nbsp;progresses.&lt;/li&gt;
-&lt;li&gt;Tyrion : Goes from having several strong chapters in the previous books to having a weak showing in &lt;code&gt;ADWD&lt;/code&gt;. The drop in the quality of his storyline is particularly jarring considering the strength of his chapters at the end of &lt;code&gt;ASOS&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Theon/Reek : One of the few consistently solid &lt;span class="caps"&gt;POV&lt;/span&gt; characters in &lt;code&gt;ADWD&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Daenerys&lt;/strong&gt; : With the exception of one strong chapter, Daenerys&amp;#8217; chapters in the final book are not very&amp;nbsp;good.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ned&lt;/strong&gt; : As we all know, he was a short lived character, but his chapters were consistently&amp;nbsp;great&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Brienne&lt;/strong&gt; : Many people complain about Brienne&amp;#8217;s chapters in &lt;code&gt;AFFC&lt;/code&gt;. It&amp;#8217;s interesting to see that Brienne&amp;#8217;s chapters start out being dull, but appear to get more interesting as the book&amp;nbsp;progresses.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tyrion&lt;/strong&gt; : Goes from having several strong chapters in the previous books to having a weak showing in &lt;code&gt;ADWD&lt;/code&gt;. The drop in the quality of his storyline is particularly jarring considering the strength of his chapters at the end of &lt;code&gt;ASOS&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Theon/Reek&lt;/strong&gt; : One of the few consistently solid &lt;span class="caps"&gt;POV&lt;/span&gt; characters in &lt;code&gt;ADWD&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;Chapter rating distributions by&amp;nbsp;book&lt;/h1&gt;
 &lt;p&gt;&lt;img alt="Chapter ratings distribution by book - violin" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_book_-_violin.png" /&gt;&lt;/p&gt;
@@ -71,7 +71,9 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;If we rank the books by the average ratings of the chapters in each book, they rank in the order &lt;code&gt;AGOT&lt;/code&gt; &amp;gt; &lt;code&gt;ADWD&lt;/code&gt; ≈ &lt;code&gt;ASOS&lt;/code&gt; &amp;gt; &lt;code&gt;ACOK&lt;/code&gt; &amp;gt; &lt;code&gt;AFFC&lt;/code&gt;. The overall book ratings on &lt;a href="https://www.goodreads.com/series/43790-a-song-of-ice-and-fire"&gt;Goodreads&lt;/a&gt;, however, suggest that &lt;code&gt;ASOS&lt;/code&gt; &amp;gt; &lt;code&gt;AGOT&lt;/code&gt; &amp;gt; &lt;code&gt;ACOK&lt;/code&gt; &amp;gt; &lt;code&gt;ADWD&lt;/code&gt; &amp;gt; &lt;code&gt;AFFC&lt;/code&gt;. Personally, my views on the quality of the books are more aligned with the Goodreads ratings, but it&amp;#8217;s likely because the overall experience of a book is not well represented by the average of its&amp;nbsp;chapters.&lt;/p&gt;
+&lt;p&gt;If we rank the books by the average ratings of the chapters in each book, they rank in the order &lt;code&gt;AGOT&lt;/code&gt; &amp;gt; &lt;code&gt;ADWD&lt;/code&gt; ≈ &lt;code&gt;ASOS&lt;/code&gt; &amp;gt; &lt;code&gt;ACOK&lt;/code&gt; &amp;gt; &lt;code&gt;AFFC&lt;/code&gt;. 
+The overall book ratings on &lt;a href="https://www.goodreads.com/series/43790-a-song-of-ice-and-fire"&gt;Goodreads&lt;/a&gt;, however, suggest that &lt;code&gt;ASOS&lt;/code&gt; &amp;gt; &lt;code&gt;AGOT&lt;/code&gt; &amp;gt; &lt;code&gt;ACOK&lt;/code&gt; &amp;gt; &lt;code&gt;ADWD&lt;/code&gt; &amp;gt; &lt;code&gt;AFFC&lt;/code&gt;. 
+Personally, my views on the quality of the books are more aligned with the Goodreads ratings, but it&amp;#8217;s likely because the overall experience of a book is not well represented by the average of its&amp;nbsp;chapters.&lt;/p&gt;
 &lt;h1&gt;Chapter rating distributions by &lt;span class="caps"&gt;POV&lt;/span&gt;&amp;nbsp;character&lt;/h1&gt;
 &lt;p&gt;We can also have a look at the distributions of chapter ratings in each book to see which of the &lt;span class="caps"&gt;POV&lt;/span&gt; characters have the better&amp;nbsp;chapters.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Chapter ratings distribution by POV - violin" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_POV_character_-_violin.png" /&gt;&lt;/p&gt;
