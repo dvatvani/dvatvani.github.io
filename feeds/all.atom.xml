@@ -1,5 +1,296 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dinesh Vatvani</title><link href="http://dvatvani.github.io/" rel="alternate"></link><link href="http://dvatvani.github.io/feeds/all.atom.xml" rel="self"></link><id>http://dvatvani.github.io/</id><updated>2016-04-10T23:12:00+01:00</updated><entry><title>A Song of Ice and Fire : Chapter ratings</title><link href="http://dvatvani.github.io/ASOIAF-Chapter-ratings.html" rel="alternate"></link><updated>2016-04-10T23:12:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2016-04-10:ASOIAF-Chapter-ratings.html</id><summary type="html">&lt;p&gt;This post relates to Game of Thrones, or more specifically to the series of books the show is based on: A Song of Ice and&amp;nbsp;Fire. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dinesh Vatvani</title><link href="http://dvatvani.github.io/" rel="alternate"></link><link href="http://dvatvani.github.io/feeds/all.atom.xml" rel="self"></link><id>http://dvatvani.github.io/</id><updated>2016-05-28T22:00:00+01:00</updated><entry><title>TV show episode ratings</title><link href="http://dvatvani.github.io/tv-show-episode-ratings.html" rel="alternate"></link><updated>2016-05-28T22:00:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2016-05-28:tv-show-episode-ratings.html</id><summary type="html">&lt;p&gt;This post is about a simple visualisation of the episode ratings of &lt;span class="caps"&gt;TV&lt;/span&gt; shows. The idea behind this is heavily borrowed from &lt;a href="http://graphtv.kevinformatics.com/"&gt;Graph &lt;span class="caps"&gt;TV&lt;/span&gt;&lt;/a&gt;. I use that site often and really like it, but the plots it generates are based on &lt;a href="http://www.imdb.com/"&gt;IMDb&lt;/a&gt; rating data. I&amp;#8217;ve always wanted something similar but using &lt;a href="https://trakt.tv/"&gt;Trakt.tv&lt;/a&gt; rating data instead, so I decided to write a script to do just&amp;nbsp;that. &lt;/p&gt;
+&lt;p&gt;Below are the episode ratings for the top 10 most popular shows, according to Trakt.tv. The plots are interactive. You can hover over a point to get more information on the episode or pan/zoom on the data using the tools on the bottom left of each&amp;nbsp;plot. &lt;/p&gt;
+&lt;p&gt;I will likely create a small web app to make it easier to generate the plots online for any tv show at some stage in the future, but if anyone is interested in generating similar plots for other shows now, the Python code to generate the plots is available &lt;a href="https://github.com/dvatvani/trakt-ratings-trends"&gt;here on GitHub&lt;/a&gt;. A Jupyter notebook with the code can also be found &lt;a href="http://nbviewer.jupyter.org/github/dvatvani/trakt-ratings-trends/blob/master/trakt-ratings-trends.ipynb"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el43921586921842571185746"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/game_of_thrones.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el43921951669525390596189"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/breaking_bad.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el43921573256326407222326"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/the_big_bang_theory.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el43922826681681423509412"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/the_walking_dead.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el43921932024407192895674"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/dexter.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el43921916642569335910854"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/how_i_met_your_mother.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el43922452610884251329649"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/sherlock.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el439222331763277133446"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/arrow.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el43921909720324799833593"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/homeland.js"&gt;&lt;/script&gt;
+
+&lt;style&gt;
+
+table
+{
+  border-collapse: collapse;
+  width: 300px;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+
+&lt;/style&gt;
+
+&lt;div id="fig_el43921571023769423801765"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/friends.js"&gt;&lt;/script&gt;</summary><category term="Python"></category><category term="TV"></category></entry><entry><title>A Song of Ice and Fire : Chapter ratings</title><link href="http://dvatvani.github.io/ASOIAF-Chapter-ratings.html" rel="alternate"></link><updated>2016-04-10T23:12:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2016-04-10:ASOIAF-Chapter-ratings.html</id><summary type="html">&lt;p&gt;This post relates to Game of Thrones, or more specifically to the series of books the show is based on: A Song of Ice and&amp;nbsp;Fire. &lt;/p&gt;
 &lt;p&gt;The website &lt;a href="http://towerofthehand.com/"&gt;Tower of the Hand&lt;/a&gt; contains ratings for each chapter in the series of books. Chapters&amp;#8217; ratings are generated by users. Each chapter has ratings from typically around 150 people so there will still be a reasonable amount of uncertainty around each chapter rating, but there is still enough information in here to give us broad ideas about the overall progression in how interesting the books are, the most interesting books and the most interesting &lt;span class="caps"&gt;POV&lt;/span&gt;&amp;nbsp;characters.&lt;/p&gt;
 &lt;p&gt;Let&amp;#8217;s start by having a quick overview of the progression of chapter ratings across the entire&amp;nbsp;series.&lt;/p&gt;
 &lt;h1&gt;Chapter ratings in the entire&amp;nbsp;series&lt;/h1&gt;
