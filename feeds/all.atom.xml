@@ -23,7 +23,7 @@
 &lt;p&gt;&lt;img alt="scrobbles by hour and day of week" src="http://dvatvani.github.io/static/last-fm/lastfm-scrobbles-days-hours.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="scrobbles by hour" src="http://dvatvani.github.io/static/last-fm/lastfm-scrobbles-per-hour.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="scrobbles by day of week" src="http://dvatvani.github.io/static/last-fm/lastfm-scrobbles-per-weekday.png" /&gt;&lt;/p&gt;
-&lt;p&gt;There&amp;#8217;s a lot that be inferred about my lifestyle from the plots above. I listen to music a lot around 10 am on weekdays (on my commute to work) and have a fairly erratic sleeping pattern. There isn&amp;#8217;t a day of week and time of day during which I haven&amp;#8217;t, at some point, been listening to&amp;nbsp;music!&lt;/p&gt;
+&lt;p&gt;There&amp;#8217;s aspects of my lifestyle visible in the plots above. I listen to music a lot around 10 am on weekdays (on my commute to work) and have a fairly erratic sleeping pattern. There isn&amp;#8217;t a day of week and time of day during which I haven&amp;#8217;t, at some point, been listening to&amp;nbsp;music!&lt;/p&gt;
 &lt;p&gt;Observing patterns in when I listen to new artists can also be&amp;nbsp;insightful&amp;#8230;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="new artist and track timeseries" src="http://dvatvani.github.io/static/last-fm/lastfm-new-artists-and-tracks-timeseries.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#8230;as can observing when I listen to my most played&amp;nbsp;artists.&lt;/p&gt;
