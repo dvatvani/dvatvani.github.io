@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
+
+
+    <link href="http://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+<meta name="author" content="Dinesh Vatvani" />
+<meta name="description" content="Short version for index and feeds" />
+<meta name="keywords" content="Testing, Themes">
+<meta property="og:site_name" content="Dinesh Vatvani"/>
+<meta property="og:title" content="An analysis of board games: Part II - More on mechanics and themes"/>
+<meta property="og:description" content="Short version for index and feeds"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://dvatvani.github.io/drafts/BGG-Analysis-Part-2.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-02-28 19:30:00+00:00"/>
+<meta property="article:modified_time" content="2016-02-28 19:35:00+00:00"/>
+<meta property="article:author" content="http://dvatvani.github.io/author/dinesh-vatvani.html">
+<meta property="article:section" content="Analysis"/>
+<meta property="article:tag" content="Testing"/>
+<meta property="article:tag" content="Themes"/>
+<meta property="og:image" content="/static/Logo/radial_barh.png">
+  <title>Dinesh Vatvani &ndash; An analysis of board games: Part II - More on mechanics and themes</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://dvatvani.github.io">
+        <img src="/static/Logo/radial_barh.png" alt="Dinesh Vatvani" title="Dinesh Vatvani">
+      </a>
+      <h1><a href="http://dvatvani.github.io">Dinesh Vatvani</a></h1>
+      <p>A Python and data analysis blog</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://dvatvani.github.io/pages/about.html#about">About</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-github-square" href="https://github.com/dvatvani" target="_blank"><i class="fa fa-github-square"></i></a></li>
+        <li><a class="sc-twitter-square" href="https://twitter.com/d_vatvani" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a class="sc-rss-square" href="http://dvatvani.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss-square"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="http://dvatvani.github.io">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="http://dvatvani.github.io/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="BGG-Analysis-Part-2">An analysis of board games: Part <span class="caps">II</span> - More on mechanics and&nbsp;themes</h1>
+    <p>Posted on Sun 28 February 2016 in <a href="http://dvatvani.github.io/category/analysis.html">Analysis</a></p>
+  </header>
+  <div>
+    <p>This is part <span class="caps">II</span> in my series on analysing BoardGameGeek data. Other parts can be found&nbsp;here:</p>
+<ul>
+<li><a href="./BGG-Analysis-Part-1.html">Part I: Introduction and general&nbsp;trends</a></li>
+<li>Part <span class="caps">II</span>: More on mechanics and&nbsp;themes</li>
+<li><a href="./BGG-Analysis-Part-3.html">Part <span class="caps">III</span>: Complexity bias in <span class="caps">BGG</span></a></li>
+</ul>
+<hr />
+<p>In Part I of this series, we looked at general trends in the release rate of board games, board game ratings, complexity, mechanics and themes have changed over the years. In this post, we&#8217;ll explore the co-occurance of mechanics and themes, as well as look at which mechanics/themes are associated with highly rated&nbsp;games.</p>
+<h1>Mechanics</h1>
+<h3>Co-occurance</h3>
+<p>One of the things I was looking forward to when I got my hands on this data is to look at which mechanics co-occur most often. I think this list would not only be useful for game designers looking to see which additional mechanics they could incorporate into their game that fits with other mechanics in place, but more interestingly, it could be a challenge for designers to try to create interesting games that marry together mechanics seldom seen together. Let&#8217;s have a look at that this co-occurance table looks&nbsp;like.</p>
+<p><center><img alt="Mechanics co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Mechanics_co-ocurrance.png" /></center></p>
+<p>From the matrix above, the mechanics that most often co-occur (relative to how much we&#8217;d expect them to co-occur by random distribution of mechanics, not in absolute terms), are shown in this&nbsp;table.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Mechanic 1</th>
+<th>Mechanic 2</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auction/Bidding</td>
+<td>Trading</td>
+<td align="center">0.35</td>
+</tr>
+<tr>
+<td>Trading</td>
+<td>Set Collection</td>
+<td align="center">0.31</td>
+</tr>
+<tr>
+<td>Trading</td>
+<td>Stock Holding</td>
+<td align="center">0.31</td>
+</tr>
+<tr>
+<td>Storytelling</td>
+<td>Role Playing</td>
+<td align="center">0.21</td>
+</tr>
+<tr>
+<td>Auction/Bidding</td>
+<td>Stock Holding</td>
+<td align="center">0.20</td>
+</tr>
+<tr>
+<td>Auction/Bidding</td>
+<td>Set Collection</td>
+<td align="center">0.19</td>
+</tr>
+<tr>
+<td>Singing</td>
+<td>Acting</td>
+<td align="center">0.19</td>
+</tr>
+<tr>
+<td>Trading</td>
+<td>Roll / Spin and Move</td>
+<td align="center">0.18</td>
+</tr>
+<tr>
+<td>Hand Management</td>
+<td>Take That</td>
+<td align="center">0.16</td>
+</tr>
+<tr>
+<td>Pattern Building</td>
+<td>Pattern Recognition</td>
+<td align="center">0.16</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>It seems like there&#8217;s a cluster of linked mechanics surrounding trading that dominate the most co-occuring mechanics list, but there&#8217;s also unsurprising combinations such as Singing with Acting, and Storytelling with role playing. Having had a look at the table, nothing stands out to me as being particuarly surprising, but it could still be a useful resource for board game&nbsp;designers.</p>
+<p>Similarly, the mechanics that least often co-occur are shown&nbsp;below.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Mechanic 1</th>
+<th>Mechanic 2</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hand Management</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.18</td>
+</tr>
+<tr>
+<td>Hex-and-Counter</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.14</td>
+</tr>
+<tr>
+<td>Roll / Spin and Move</td>
+<td>Tile Placement</td>
+<td align="center">-0.11</td>
+</tr>
+<tr>
+<td>Set Collection</td>
+<td>Hex-and-Counter</td>
+<td align="center">-0.11</td>
+</tr>
+<tr>
+<td>Roll / Spin and Move</td>
+<td>Dice Rolling</td>
+<td align="center">-0.11</td>
+</tr>
+<tr>
+<td>Hex-and-Counter</td>
+<td>Hand Management</td>
+<td align="center">-0.10</td>
+</tr>
+<tr>
+<td>Dice Rolling</td>
+<td>Hand Management</td>
+<td align="center">-0.10</td>
+</tr>
+<tr>
+<td>Roll / Spin and Move</td>
+<td>Variable Player Powers</td>
+<td align="center">-0.10</td>
+</tr>
+<tr>
+<td>Simultaneous Action Selection</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.10</td>
+</tr>
+<tr>
+<td>Area Control / Area Influence</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.09</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>These are all combinations of mechanics that are not seen together often. If any board game designers want a design challenge, it might be interesting to try to build a functional board game using a pair of these mechanics as the basis of the game. A particularly rare 3 mechanic combination is <code>Roll / Spin and move</code>, <code>Hand management</code> and <code>Dice rolling</code>, and a rare 4 mechanic combination is those 3 + <code>Hex and Counter</code>. I&#8217;d love to hear about how that experiment went if anyone actually decides to try to make a game out of&nbsp;these. </p>
+<p>It&#8217;s worth noting that Roll / Spin and move comes up in 7 out of the 10 sets of least co-occurring mechanics. In fact, it&#8217;s occurance is negatively correlated with most other mechanics. The only mechanics that Roll / Spin and move has a positive correlation with are <code>Trading</code>, <code>Auction/Bidding</code>, <code>Stock holding</code> and <code>Set collection</code>.</p>
+<h3>Ratings</h3>
+<p><center><img alt="Mechanics ratings" src="http://dvatvani.github.io/static/BGG-analysis/mechanics-ratings.png" /></center></p>
+<ul>
+<li>Mechanics rating vs increase in popularity (%, not absolute)&nbsp;?</li>
+</ul>
+<p>Note that this is a multivariate regression, not a simple average rating of games containing that&nbsp;mechanic. </p>
+<p>We can tie things back&nbsp;to </p>
+<h1>Themes</h1>
+<h3>Co-occurance</h3>
+<p><center><img alt="Themes co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Themes_co-ocurrance.png" /></center></p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Theme 1</th>
+<th>Theme 2</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Age of Reason</td>
+<td>American Revolutionary War</td>
+<td align="center">0.38</td>
+</tr>
+<tr>
+<td>Deduction</td>
+<td>Murder/Mystery</td>
+<td align="center">0.34</td>
+</tr>
+<tr>
+<td>Adventure</td>
+<td>Exploration</td>
+<td align="center">0.29</td>
+</tr>
+<tr>
+<td>Horror</td>
+<td>Zombies</td>
+<td align="center">0.29</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>Trains</td>
+<td align="center">0.25</td>
+</tr>
+<tr>
+<td>Space Exploration</td>
+<td>Science Fiction</td>
+<td align="center">0.24</td>
+</tr>
+<tr>
+<td>Fantasy</td>
+<td>Adventure</td>
+<td align="center">0.23</td>
+</tr>
+<tr>
+<td>Fighting</td>
+<td>Fantasy</td>
+<td align="center">0.23</td>
+</tr>
+<tr>
+<td>Nautical</td>
+<td>Pirates</td>
+<td align="center">0.20</td>
+</tr>
+<tr>
+<td>Civil War</td>
+<td>Pike and Shot</td>
+<td align="center">0.19</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Nothing in here stands out particularly strongly. In most cases, the related themes are synonymous with one&nbsp;another. </p>
+<p>Least co-occuring&nbsp;themes:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Theme 1</th>
+<th>Theme 2</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trivia</td>
+<td>Fantasy</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>Fighting</td>
+<td align="center">-0.06</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>Science Fiction</td>
+<td align="center">-0.06</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>World War <span class="caps">II</span></td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Fantasy</td>
+<td>Sports</td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Racing</td>
+<td>Economic</td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Fantasy</td>
+<td>World War <span class="caps">II</span></td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Animals</td>
+<td>World War <span class="caps">II</span></td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Science Fiction</td>
+<td>Animals</td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>World War <span class="caps">II</span></td>
+<td>Sports</td>
+<td align="center">-0.05</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>This list of themes that don&#8217;t co-occur are slightly more interesting to me than the list of most co-occuring ones themes. It&#8217;s clear that Trivia games lend themselves to general knowledge, and as such there aren&#8217;t many specialist theme trivia games such as Fantasy trivia games, Fighting trivia games, Science fiction trivia games or World war <span class="caps">II</span> trivia games. Other themes that would be interesting to see together are Fantasy and Sports (would anyone like to try to make Quidditch: The board game?), Racing and Economic (I think <code>Race for the Galaxy</code> has this base covered), World war <span class="caps">II</span> games that incorporate Fantasy or Animals elements, Science fiction games that incorporate Animals as a theme and World war <span class="caps">II</span> Sports games (Out of all these least co-occurring mechanics, this is probably the pair that is understandable). If anyone is interested in trying to create an unusual and unique game, those are theme combinations worth&nbsp;trying. </p>
+<h3>Associated&nbsp;mechanics</h3>
+<p>A final co-occurance relationship to look at is the co-occurance of mechanics and themes. Some themes will lend themselves better to some mechanics than others. It&#8217;s interesting to see which combinations work well and which don&#8217;t, or rather, which combinations appear often and which&nbsp;don&#8217;t.</p>
+<p><center><img alt="Mechanics-Themes co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Mechanics-themes_co-ocurrance.png" /></center></p>
+<p>Most&nbsp;co-occuring:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Mechanic</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Economic</td>
+<td>Trading</td>
+<td align="center">0.51</td>
+</tr>
+<tr>
+<td>Economic</td>
+<td>Stock Holding</td>
+<td align="center">0.42</td>
+</tr>
+<tr>
+<td>World War <span class="caps">II</span></td>
+<td>Hex-and-Counter</td>
+<td align="center">0.41</td>
+</tr>
+<tr>
+<td>Economic</td>
+<td>Auction/Bidding</td>
+<td align="center">0.38</td>
+</tr>
+<tr>
+<td>Trains</td>
+<td>Route/Network Building</td>
+<td align="center">0.35</td>
+</tr>
+<tr>
+<td>Murder/Mystery</td>
+<td>Role Playing</td>
+<td align="center">0.30</td>
+</tr>
+<tr>
+<td>Music</td>
+<td>Singing</td>
+<td align="center">0.28</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>Pick-up and Deliver</td>
+<td align="center">0.27</td>
+</tr>
+<tr>
+<td>Territory Building</td>
+<td>Area Control / Area Influence</td>
+<td align="center">0.26</td>
+</tr>
+<tr>
+<td>Fighting</td>
+<td>Variable Player Powers</td>
+<td align="center">0.26</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Least&nbsp;co-occuring:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Mechanic</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>World War <span class="caps">II</span></td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.09</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>Hand Management</td>
+<td align="center">-0.08</td>
+</tr>
+<tr>
+<td>Fighting</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.08</td>
+</tr>
+<tr>
+<td>World War <span class="caps">II</span></td>
+<td>Set Collection</td>
+<td align="center">-0.08</td>
+</tr>
+<tr>
+<td>Economic</td>
+<td>Hex-and-Counter</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Science Fiction</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>Hex-and-Counter</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Deduction</td>
+<td>Dice Rolling</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Medieval</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Animals</td>
+<td>Hex-and-Counter</td>
+<td align="center">-0.07</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h3>Ratings</h3>
+<p><center><img alt="Themes ratings" src="http://dvatvani.github.io/static/BGG-analysis/themes-ratings.png" /></center></p>
+<p>More analysis on the <span class="caps">BGG</span> dataset can be found in <a href="./BGG-Analysis-Part-3.html">part <span class="caps">III</span></a> of this series of analysis posts, in which we explore the complexity bias in <span class="caps">BGG</span>&#8217;s ratings and obtain a complexity-bias-corrected top 10 list of board&nbsp;games.</p>
+<p>I&#8217;ve left out a lot of smaller bits of analysis that didn&#8217;t fit into the structure of this write-up, but if you&#8217;re interested in learning more about the board game dataset, you can find all of my analysis, including the code [here] in the form of a Jupyter Notebook&nbsp;(Python).</p>
+<hr />
+<p><em>Thanks to</em>:</p>
+<ul>
+<li><em><a href="https://colmseeley.wordpress.com/">Colm Seeley</a> for introducing me to the world of modern board games, countless discussions and ideas on interesting things to do with the dataset, helping me structure the analysis and for providing some manually collected data. I look forward to co-presenting this analysis with him in the&nbsp;future.</em></li>
+<li><em>Catherine Maddox for great feedback on the writing and presentation of the&nbsp;post</em></li>
+<li><em>Yihui Fan and Hugh Thompson for helpful feedback on the clarity and aesthetics of the&nbsp;graphs.</em></li>
+<li><em>GitHub user <code>TheWeatherman</code> for creating the <a href="https://github.com/ThaWeatherman"><span class="caps">BGG</span> scraper</a> that I modified for this&nbsp;analysis.</em></li>
+</ul>
+<p><em>If you enjoyed reading this, you may also&nbsp;enjoy:</em></p>
+<ul>
+<li><em><a href="https://www.kaggle.com/mrpantherson/board-game-data#"><em>Boardgamegeek dataset on Kaggle</em></a>, with multiple users&#8217; analysis on the&nbsp;dataset</em></li>
+<li><em><a href="https://opinionatedgamers.com/2015/08/17/are-boardgames-getting-better-an-empirical-analysis/"><em>Are Boardgames Getting Better? An Empirical Analysis</em></a> by <a href="https://opinionatedgamers.com/"><em>Opinionated&nbsp;Gamers</em></a></em></li>
+<li><em><a href="https://boardgamegeek.com/blogpost/11991/numbers-bgg-rank-data-analysis"><em>By the Numbers - <span class="caps">BGG</span> Rank Data + Analysis</em></a> by Oliver&nbsp;Kiley</em></li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://dvatvani.github.io/tag/testing.html">Testing</a>
+      <a href="http://dvatvani.github.io/tag/themes.html">Themes</a>
+    </p>
+  </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dvatvani';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
+
+    <footer>
+        <p>&copy; Dinesh Vatvani </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75651339-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "An analysis of board games: Part II - More on mechanics and themes",
+  "headline": "An analysis of board games: Part II - More on mechanics and themes",
+  "datePublished": "2016-02-28 19:30:00+00:00",
+  "dateModified": "2016-02-28 19:35:00+00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Dinesh Vatvani",
+    "url": "http://dvatvani.github.io/author/dinesh-vatvani.html"
+  },
+  "image": "/static/Logo/radial_barh.png",
+  "url": "http://dvatvani.github.io/drafts/BGG-Analysis-Part-2.html",
+  "description": "Short version for index and feeds"
+}
+</script></body>
+</html>

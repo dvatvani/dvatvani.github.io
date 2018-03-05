@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
+
+
+    <link href="http://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+<meta name="author" content="Dinesh Vatvani" />
+<meta name="description" content="Short version for index and feeds" />
+<meta name="keywords" content="Testing, Themes">
+<meta property="og:site_name" content="Dinesh Vatvani"/>
+<meta property="og:title" content="An analysis of board games: Part III - Complexity bias in BGG"/>
+<meta property="og:description" content="Short version for index and feeds"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://dvatvani.github.io/drafts/BGG-Analysis-Part-3.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-02-28 19:30:00+00:00"/>
+<meta property="article:modified_time" content="2016-02-28 19:35:00+00:00"/>
+<meta property="article:author" content="http://dvatvani.github.io/author/dinesh-vatvani.html">
+<meta property="article:section" content="Analysis"/>
+<meta property="article:tag" content="Testing"/>
+<meta property="article:tag" content="Themes"/>
+<meta property="og:image" content="/static/Logo/radial_barh.png">
+  <title>Dinesh Vatvani &ndash; An analysis of board games: Part III - Complexity bias in BGG</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://dvatvani.github.io">
+        <img src="/static/Logo/radial_barh.png" alt="Dinesh Vatvani" title="Dinesh Vatvani">
+      </a>
+      <h1><a href="http://dvatvani.github.io">Dinesh Vatvani</a></h1>
+      <p>A Python and data analysis blog</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://dvatvani.github.io/pages/about.html#about">About</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-github-square" href="https://github.com/dvatvani" target="_blank"><i class="fa fa-github-square"></i></a></li>
+        <li><a class="sc-twitter-square" href="https://twitter.com/d_vatvani" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a class="sc-rss-square" href="http://dvatvani.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss-square"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="http://dvatvani.github.io">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="http://dvatvani.github.io/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="BGG-Analysis-Part-3">An analysis of board games: Part <span class="caps">III</span> - Complexity bias in <span class="caps">BGG</span></h1>
+    <p>Posted on Sun 28 February 2016 in <a href="http://dvatvani.github.io/category/analysis.html">Analysis</a></p>
+  </header>
+  <div>
+    <p>This is part <span class="caps">III</span> in my series on analysing BoardGameGeek data. Other parts can be found&nbsp;here:</p>
+<ul>
+<li><a href="./BGG-Analysis-Part-1.html">Part I: Introduction and general&nbsp;trends</a></li>
+<li><a href="./BGG-Analysis-Part-2.html">Part <span class="caps">II</span>: More on mechanics and&nbsp;themes</a></li>
+<li>Part <span class="caps">III</span>: Complexity bias in <span class="caps">BGG</span></li>
+</ul>
+<hr />
+<h1>Complexity bias in&nbsp;ratings?</h1>
+<p>I&#8217;ve heard many people comment on the fact that Boardgamegeek&#8217;s top 10 list appears to be dominated by really big and complex games, particularly when compared to many other curators&#8217; top 10&nbsp;lists. </p>
+<p><center><img alt="Rating vs weight" src="http://dvatvani.github.io/static/BGG-analysis/rating-vs-weight.png" /></center></p>
+<p>There are a several interesting features in the plot&nbsp;above.</p>
+<ol>
+<li>There is a clear correlation between game rating and game complexity (average weight score). This could either mean that more complex games are generally better, or that the boardgamegeek userbase values complexity in board&nbsp;games.</li>
+<li>Games above the rating vs complexity trend line are more likely to be commercially successful than those beneath it. At first glance, this seems intuitive since it indicates that good games (i.e. higher rated games) sell more, but more particularly what this tells us is that the ratings bar in order for games to be successful is is set much lower for less complex&nbsp;games. </li>
+<li>The final interesting feature is the tail of games of low complexity and low ratings at the bottom left of the plot. This &#8220;tail of spite&#8221; consist of relatively old mass-appeal games. Every single game in the &#8220;tail of spite&#8221; was released pre-1980, with many being considerably older than that. The names of these games are shown in the table&nbsp;below:</li>
+</ol>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="center">Avg. rating</th>
+<th align="center">Avg. weight</th>
+<th align="center">Year published</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Tic-Tac-Toe</td>
+<td align="center">2.6</td>
+<td align="center">1.11</td>
+<td align="center">-1300</td>
+</tr>
+<tr>
+<td align="left">Monopoly</td>
+<td align="center">4.4</td>
+<td align="center">1.68</td>
+<td align="center">1933</td>
+</tr>
+<tr>
+<td align="left">Trouble</td>
+<td align="center">3.7</td>
+<td align="center">1.05</td>
+<td align="center">1965</td>
+</tr>
+<tr>
+<td align="left">Pay Day</td>
+<td align="center">4.7</td>
+<td align="center">1.23</td>
+<td align="center">1975</td>
+</tr>
+<tr>
+<td align="left">Checkers</td>
+<td align="center">4.9</td>
+<td align="center">1.79</td>
+<td align="center">1150</td>
+</tr>
+<tr>
+<td align="left">Pachisi</td>
+<td align="center">4.5</td>
+<td align="center">1.21</td>
+<td align="center">400</td>
+</tr>
+<tr>
+<td align="left">Sorry!</td>
+<td align="center">4.5</td>
+<td align="center">1.17</td>
+<td align="center">1929</td>
+</tr>
+<tr>
+<td align="left">Battleship</td>
+<td align="center">4.5</td>
+<td align="center">1.23</td>
+<td align="center">1931</td>
+</tr>
+<tr>
+<td align="left">Mouse Trap</td>
+<td align="center">4.1</td>
+<td align="center">1.12</td>
+<td align="center">1963</td>
+</tr>
+<tr>
+<td align="left">Connect Four</td>
+<td align="center">4.8</td>
+<td align="center">1.20</td>
+<td align="center">1974</td>
+</tr>
+<tr>
+<td align="left">The Game of Life</td>
+<td align="center">4.1</td>
+<td align="center">1.19</td>
+<td align="center">1960</td>
+</tr>
+<tr>
+<td align="left">Operation</td>
+<td align="center">4.0</td>
+<td align="center">1.08</td>
+<td align="center">1965</td>
+</tr>
+<tr>
+<td align="left">Guess Who?</td>
+<td align="center">4.8</td>
+<td align="center">1.12</td>
+<td align="center">1979</td>
+</tr>
+<tr>
+<td align="left">Candy Land</td>
+<td align="center">3.2</td>
+<td align="center">1.05</td>
+<td align="center">1949</td>
+</tr>
+<tr>
+<td align="left">Snakes and Ladders</td>
+<td align="center">2.8</td>
+<td align="center">1.00</td>
+<td align="center">-200</td>
+</tr>
+<tr>
+<td align="left">Twister</td>
+<td align="center">4.6</td>
+<td align="center">1.09</td>
+<td align="center">1966</td>
+</tr>
+<tr>
+<td align="left">Pick Up Sticks</td>
+<td align="center">4.2</td>
+<td align="center">1.05</td>
+<td align="center">1850</td>
+</tr>
+<tr>
+<td align="left">Bingo</td>
+<td align="center">2.7</td>
+<td align="center">1.02</td>
+<td align="center">1530</td>
+</tr>
+<tr>
+<td align="left">Memory</td>
+<td align="center">4.7</td>
+<td align="center">1.16</td>
+<td align="center">1959</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<ul>
+<li></li>
+</ul>
+<h1>Correcting for the complexity&nbsp;bias</h1>
+<p>We can correct for the complexity bias in the ratings to obtain a more complexity-agnostic rating of a game. We do this by determining the residuals for all games from the ratings vs weight regression that we established above. The rating residuals are effectively a measure of how much more highly a game is rated than the average game of a similar level of&nbsp;complexity. </p>
+<p><span class="caps">BGG</span> use a Bayesian mean to rank their games instead of taking the raw average ratings. This is designed to push games with a very low number of ratings towards the mean to prevent the top games list being dominated by highly rated games with only a handful of ratings. I&#8217;ve taken a similar approach, assuming a Bayesian prior of <code>0</code> (the average for rating residuals), with a weight of <code>5,000</code> ratings. Looking at the top 10 games using this complexity-bias correction, we find that the top games&nbsp;are:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>New rank</th>
+<th align="left">Name</th>
+<th align="center">Original <span class="caps">BGG</span> rank</th>
+<th align="center">Year published</th>
+<th align="center">Avg. weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td align="left">Codenames</td>
+<td align="center">38</td>
+<td align="center">2015</td>
+<td align="center">1.3</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="left">Pandemic Legacy: Season 1</td>
+<td align="center">2</td>
+<td align="center">2015</td>
+<td align="center">2.8</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="left">7 Wonders Duel</td>
+<td align="center">9</td>
+<td align="center">2015</td>
+<td align="center">2.2</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="left">Patchwork</td>
+<td align="center">50</td>
+<td align="center">2014</td>
+<td align="center">1.7</td>
+</tr>
+<tr>
+<td>5</td>
+<td align="left">Crokinole</td>
+<td align="center">69</td>
+<td align="center">1876</td>
+<td align="center">1.3</td>
+</tr>
+<tr>
+<td>6</td>
+<td align="left">Love Letter</td>
+<td align="center">192</td>
+<td align="center">2012</td>
+<td align="center">1.2</td>
+</tr>
+<tr>
+<td>7</td>
+<td align="left">Dixit</td>
+<td align="center">175</td>
+<td align="center">2008</td>
+<td align="center">1.3</td>
+</tr>
+<tr>
+<td>8</td>
+<td align="left">Jaipur</td>
+<td align="center">99</td>
+<td align="center">2009</td>
+<td align="center">1.5</td>
+</tr>
+<tr>
+<td>9</td>
+<td align="left">Gloomhaven</td>
+<td align="center">1</td>
+<td align="center">2017</td>
+<td align="center">3.8</td>
+</tr>
+<tr>
+<td>10</td>
+<td align="left">The Resistance: Avalon</td>
+<td align="center">77</td>
+<td align="center">2012</td>
+<td align="center">1.8</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>I&#8217;ve left a lot of smaller disjointed bits of analysis out of this writeup, but if you you&#8217;re interested in learning more about the board game dataset, you can find all of my analysis&nbsp;[here]</p>
+<p>Thanks&nbsp;to:</p>
+<ul>
+<li><a href="https://colmseeley.wordpress.com/">Colm&nbsp;Seeley</a></li>
+<li>GitHub user <code>TheWeatherman</code> for creating the <a href="https://github.com/ThaWeatherman"><span class="caps">BGG</span> scraper</a> that I modified for this&nbsp;analysis. </li>
+</ul>
+<p>If you enjoyed reading this, you may also&nbsp;enjoy:</p>
+<ul>
+<li><a href="https://www.kaggle.com/mrpantherson/board-game-data#"><em>Boardgamegeek dataset on Kaggle</em></a>, with multiple users&#8217; analysis on the&nbsp;dataset</li>
+<li><a href="https://opinionatedgamers.com/2015/08/17/are-boardgames-getting-better-an-empirical-analysis/"><em>Are Boardgames Getting Better? An Empirical Analysis</em></a> by <a href="https://opinionatedgamers.com/"><em>Opinionated&nbsp;Gamers</em></a></li>
+<li><a href="https://boardgamegeek.com/blogpost/11991/numbers-bgg-rank-data-analysis"><em>By the Numbers - <span class="caps">BGG</span> Rank Data + Analysis</em></a> by <em>Oliver&nbsp;Kiley</em></li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://dvatvani.github.io/tag/testing.html">Testing</a>
+      <a href="http://dvatvani.github.io/tag/themes.html">Themes</a>
+    </p>
+  </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dvatvani';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
+
+    <footer>
+        <p>&copy; Dinesh Vatvani </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75651339-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "An analysis of board games: Part III - Complexity bias in BGG",
+  "headline": "An analysis of board games: Part III - Complexity bias in BGG",
+  "datePublished": "2016-02-28 19:30:00+00:00",
+  "dateModified": "2016-02-28 19:35:00+00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Dinesh Vatvani",
+    "url": "http://dvatvani.github.io/author/dinesh-vatvani.html"
+  },
+  "image": "/static/Logo/radial_barh.png",
+  "url": "http://dvatvani.github.io/drafts/BGG-Analysis-Part-3.html",
+  "description": "Short version for index and feeds"
+}
+</script></body>
+</html>
