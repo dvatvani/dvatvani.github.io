@@ -21,7 +21,7 @@
 <meta name="description" content="Short version for index and feeds" />
 <meta name="keywords" content="Board games">
 <meta property="og:site_name" content="Dinesh Vatvani"/>
-<meta property="og:title" content="An analysis of board games: Part III - Complexity bias in BGG"/>
+<meta property="og:title" content="An analysis of board games: Part III - More on mechanics and themes"/>
 <meta property="og:description" content="Short version for index and feeds"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://dvatvani.github.io/drafts/BGG-Analysis-Part-3.html"/>
@@ -32,7 +32,7 @@
 <meta property="article:section" content="Analysis"/>
 <meta property="article:tag" content="Board games"/>
 <meta property="og:image" content="/static/Logo/radial_barh.png">
-  <title>Dinesh Vatvani &ndash; An analysis of board games: Part III - Complexity bias in BGG</title>
+  <title>Dinesh Vatvani &ndash; An analysis of board games: Part III - More on mechanics and themes</title>
 </head>
 <body>
   <aside>
@@ -65,246 +65,437 @@
 
 <article>
   <header>
-    <h1 id="BGG-Analysis-Part-3">An analysis of board games: Part <span class="caps">III</span> - Complexity bias in <span class="caps">BGG</span></h1>
+    <h1 id="BGG-Analysis-Part-3">An analysis of board games: Part <span class="caps">III</span> - More on mechanics and&nbsp;themes</h1>
     <p>Posted on Sun 28 February 2016 in <a href="http://dvatvani.github.io/category/analysis.html">Analysis</a></p>
   </header>
   <div>
-    <p>This is part <span class="caps">III</span> in my series on analysing BoardGameGeek data. Other parts can be found&nbsp;here:</p>
+    <p>This is part <span class="caps">II</span> in my series on analysing BoardGameGeek data. Other parts can be found&nbsp;here:</p>
 <ul>
 <li><a href="./BGG-Analysis-Part-1.html">Part I: Introduction and general&nbsp;trends</a></li>
-<li><a href="./BGG-Analysis-Part-2.html">Part <span class="caps">II</span>: More on mechanics and&nbsp;themes</a></li>
-<li>Part <span class="caps">III</span>: Complexity bias in <span class="caps">BGG</span></li>
+<li>Part <span class="caps">II</span>: More on mechanics and&nbsp;themes</li>
+<li><code>Part III: Complexity bias in BGG</code> (Coming&nbsp;soon)</li>
 </ul>
 <hr />
-<h1>Complexity bias in&nbsp;ratings?</h1>
-<p>I&#8217;ve heard many people comment on the fact that Boardgamegeek&#8217;s top 10 list appears to be dominated by really big and complex games, particularly when compared to many other curators&#8217; top 10&nbsp;lists. </p>
-<p><center><img alt="Rating vs weight" src="http://dvatvani.github.io/static/BGG-analysis/rating-vs-weight.png" /></center></p>
-<p>There are a several interesting features in the plot&nbsp;above.</p>
-<ol>
-<li>There is a clear correlation between game rating and game complexity (average weight score). This could either mean that more complex games are generally better, or that the boardgamegeek userbase values complexity in board&nbsp;games.</li>
-<li>Games above the rating vs complexity trend line are more likely to be commercially successful than those beneath it. At first glance, this seems intuitive since it indicates that good games (i.e. higher rated games) sell more, but more particularly what this tells us is that the ratings bar in order for games to be successful is is set much lower for less complex&nbsp;games. </li>
-<li>The final interesting feature is the tail of games of low complexity and low ratings at the bottom left of the plot. This &#8220;tail of spite&#8221; consist of relatively old mass-appeal games. Every single game in the &#8220;tail of spite&#8221; was released pre-1980, with many being considerably older than that. The names of these games are shown in the table&nbsp;below:</li>
-</ol>
+<p>In <a href="./BGG-Analysis-Part-1.html">Part I</a> of this series, we explained how we generated a dataset from BoardGameGeek and explored general trends in the release rate of board games, board game ratings, complexity, mechanics and themes have changed over the years. In this post, we&#8217;ll tease out a little bit more information on the mechanics/themes associated with highly rated games as well as the co-occurance of mechanics and&nbsp;themes.</p>
+<h1>Mechanics</h1>
+<h3>Ratings</h3>
+<p>One interesting thing we can do with the dataset we have obtained is train a multivariate regression model to predict game ratings based entirely on the mechanics present in a game. What this model generates is a set of parameters that tells us how much a game&#8217;s rating is expected to increase or decrease by, on average, due to the addition of that mechanic to the game. The results are shown in the plot below, with the black lines representing the 95% confidence intervals of the estimated impact of the inclusion of the mechanic in a game to its overall <span class="caps">BGG</span>&nbsp;rating.</p>
+<p><center><img alt="Mechanics ratings" src="http://dvatvani.github.io/static/BGG-analysis/mechanics-ratings.png" /></center></p>
+<p>Based on this analysis of the <span class="caps">BGG</span> data, it appears that the mechanics most strongly associated with positive game ratings are <code>Worker Placement</code>, <code>Deck/Pool Building</code> and <code>Hex and Counter</code> whereas the mechanics most strongly associated with negative game ratings are <code>Roll / Spin and Move</code>, <code>Singing</code>, and <code>Rock-Paper-Scissors</code>.</p>
+<p>Since we looked at the mechanics that have increased in prevalence over the last couple of decades in part I of the analysis, an interesting and natural analysis to follow up on the results from the table above is to see if the mechanics that are associated with higher game ratings are also the ones that are becoming more prevalent. In other words, are game developers picking up on the mechanics that are associated with highly rated games and incorporating these&nbsp;preferentially?</p>
+<p><center><img alt="Mechanics growth vs rating" src="http://dvatvani.github.io/static/BGG-analysis/mechanic-growth-vs-rating.png" /></center></p>
+<p>It looks like there is weak, but statistically significant relationship between the mechanics that are becoming more popular and the mechanics that are associated with high ratings (Pearson-R = <code>0.44</code>, p &lt; <code>0.01</code>). Most pertinently, the mechanic that is associated with the lowest game ratings (<code>Roll / Spin and move</code>) is also the mechanic that is being phased out of board games most rapidly. Mechanics that are associated with high game ratings that are becoming considerably more prevalent include <code>Deck / Pool Building</code> and <code>Worker Placement</code>. All in all, it&#8217;s probably to the benefit of the board gaming community that mechanics associated with high game ratings are becoming more prevalent since we can assume that these mechanics are inherently more engaging, interesting or in some  other way more enjoyable mechanics to have in&nbsp;games.</p>
+<h3>Co-occurance</h3>
+<p>One of the things I was looking forward to when I got my hands on this data is to look at which mechanics co-occur most often. This gives us an idea of which combinations of mechanics occur together more often than expected (considering how prevalent the individual mechanics are) and which combinations are under-represented (occur less often than the individual mechanics would suggest). This might be of more interest to game designers rather than players, since it&#8217;s a resource that might help designers identify mechanics they could incorporate into their game that fit with other mechanics already in place, but more interestingly, it could be a challenge for designers to try to create interesting games that marry together mechanics seldom seen together. Let&#8217;s have a look at the co-occurance&nbsp;table.</p>
+<p><center><img alt="Mechanics co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Mechanics_co-ocurrance.png" /></center></p>
+<p>From the co-occurance table above, the mechanics that most, and least often co-occur (relative to how much we&#8217;d expect them to co-occur by random distribution of mechanics, not in absolute terms), are shown in the tables&nbsp;below.</p>
+<p>Most co-occurring&nbsp;mechanics:</p>
 <p><center></p>
 <table>
 <thead>
 <tr>
-<th align="left">Name</th>
-<th align="center">Avg. rating</th>
-<th align="center">Avg. weight</th>
-<th align="center">Year published</th>
+<th>Mechanic 1</th>
+<th>Mechanic 2</th>
+<th align="center">Correlation (R²)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Tic-Tac-Toe</td>
-<td align="center">2.6</td>
-<td align="center">1.11</td>
-<td align="center">-1300</td>
+<td>Auction/Bidding</td>
+<td>Trading</td>
+<td align="center">0.35</td>
 </tr>
 <tr>
-<td align="left">Monopoly</td>
-<td align="center">4.4</td>
-<td align="center">1.68</td>
-<td align="center">1933</td>
+<td>Trading</td>
+<td>Set Collection</td>
+<td align="center">0.31</td>
 </tr>
 <tr>
-<td align="left">Trouble</td>
-<td align="center">3.7</td>
-<td align="center">1.05</td>
-<td align="center">1965</td>
+<td>Trading</td>
+<td>Stock Holding</td>
+<td align="center">0.31</td>
 </tr>
 <tr>
-<td align="left">Pay Day</td>
-<td align="center">4.7</td>
-<td align="center">1.23</td>
-<td align="center">1975</td>
+<td>Storytelling</td>
+<td>Role Playing</td>
+<td align="center">0.21</td>
 </tr>
 <tr>
-<td align="left">Checkers</td>
-<td align="center">4.9</td>
-<td align="center">1.79</td>
-<td align="center">1150</td>
+<td>Auction/Bidding</td>
+<td>Stock Holding</td>
+<td align="center">0.20</td>
 </tr>
 <tr>
-<td align="left">Pachisi</td>
-<td align="center">4.5</td>
-<td align="center">1.21</td>
-<td align="center">400</td>
+<td>Auction/Bidding</td>
+<td>Set Collection</td>
+<td align="center">0.19</td>
 </tr>
 <tr>
-<td align="left">Sorry!</td>
-<td align="center">4.5</td>
-<td align="center">1.17</td>
-<td align="center">1929</td>
+<td>Singing</td>
+<td>Acting</td>
+<td align="center">0.19</td>
 </tr>
 <tr>
-<td align="left">Battleship</td>
-<td align="center">4.5</td>
-<td align="center">1.23</td>
-<td align="center">1931</td>
+<td>Trading</td>
+<td>Roll / Spin and Move</td>
+<td align="center">0.18</td>
 </tr>
 <tr>
-<td align="left">Mouse Trap</td>
-<td align="center">4.1</td>
-<td align="center">1.12</td>
-<td align="center">1963</td>
+<td>Hand Management</td>
+<td>Take That</td>
+<td align="center">0.16</td>
 </tr>
 <tr>
-<td align="left">Connect Four</td>
-<td align="center">4.8</td>
-<td align="center">1.20</td>
-<td align="center">1974</td>
-</tr>
-<tr>
-<td align="left">The Game of Life</td>
-<td align="center">4.1</td>
-<td align="center">1.19</td>
-<td align="center">1960</td>
-</tr>
-<tr>
-<td align="left">Operation</td>
-<td align="center">4.0</td>
-<td align="center">1.08</td>
-<td align="center">1965</td>
-</tr>
-<tr>
-<td align="left">Guess Who?</td>
-<td align="center">4.8</td>
-<td align="center">1.12</td>
-<td align="center">1979</td>
-</tr>
-<tr>
-<td align="left">Candy Land</td>
-<td align="center">3.2</td>
-<td align="center">1.05</td>
-<td align="center">1949</td>
-</tr>
-<tr>
-<td align="left">Snakes and Ladders</td>
-<td align="center">2.8</td>
-<td align="center">1.00</td>
-<td align="center">-200</td>
-</tr>
-<tr>
-<td align="left">Twister</td>
-<td align="center">4.6</td>
-<td align="center">1.09</td>
-<td align="center">1966</td>
-</tr>
-<tr>
-<td align="left">Pick Up Sticks</td>
-<td align="center">4.2</td>
-<td align="center">1.05</td>
-<td align="center">1850</td>
-</tr>
-<tr>
-<td align="left">Bingo</td>
-<td align="center">2.7</td>
-<td align="center">1.02</td>
-<td align="center">1530</td>
-</tr>
-<tr>
-<td align="left">Memory</td>
-<td align="center">4.7</td>
-<td align="center">1.16</td>
-<td align="center">1959</td>
+<td>Pattern Building</td>
+<td>Pattern Recognition</td>
+<td align="center">0.16</td>
 </tr>
 </tbody>
 </table>
 <p></center></p>
-<ul>
-<li></li>
-</ul>
-<h1>Correcting for the complexity&nbsp;bias</h1>
-<p>We can correct for the complexity bias in the ratings to obtain a more complexity-agnostic rating of a game. We do this by determining the residuals for all games from the ratings vs weight regression that we established above. The rating residuals are effectively a measure of how much more highly a game is rated than the average game of a similar level of&nbsp;complexity. </p>
-<p><span class="caps">BGG</span> use a Bayesian mean to rank their games instead of taking the raw average ratings. This is designed to push games with a very low number of ratings towards the mean to prevent the top games list being dominated by highly rated games with only a handful of ratings. I&#8217;ve taken a similar approach, assuming a Bayesian prior of <code>0</code> (the average for rating residuals), with a weight of <code>5,000</code> ratings. Looking at the top 10 games using this complexity-bias correction, we find that the top games&nbsp;are:</p>
+<p>Least co-occurring&nbsp;mechanics:</p>
 <p><center></p>
 <table>
 <thead>
 <tr>
-<th>New rank</th>
-<th align="left">Name</th>
-<th align="center">Original <span class="caps">BGG</span> rank</th>
-<th align="center">Year published</th>
-<th align="center">Avg. weight</th>
+<th>Mechanic 1</th>
+<th>Mechanic 2</th>
+<th align="center">Correlation (R²)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td align="left">Codenames</td>
-<td align="center">38</td>
-<td align="center">2015</td>
-<td align="center">1.3</td>
+<td>Hand Management</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.18</td>
 </tr>
 <tr>
-<td>2</td>
-<td align="left">Pandemic Legacy: Season 1</td>
-<td align="center">2</td>
-<td align="center">2015</td>
-<td align="center">2.8</td>
+<td>Hex-and-Counter</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.14</td>
 </tr>
 <tr>
-<td>3</td>
-<td align="left">7 Wonders Duel</td>
-<td align="center">9</td>
-<td align="center">2015</td>
-<td align="center">2.2</td>
+<td>Roll / Spin and Move</td>
+<td>Tile Placement</td>
+<td align="center">-0.11</td>
 </tr>
 <tr>
-<td>4</td>
-<td align="left">Patchwork</td>
-<td align="center">50</td>
-<td align="center">2014</td>
-<td align="center">1.7</td>
+<td>Set Collection</td>
+<td>Hex-and-Counter</td>
+<td align="center">-0.11</td>
 </tr>
 <tr>
-<td>5</td>
-<td align="left">Crokinole</td>
-<td align="center">69</td>
-<td align="center">1876</td>
-<td align="center">1.3</td>
+<td>Roll / Spin and Move</td>
+<td>Dice Rolling</td>
+<td align="center">-0.11</td>
 </tr>
 <tr>
-<td>6</td>
-<td align="left">Love Letter</td>
-<td align="center">192</td>
-<td align="center">2012</td>
-<td align="center">1.2</td>
+<td>Hex-and-Counter</td>
+<td>Hand Management</td>
+<td align="center">-0.10</td>
 </tr>
 <tr>
-<td>7</td>
-<td align="left">Dixit</td>
-<td align="center">175</td>
-<td align="center">2008</td>
-<td align="center">1.3</td>
+<td>Dice Rolling</td>
+<td>Hand Management</td>
+<td align="center">-0.10</td>
 </tr>
 <tr>
-<td>8</td>
-<td align="left">Jaipur</td>
-<td align="center">99</td>
-<td align="center">2009</td>
-<td align="center">1.5</td>
+<td>Roll / Spin and Move</td>
+<td>Variable Player Powers</td>
+<td align="center">-0.10</td>
 </tr>
 <tr>
-<td>9</td>
-<td align="left">Gloomhaven</td>
-<td align="center">1</td>
-<td align="center">2017</td>
-<td align="center">3.8</td>
+<td>Simultaneous Action Selection</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.10</td>
 </tr>
 <tr>
-<td>10</td>
-<td align="left">The Resistance: Avalon</td>
-<td align="center">77</td>
-<td align="center">2012</td>
-<td align="center">1.8</td>
+<td>Area Control / Area Influence</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.09</td>
 </tr>
 </tbody>
 </table>
 <p></center></p>
-<p>I&#8217;ve left a lot of smaller disjointed bits of analysis out of this writeup, but if you you&#8217;re interested in learning more about the board game dataset, you can find all of my analysis&nbsp;[here]</p>
+<p>It seems like there&#8217;s a few clusters in mechanic co-occurance, but the cluster surrounding trading dominate the most co-occuring mechanics list. Besides the trading related mechanics, there are some other unsurprising combinations such as Singing with Acting, and Storytelling with role playing. Having had a look at the most co-occurring mechanics table, nothing stands out to me as being particularly&nbsp;surprising.</p>
+<p>The list of mechanics not seen together often is more interesting. If any board game designers want a design challenge, it might be interesting to try to build a functional board game using a pair of these mechanics as the basis of the game. A particularly rare 3 mechanic combination is <code>Roll / Spin and move</code>, <code>Hand management</code> and <code>Dice rolling</code>, and a rare 4 mechanic combination is those 3 + <code>Hex and Counter</code>. Given that <code>Roll / Spin and move</code> is associated with poor game ratings, it&#8217;s probably not worth trying to include in modern games (unless you <strong>really</strong> want a design challenge), so an appropriate design challenge might be to create a board game with the <code>Hand management</code>, <code>Dice rolling</code> and <code>Hex and Counter</code> mechanics. If anyone actually decides to try to make a game out of these, please do let me know. I&#8217;d love to hear how that experiment played&nbsp;out.</p>
+<h1>Themes</h1>
+<h3>Ratings</h3>
+<p>Similar to what we did the mechanics, we can also look at which themes are associated with high and low game&nbsp;ratings.</p>
+<p><center><img alt="Themes ratings" src="http://dvatvani.github.io/static/BGG-analysis/themes-ratings.png" /></center></p>
+<p>The top 11 themes most strongly associated with positive ratings include 10 historic war related themes, with the only non-war-related theme in the top 11 being <code>Trains</code>. Interestingly, the top war themes are specifically about historical wars. The modern equivalent of this theme: <code>Modern Warfare</code> is still associated with highly rated games, but is only about a quarter of the way down the list. People seem to really like board games based on historic wars.
+The bottom few are <code>Trivia</code>, <code>Music</code> and <code>Movies / TV / Radio theme</code>. The Fact that <code>Music</code> is at the bottom of this list isn&#8217;t all that surprising since we saw that <code>Singing</code> was one of the mechanics most strongly associated with poorly rated&nbsp;games.</p>
+<p>As we did with mechanics, we can also look at the relationship between the expected ratings associated with each theme and the change in prevalence of the themes. This should tell us whether themes that are considered &#8220;good&#8221; (in the sense that they are associated with highly rated games) are becoming more prevalent over time than other&nbsp;themes.</p>
+<p><center><img alt="Theme growth vs rating" src="http://dvatvani.github.io/static/BGG-analysis/themes-growth-vs-rating.png" /></center></p>
+<p>Overall, there doesn&#8217;t appear to be any meaningful general relationship between the themes that are associated with highly rated games and the themes that are becoming more prevalent (Pearson-R = <code>0.08</code>, p = <code>0.58</code>). The only relationship of interest I can spot in this data is that the themes most strongly associated with poorly rated games (<code>Trivia</code>, <code>Music</code>, <code>Movies / TV / Radio theme</code>, <code>Electronic</code> and <code>Racing</code>) are all declining in prevalence reasonably quickly. Beyond that, the relationship becomes more&nbsp;unpredictable.</p>
+<h3>Co-occurance</h3>
+<p>The table of co-occurance of themes, analogous to the co-ocurrance of mechanics table shown earlier in this post, is shown&nbsp;below.</p>
+<p><center><img alt="Themes co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Themes_co-ocurrance.png" /></center></p>
+<p>Most co-occurring&nbsp;themes:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Theme 1</th>
+<th>Theme 2</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Age of Reason</td>
+<td>American Revolutionary War</td>
+<td align="center">0.38</td>
+</tr>
+<tr>
+<td>Deduction</td>
+<td>Murder/Mystery</td>
+<td align="center">0.34</td>
+</tr>
+<tr>
+<td>Adventure</td>
+<td>Exploration</td>
+<td align="center">0.29</td>
+</tr>
+<tr>
+<td>Horror</td>
+<td>Zombies</td>
+<td align="center">0.29</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>Trains</td>
+<td align="center">0.25</td>
+</tr>
+<tr>
+<td>Space Exploration</td>
+<td>Science Fiction</td>
+<td align="center">0.24</td>
+</tr>
+<tr>
+<td>Fantasy</td>
+<td>Adventure</td>
+<td align="center">0.23</td>
+</tr>
+<tr>
+<td>Fighting</td>
+<td>Fantasy</td>
+<td align="center">0.23</td>
+</tr>
+<tr>
+<td>Nautical</td>
+<td>Pirates</td>
+<td align="center">0.20</td>
+</tr>
+<tr>
+<td>Civil War</td>
+<td>Pike and Shot</td>
+<td align="center">0.19</td>
+</tr>
+</tbody>
+</table>
+<p></center> </p>
+<p>Least co-occuring&nbsp;themes:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Theme 1</th>
+<th>Theme 2</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trivia</td>
+<td>Fantasy</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>Fighting</td>
+<td align="center">-0.06</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>Science Fiction</td>
+<td align="center">-0.06</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>World War <span class="caps">II</span></td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Fantasy</td>
+<td>Sports</td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Racing</td>
+<td>Economic</td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Fantasy</td>
+<td>World War <span class="caps">II</span></td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Animals</td>
+<td>World War <span class="caps">II</span></td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>Science Fiction</td>
+<td>Animals</td>
+<td align="center">-0.05</td>
+</tr>
+<tr>
+<td>World War <span class="caps">II</span></td>
+<td>Sports</td>
+<td align="center">-0.05</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>This list of themes that don&#8217;t co-occur are slightly more interesting to me than the list of most co-occuring ones themes. It&#8217;s clear that Trivia games lend themselves to general knowledge, and as such there aren&#8217;t many specialist theme trivia games such as Fantasy trivia games, Fighting trivia games, Science fiction trivia games or World war <span class="caps">II</span> trivia games. Other themes that aren&#8217;t often seen together are Fantasy and Sports, Racing and Economic, World war <span class="caps">II</span> games that incorporate Fantasy or Animals elements, Science fiction games that incorporate Animals as a theme and World war <span class="caps">II</span> Sports games. If anyone is interested in trying to create an unusual and unique game, those are theme combinations worth&nbsp;trying. </p>
+<h3>Associated&nbsp;mechanics</h3>
+<p>A final co-occurance relationship worth looking at is the co-occurance of mechanics and themes. Some themes will lend themselves better to some mechanics than others. It&#8217;s interesting to see which theme-mechanic combinations work well and which don&#8217;t, or rather, which combinations appear together more often than expected and which&nbsp;don&#8217;t.</p>
+<p><center><img alt="Mechanics-Themes co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Mechanics-themes_co-ocurrance.png" /></center></p>
+<p>Most&nbsp;co-occuring:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Mechanic</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Economic</td>
+<td>Trading</td>
+<td align="center">0.51</td>
+</tr>
+<tr>
+<td>Economic</td>
+<td>Stock Holding</td>
+<td align="center">0.42</td>
+</tr>
+<tr>
+<td>World War <span class="caps">II</span></td>
+<td>Hex-and-Counter</td>
+<td align="center">0.41</td>
+</tr>
+<tr>
+<td>Economic</td>
+<td>Auction/Bidding</td>
+<td align="center">0.38</td>
+</tr>
+<tr>
+<td>Trains</td>
+<td>Route/Network Building</td>
+<td align="center">0.35</td>
+</tr>
+<tr>
+<td>Murder/Mystery</td>
+<td>Role Playing</td>
+<td align="center">0.30</td>
+</tr>
+<tr>
+<td>Music</td>
+<td>Singing</td>
+<td align="center">0.28</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>Pick-up and Deliver</td>
+<td align="center">0.27</td>
+</tr>
+<tr>
+<td>Territory Building</td>
+<td>Area Control / Area Influence</td>
+<td align="center">0.26</td>
+</tr>
+<tr>
+<td>Fighting</td>
+<td>Variable Player Powers</td>
+<td align="center">0.26</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Least&nbsp;co-occuring:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Mechanic</th>
+<th align="center">Correlation (R²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>World War <span class="caps">II</span></td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.09</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>Hand Management</td>
+<td align="center">-0.08</td>
+</tr>
+<tr>
+<td>Fighting</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.08</td>
+</tr>
+<tr>
+<td>World War <span class="caps">II</span></td>
+<td>Set Collection</td>
+<td align="center">-0.08</td>
+</tr>
+<tr>
+<td>Economic</td>
+<td>Hex-and-Counter</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Science Fiction</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Trivia</td>
+<td>Hex-and-Counter</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Deduction</td>
+<td>Dice Rolling</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Medieval</td>
+<td>Roll / Spin and Move</td>
+<td align="center">-0.07</td>
+</tr>
+<tr>
+<td>Animals</td>
+<td>Hex-and-Counter</td>
+<td align="center">-0.07</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>The Economic theme is the one that has the most strong association with particular mechanics, particularly the <code>Trading</code>, <code>Stock Holding</code>, <code>Auction/Bidding</code>, <code>Set collection</code>, <code>Commonity speculation</code> and <code>Roll / Spin and Move</code> mechanics. I suspect the last one of those is largely to do with the legacy of <code>Monopoly</code> and how its success influenced the design of subsequent Economic games. Other strong relationships between Themes and mechanics include the <code>Hex and Counter</code> mechanic&#8217;s link to war games, particularly <code>World War II</code> games and the link between the <code>Trains</code> theme and the <code>Route/Network Building</code> mechanic. There are several other strong theme-mechanic relationships that are not very surprising e.g. <code>Music</code> with <code>Singing</code> and <code>Territory Building</code> with <code>Area Control / Area Influence</code>, but one that stood out to me as being quite interesting the association between <code>Fighting</code> games and the <code>Variable Player Powers</code> mechanic. I suppose fighting games lend themselves well to slightly asymmetric styles of play between&nbsp;players.</p>
+<p>There are also many Theme-Mechanic combinations that are under-explored, but some interesting ones include <code>Trivia</code> with <code>Hand Management</code>, <code>Economic</code> with <code>Hex-and-Counter</code> (<code>Scythe</code> does this to some extent, but it would be interesting to see more games in which moving resources and workers around a hex grid is a more integral part of the game experience) and <code>Deduction</code> with <code>Dice rolling</code>.</p>
+<p>I&#8217;m sure many of you readers will have more insight into why some of the patterns observed in this post are occurring, which I haven&#8217;t discussed. I&#8217;d be interested to hear any thoughts you might have that relate to this post or any other comments that might add to the discussion of the topic. I really appreciated all the comments and discussion on the <a href="https://www.reddit.com/r/boardgames/comments/822jhj/an_analysis_of_the_growth_of_number_of_published/">reddit thread</a> for Part I of the board games analysis series of posts as well as the comments left at the bottom of the blog post, so if you&#8217;re one of those people, thanks for engaging with this&nbsp;work!</p>
+<p>More analysis on the <span class="caps">BGG</span> dataset can be found in <code>part III</code> (coming soon) of this series of analysis posts, in which we explore the complexity bias in <span class="caps">BGG</span>&#8217;s ratings and obtain a complexity-bias-corrected top 10 list of board&nbsp;games.</p>
+<p>I&#8217;ve left out a lot of smaller bits of analysis that didn&#8217;t fit into the structure of this write-up, but if you&#8217;re interested in learning more about the board game dataset, you can find all of my analysis, including the code [here] in the form of a Jupyter Notebook&nbsp;(Python).</p>
 <hr />
 <p><em>Thanks to</em>:</p>
 <ul>
@@ -317,7 +508,15 @@
 <ul>
 <li><em><a href="https://www.kaggle.com/mrpantherson/board-game-data#"><em>Boardgamegeek dataset on Kaggle</em></a>, with multiple users&#8217; analysis on the&nbsp;dataset</em></li>
 <li><em><a href="https://opinionatedgamers.com/2015/08/17/are-boardgames-getting-better-an-empirical-analysis/"><em>Are Boardgames Getting Better? An Empirical Analysis</em></a> by <a href="https://opinionatedgamers.com/"><em>Opinionated&nbsp;Gamers</em></a></em></li>
-<li><em><a href="https://boardgamegeek.com/blogpost/11991/numbers-bgg-rank-data-analysis"><em>By the Numbers - <span class="caps">BGG</span> Rank Data + Analysis</em></a> by Oliver&nbsp;Kiley</em></li>
+<li>
+<p><em><a href="https://boardgamegeek.com/blogpost/11991/numbers-bgg-rank-data-analysis"><em>By the Numbers - <span class="caps">BGG</span> Rank Data + Analysis</em></a> by Oliver&nbsp;Kiley</em></p>
+</li>
+<li>
+<p>Deal with rating bias (who rates board&nbsp;games?)</p>
+</li>
+<li>Dice rolling vs Roll/Spin and Move. Don&#8217;t co-occur. Because they&#8217;re the same&nbsp;thing.</li>
+<li>Identify the 3 key&nbsp;points</li>
+<li>Identifying things that really are themes based&nbsp;on </li>
 </ul>
   </div>
   <div class="tag-cloud">
@@ -360,8 +559,8 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "name": "An analysis of board games: Part III - Complexity bias in BGG",
-  "headline": "An analysis of board games: Part III - Complexity bias in BGG",
+  "name": "An analysis of board games: Part III - More on mechanics and themes",
+  "headline": "An analysis of board games: Part III - More on mechanics and themes",
   "datePublished": "2016-02-28 19:30:00+00:00",
   "dateModified": "2016-02-28 19:35:00+00:00",
   "author": {
