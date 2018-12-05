@@ -294,7 +294,7 @@ The bottom few are <code>Trivia</code>, <code>Music</code> and <code>Movies / TV
 </tr>
 </tbody>
 </table>
-<p></center> </p>
+<p></center></p>
 <p>Least co-occuring&nbsp;themes:</p>
 <p><center></p>
 <table>
@@ -359,7 +359,7 @@ The bottom few are <code>Trivia</code>, <code>Music</code> and <code>Movies / TV
 </tbody>
 </table>
 <p></center></p>
-<p>This list of themes that don&#8217;t co-occur are slightly more interesting to me than the list of most co-occuring ones themes. It&#8217;s clear that Trivia games lend themselves to general knowledge, and as such there aren&#8217;t many specialist theme trivia games such as Fantasy trivia games, Fighting trivia games, Science fiction trivia games or World war <span class="caps">II</span> trivia games. Other themes that aren&#8217;t often seen together are Fantasy and Sports, Racing and Economic, World war <span class="caps">II</span> games that incorporate Fantasy or Animals elements, Science fiction games that incorporate Animals as a theme and World war <span class="caps">II</span> Sports games. If anyone is interested in trying to create an unusual and unique game, those are theme combinations worth&nbsp;trying. </p>
+<p>This list of themes that don&#8217;t co-occur are slightly more interesting to me than the list of most co-occuring ones themes. It&#8217;s clear that Trivia games lend themselves to general knowledge, and as such there aren&#8217;t many specialist theme trivia games such as Fantasy trivia games, Fighting trivia games, Science fiction trivia games or World war <span class="caps">II</span> trivia games. Other themes that aren&#8217;t often seen together are Fantasy and Sports, Racing and Economic, World war <span class="caps">II</span> games that incorporate Fantasy or Animals elements, Science fiction games that incorporate Animals as a theme and World war <span class="caps">II</span> Sports games. If anyone is interested in trying to create an unusual and unique game, those are theme combinations worth&nbsp;trying.</p>
 <h3>Associated&nbsp;mechanics</h3>
 <p>A final co-occurance relationship worth looking at is the co-occurance of mechanics and themes. Some themes will lend themselves better to some mechanics than others. It&#8217;s interesting to see which theme-mechanic combinations work well and which don&#8217;t, or rather, which combinations appear together more often than expected and which&nbsp;don&#8217;t.</p>
 <p><center><img alt="Mechanics-Themes co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Mechanics-themes_co-ocurrance.png" /></center></p>
@@ -496,6 +496,10 @@ The bottom few are <code>Trivia</code>, <code>Music</code> and <code>Movies / TV
 <p>I&#8217;m sure many of you readers will have more insight into why some of the patterns observed in this post are occurring, which I haven&#8217;t discussed. I&#8217;d be interested to hear any thoughts you might have that relate to this post or any other comments that might add to the discussion of the topic. I really appreciated all the comments and discussion on the <a href="https://www.reddit.com/r/boardgames/comments/822jhj/an_analysis_of_the_growth_of_number_of_published/">reddit thread</a> for Part I of the board games analysis series of posts as well as the comments left at the bottom of the blog post, so if you&#8217;re one of those people, thanks for engaging with this&nbsp;work!</p>
 <p>More analysis on the <span class="caps">BGG</span> dataset can be found in <code>part III</code> (coming soon) of this series of analysis posts, in which we explore the complexity bias in <span class="caps">BGG</span>&#8217;s ratings and obtain a complexity-bias-corrected top 10 list of board&nbsp;games.</p>
 <p>I&#8217;ve left out a lot of smaller bits of analysis that didn&#8217;t fit into the structure of this write-up, but if you&#8217;re interested in learning more about the board game dataset, you can find all of my analysis, including the code [here] in the form of a Jupyter Notebook&nbsp;(Python).</p>
+<h2>Caveats</h2>
+<p>The true cause of this relationship or its practical implications are a little hard to understand because of the reductive nature of the rating game ratings as well as weight (complexity) ratings. The game overall rating strives to be a single all-encompassing measure of how &#8220;good&#8221; <span class="caps">BGG</span> users think a game is. However, this is likely to be a product of several factors including the elegance of its design, how enjoyable (in terms of just fun) it is to play the first time, its replayability, how satisfying/rewarding it feels to play (something very different from how &#8220;fun&#8221; it is), any new ideas it brings to the table that haven&#8217;t been tried by other board games before, or any of a number of other factors. It is also likely that aspects of a game that appeal to <span class="caps">BGG</span> users, particularly ones invested in board games enough to spend time rating games, differ from the general board game playing population.
+Similarly, the weight rating is a single measure that&#8217;s supposed to encapsulate the complexity of a game, but it doesn&#8217;t resolve between the different types of complexity very well. For example, it doesn&#8217;t resolve between games with relatively simple rules, but a high complexity that arises from the number of possible moves available. Examples of such games are <code>Chess</code>/<code>Go</code> (average weight of 3.74 and 3.98). In contrast, games like <code>Arkham Horror</code> (average weight of 3.55) contain many more fiddly rules and take considerably longer to learn to play for the first time, but have a considerably lower number of possibilities to consider each turn. Some <a href="https://boardgamegeek.com/geeklist/200613/weight-depth-vs-complexity-results-and-analysis">discussions in <span class="caps">BGG</span> forums</a> use the terms <code>Depth</code> (Amount of thinking/processing/negotiating required due to options/choices/tactics and/or long-term planning) and <code>Complexity</code> (Level of rules complexity and/or board maintenance) to resolve between these 2 components that contribute to a game&#8217;s&nbsp;&#8220;weight&#8221;.</p>
+<p>the relationship between a game&#8217;s weight rating and overall game rating could be a result of the relationship between one of the different types of complexity and one of the many possible components that form part of what makes a game good. For example, a game with more mechanics and moving parts can feel more satisfying/rewarding if you find a way to get them to synergize. The same level of satisfaction is harder to achieve in games with fewer moving&nbsp;parts.</p>
 <hr />
 <p><em>Thanks to</em>:</p>
 <ul>
@@ -516,7 +520,7 @@ The bottom few are <code>Trivia</code>, <code>Music</code> and <code>Movies / TV
 </li>
 <li>Dice rolling vs Roll/Spin and Move. Don&#8217;t co-occur. Because they&#8217;re the same&nbsp;thing.</li>
 <li>Identify the 3 key&nbsp;points</li>
-<li>Identifying things that really are themes based&nbsp;on </li>
+<li>Identifying things that really are themes based&nbsp;on</li>
 </ul>
   </div>
   <div class="tag-cloud">

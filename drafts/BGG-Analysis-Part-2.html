@@ -26,8 +26,8 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="http://dvatvani.github.io/drafts/BGG-Analysis-Part-2.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2016-02-28 19:30:00+00:00"/>
-<meta property="article:modified_time" content="2016-02-28 19:35:00+00:00"/>
+<meta property="article:published_time" content="2018-12-01 05:15:00+00:00"/>
+<meta property="article:modified_time" content=""/>
 <meta property="article:author" content="http://dvatvani.github.io/author/dinesh-vatvani.html">
 <meta property="article:section" content="Analysis"/>
 <meta property="article:tag" content="Board games"/>
@@ -66,25 +66,27 @@
 <article>
   <header>
     <h1 id="BGG-Analysis-Part-2">An analysis of board games: Part <span class="caps">II</span> - Complexity bias in <span class="caps">BGG</span></h1>
-    <p>Posted on Sun 28 February 2016 in <a href="http://dvatvani.github.io/category/analysis.html">Analysis</a></p>
+    <p>Posted on Sat 01 December 2018 in <a href="http://dvatvani.github.io/category/analysis.html">Analysis</a></p>
   </header>
   <div>
     <p>This is part <span class="caps">II</span> in my series on analysing BoardGameGeek data. Other parts can be found&nbsp;here:</p>
 <ul>
 <li><a href="./BGG-Analysis-Part-1.html">Part I: Introduction and general&nbsp;trends</a></li>
-<li>Part <span class="caps">II</span>: Exploring complexity bias in&nbsp;BoardGameGeek</li>
-<li><a href="./BGG-Analysis-Part-3.html">Part <span class="caps">III</span>: More on mechanics and&nbsp;themes</a></li>
+<li>Part <span class="caps">II</span>: Complexity bias in&nbsp;BoardGameGeek</li>
 </ul>
 <hr />
 <h1>Introduction</h1>
 <p><a href="./BGG-Analysis-Part-1.html">Part I</a> of my analysis of the BoardGameGeek dataset described how I generated a dataset from BoardGameGeek and explored general trends in the release rate of board games, board game ratings, complexity, mechanics and themes have changed over the years. In this post, we&#8217;ll take a closer look at complexity bias in <span class="caps">BGG</span>&nbsp;ratings.</p>
 <h1>Complexity bias in&nbsp;ratings</h1>
-<p>Boardgamegeek&#8217;s top 100 list is disproportionately dominated by big and complex games. This makes it less useful for a sizeable majority of board game players looking for good new games to play, since many of the games on that list will be inaccessible and daunting. This relationship between a game&#8217;s complexity and how highly rated it is on <span class="caps">BGG</span> is not just limited to the top 100. In fact, there is a pretty clear correlation between how complex a game is and how highly rated it is on BoardGameGeek, as shown&nbsp;below.</p>
+<p>BoardGameGeek&#8217;s top 100 list is disproportionately dominated by big and complex games. This makes it less useful for a sizeable majority of board game players looking for good new games to play, since many of the games on that list will be inaccessible and daunting. This relationship between a game&#8217;s complexity and how highly rated it is on <span class="caps">BGG</span> is not just limited to the top 100. In fact, there is a pretty clear correlation between how complex a game is and how highly rated it is on BoardGameGeek, as shown&nbsp;below.</p>
 <p><center><img alt="Rating vs weight" src="http://dvatvani.github.io/static/BGG-analysis/complexity-bias.png" /></center>
 <center><em>Note: The above graph only includes games with &gt; 100 votes for game weight</em></center></p>
-<p>The existence of this correlation/relationship in the <span class="caps">BGG</span> dataset makes it easier to understand why the top 100 is disproportionately populated with big, complex&nbsp;games. </p>
-<p>There are many possible causes for this relationship. It could be a reflection of the sampling bias inherent in the <span class="caps">BGG</span> dataset (i.e. there may be something about board games with high complexity that disproportionately appeals to the <span class="caps">BGG</span> userbase). It could also be a real effect. Moreover, there might be more complex interplay between them because of the loose definitions of both game rating (replayability, elegance of design, how fun it is to play, how satisfying it feels to play, etc.) and complexity (). Delving into the causes for the correlation between complexity and game rating is something beyond the scope of this&nbsp;post.</p>
-<p>Another curious feature of the graph above is the tail of games of low complexity and low ratings at the bottom left of the plot. This &#8220;tail of spite&#8221; consist of relatively old mass-appeal games. Every single game in the &#8220;tail of spite&#8221; was released pre-1980, with many being considerably older than that. The names of these games are shown in the table&nbsp;below:</p>
+<p>The existence of this correlation in the <span class="caps">BGG</span> dataset makes it easier to understand why the top 100 is disproportionately populated with big, complex&nbsp;games.</p>
+<p>It is worth making a couple of comments based on the graph&nbsp;above:</p>
+<ol>
+<li>This graph does not necessarily mean that more complex board games are inherently better. While the graph above does show a clear (and statistically significant) relationship between perceived complexity and overall rating, we need to appreciate that there is a strong sampling bias present our dataset that leads to this result i.e. Complex board games disproportionately appeal to the <span class="caps">BGG</span> user&nbsp;base.</li>
+<li>A curious feature of the graph above is the tail of games of low complexity and low ratings at the bottom left of the plot. This &#8220;tail of spite&#8221; consists of relatively old mass-appeal games. Every single game in the &#8220;tail of spite&#8221; was released pre-1980, with many being considerably older than that. The names of these games are shown in the table&nbsp;below:</li>
+</ol>
 <p><center></p>
 <table>
 <thead>
@@ -214,17 +216,20 @@
 </table>
 <p></center></p>
 <h1>Correcting for the complexity&nbsp;bias</h1>
-<p>Regardless of whether the complexity bias is a feature of <span class="caps">BGG</span> data or whether more complex games really are &#8220;better&#8221;, I thought it would be interesting to see what the <span class="caps">BGG</span> top 10 or top 100 would be if the lighter games were given an equal opportunity of appearing at the top as some of the heavier games. To do this, we can artificially correct for the relationship between game rating and complexity to obtain a more complexity-agnostic rating of a game. This approach effectively obtains a measure of how highly a game is rated <strong>relative to the average game of that level of  complexity</strong>. The process is more intuitive to understand when presented visually, so I&#8217;ve added a short animation to illustrate what the complexity-bias correction process is&nbsp;doing.</p>
+<p>I thought it would be interesting to see what the <span class="caps">BGG</span> top 10 or top 100 would be if the lighter games were given an equal opportunity of appearing at the top as some of the heavier&nbsp;games.</p>
+<p>Since the regression in the graph above reveals how games&#8217; ratings are related to complexity within the <span class="caps">BGG</span> dataset, we can artificially correct for the correlation by adjusting the game ratings to penalize complex games and reward simpler games. For the more mathematically inclined among you, I&#8217;m referring to the residuals of the regression between rating and&nbsp;complexity.</p>
+<p>A short illustration goes a long way to intuitively explain what the process does, so I&#8217;ve added a short animation to do just&nbsp;that.</p>
 <p><center>
-<video width="700" height="450" controls>
-  <source src="http://dvatvani.github.io/static/BGG-analysis/complexity-bias-correction-animation.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<img alt="Alt Text" src="http://dvatvani.github.io/static/BGG-analysis/manual_animation.gif" />
 </center></p>
-<p>This simple process allows us to obtain a complexity-bias-corrected or complexity-agnostic rating for all games. The new rankings of games based on this complexity-agnostic rating has high complexity games appear in the top of the ranked list roughly at the same rate as lower complexity games, thereby allowing some of the less complex great games to shine through. 
-Below is an interactive plot showing the rating vs complexity plot after the rating correction. Hover over any point to see the name of the game and the game&#8217;s new <span class="caps">BGG</span> rank and rating. Note that <span class="caps">BGG</span> use a Bayesian mean to rank their games instead of taking the raw average ratings. What this does is effectively give each game a certain number of additional rating votes of a value close to the average rating. This is designed to push games with a very low number of ratings towards the average to prevent the top games list being dominated by games with only a handful of ratings. <span class="caps">BGG</span> use a Bayesian prior of about <code>5.5</code> with a weight of <code>1,000</code> ratings. I&#8217;ve used a similar approach, using the same Bayesian prior as <span class="caps">BGG</span>. As a result, there may be some cases where games with a higher raw average rating end up having a lower rank than a game with a slightly lower raw average rating if the second has significantly more rating&nbsp;votes.</p>
-<p><center><iframe width="820" height="500" src="http://dvatvani.github.io/static/BGG-analysis/toolbar.html" frameborder="0" allowfullscreen></iframe></center></p>
-<p>Looking at the top 10 games using this complexity-bias correction, we find that the top games&nbsp;are:</p>
+<p>Applying that artificial correction gives us a <code>complexity-bias-corrected</code> or <code>complexity-agnostic</code> rating for all games. Below is an interactive plot showing the rating vs complexity after the rating correction. Hover over any point to see the name of the game and the game&#8217;s new <span class="caps">BGG</span> rank and&nbsp;rating.</p>
+<p><center>
+<iframe width="820" height="470" src="http://dvatvani.github.io/static/BGG-analysis/toolbar.html" frameborder="0" allowfullscreen>
+</iframe><br>
+<strong><em>Hover your mouse over (or tap if you&#8217;re on mobile) any point for more information about the game</em></strong>
+</center></p>
+<p>We can use these corrected ratings to re-rank all of the games and obtain a complexity-agnostic top 10 or top 100 list. Note that <span class="caps">BGG</span> use something called a Bayesian mean to rank their games instead of taking the raw average ratings. What this does is effectively give each game a certain number of additional &#8220;average&#8221; rating votes. This is designed to push games with a very low number of ratings towards the average to prevent the top games list being dominated by games with only a couple of perfect score ratings. I&#8217;ve used a similar approach, using the same Bayesian prior as <span class="caps">BGG</span> (Bayesian prior of about <code>5.5</code> with a weight of around <code>1,000</code> ratings). As a result, there may be some cases where games with a higher average rating end up having a lower rank than a game with a slightly lower average rating if the second has significantly more rating votes. The re-ranked <span class="caps">BGG</span> list using these corrected ratings have the complex games evenly spread throughout the ranked list of games rather than disproportionately skewed towards the top, thereby allowing some of the less complex great games to shine through to the top&nbsp;100.</p>
+<p>After applying the complexity-bias correction, the top 10 games&nbsp;are:</p>
 <p><center></p>
 <table>
 <thead>
@@ -333,26 +338,23 @@ Below is an interactive plot showing the rating vs complexity plot after the rat
 </table>
 <p><em>Note: The original <span class="caps">BGG</span> rank reflect the games&#8217; ranks as of Jan 2018, when the dataset obtained was from <span class="caps">BGG</span></em></p>
 <p></center></p>
-<p>Biggest&nbsp;winners </p>
-<p>Biggest&nbsp;losers</p>
-<p>Here&#8217;s an interactive table that allows you to navigate the full list and find the impact of the complexity-bias correction on any game you&#8217;re interested&nbsp;in.</p>
+<p>Looking at this list, I still have some disagreements with it, but this looks much more reasonable to me than the original <span class="caps">BGG</span> top 10 list and I suspect that for most board game players looking to try out new good games, this list would look far more approachable, while still being filled with excellent&nbsp;games.</p>
+<p>Some of the games experienced a fairly substantial push up/down the rankings ladder as a result of the complexity bias correction. Some of the games that benefitted the most from this rating correction and have risen to the top 100 are <code>Skull</code>, <code>BANG! The Dice Game</code>, <code>Love Letter: Batman</code>, <code>No Thanks!</code>, <code>Time's Up!</code>, <code>Spyfall</code> and <code>Sushi Go!</code>. Conversely, some of the games that have been penalized the most are <code>Twilight Imperium (Third Edition)</code>, <code>Alchemists</code>, <code>War of the Ring (first edition)</code>, <code>A Game of Thrones: The Board Game (Second Edition)</code>, <code>Through the Ages: A Story of Civilization</code> and <code>Caverna: The Cave Farmers</code>.</p>
+<p>Below is an interactive table that allows you to navigate the full list of games. It also includes a search function to find the impact of the complexity-bias correction on specific&nbsp;games.</p>
 <p><object width="100%" height="700" type="text/html" data="http://dvatvani.github.io/static/BGG-analysis/data.html"></object>
 <center><em>Note: This table only includes games with &gt;= 30 rating votes</em></center></p>
-<h2>Caveats</h2>
-<p>The true cause of this relationship or its practical implications are a little hard to understand because of the reductive nature of the rating game ratings as well as weight (complexity) ratings. The game overall rating strives to be a single all-encompassing measure of how &#8220;good&#8221; <span class="caps">BGG</span> users think a game is. However, this is likely to be a product of several factors including the elegance of its design, how enjoyable (in terms of just fun) it is to play the first time, its replayability, how satisfying/rewarding it feels to play (something very different from how &#8220;fun&#8221; it is), any new ideas it brings to the table that haven&#8217;t been tried by other board games before, or any of a number of other factors. It is also likely that aspects of a game that appeal to <span class="caps">BGG</span> users, particularly ones invested in board games enough to spend time rating games, differ from the general board game playing population.
-Similarly, the weight rating is a single measure that&#8217;s supposed to encapsulate the complexity of a game, but it doesn&#8217;t resolve between the different types of complexity very well. For example, it doesn&#8217;t resolve between games with relatively simple rules, but a high complexity that arises from the number of possible moves available. Examples of such games are <code>Chess</code>/<code>Go</code> (average weight of 3.74 and 3.98). In contrast, games like <code>Arkham Horror</code> (average weight of 3.55) contain many more fiddly rules and take considerably longer to learn to play for the first time, but have a considerably lower number of possibilities to consider each turn. Some <a href="https://boardgamegeek.com/geeklist/200613/weight-depth-vs-complexity-results-and-analysis">discussions in <span class="caps">BGG</span> forums</a> use the terms <code>Depth</code> (Amount of thinking/processing/negotiating requred due to options/choices/tactics and/or long-term planning) and <code>Complexity</code> (Level of rules complexity and/or board maintenance) to resolve between these 2 components that contribute to a game&#8217;s&nbsp;&#8220;weight&#8221;.</p>
-<p>the relationship between a game&#8217;s weight rating and overall game rating could be a result of the relationship between one of the different types of complexity and one of the many possible components that form part of what makes a game good. For example, a game with more mechanics and moving parts can feel more satisfying/rewarding if you find a way to get them to synergize. The same level of satisfaction is harder to achieve in games with fewer moving&nbsp;parts. </p>
 <hr />
 <p><em>Thanks to</em>:</p>
 <ul>
-<li><em><a href="https://twitter.com/ColmSeeley">Colm Seeley</a> for introducing me to the world of modern board games, countless discussions and ideas on interesting things to do with the dataset, helping me structure the analysis and for providing some manually collected data. I look forward to co-presenting this analysis with him in the&nbsp;future.</em></li>
+<li><em><a href="https://twitter.com/ColmSeeley">Colm Seeley</a> for co-authoring this work with&nbsp;me</em></li>
 <li><em>Catherine Maddox for great feedback on the writing and presentation of the&nbsp;post</em></li>
-<li><em>Yihui Fan and Hugh Thompson for helpful feedback on the clarity and aesthetics of the&nbsp;graphs.</em></li>
-<li><em>GitHub user <code>TheWeatherman</code> for creating the <a href="https://github.com/ThaWeatherman"><span class="caps">BGG</span> scraper</a> that I modified for this&nbsp;analysis.</em></li>
+<li><em>Quintin Smith (Quinns) from Shut Up <span class="amp">&amp;</span> Sit Down for allowing me to use material from one of his talks in a presentation of this&nbsp;analysis</em></li>
+<li><em>GitHub user <code>TheWeatherman</code> for creating the <a href="https://github.com/ThaWeatherman"><span class="caps">BGG</span> scraper</a> that I modified to collect the data used for this&nbsp;analysis.</em></li>
+<li>_GitHub user <code>vividvilla</code> for building the useful <a href="https://github.com/vividvilla/csvtotable">CSVtoTable</a>&nbsp;tool</li>
 </ul>
 <p><em>If you enjoyed reading this, you may also&nbsp;enjoy:</em></p>
 <ul>
-<li><em><a href="https://www.kaggle.com/mrpantherson/board-game-data#"><em>Boardgamegeek dataset on Kaggle</em></a>, with multiple users&#8217; analysis on the&nbsp;dataset</em></li>
+<li><a href="https://www.shutupandsitdown.com/bgg100-100-81/"><em>Shut Up <span class="amp">&amp;</span> Sit Down&#8217;s take on the <span class="caps">BGG</span> top&nbsp;100</em></a></li>
 <li><em><a href="https://opinionatedgamers.com/2015/08/17/are-boardgames-getting-better-an-empirical-analysis/"><em>Are Boardgames Getting Better? An Empirical Analysis</em></a> by <a href="https://opinionatedgamers.com/"><em>Opinionated&nbsp;Gamers</em></a></em></li>
 <li><em><a href="https://boardgamegeek.com/blogpost/11991/numbers-bgg-rank-data-analysis"><em>By the Numbers - <span class="caps">BGG</span> Rank Data + Analysis</em></a> by Oliver&nbsp;Kiley</em></li>
 </ul>
@@ -399,8 +401,8 @@ Similarly, the weight rating is a single measure that&#8217;s supposed to encaps
   "@type": "BlogPosting",
   "name": "An analysis of board games: Part II - Complexity bias in BGG",
   "headline": "An analysis of board games: Part II - Complexity bias in BGG",
-  "datePublished": "2016-02-28 19:30:00+00:00",
-  "dateModified": "2016-02-28 19:35:00+00:00",
+  "datePublished": "2018-12-01 05:15:00+00:00",
+  "dateModified": "",
   "author": {
     "@type": "Person",
     "name": "Dinesh Vatvani",
