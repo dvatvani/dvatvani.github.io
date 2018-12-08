@@ -76,16 +76,16 @@
 </ul>
 <hr />
 <h1>Introduction</h1>
-<p><a href="./BGG-Analysis-Part-1.html">Part I</a> of my analysis of the BoardGameGeek dataset described how I generated a dataset from BoardGameGeek and explored general trends in the release rate of board games, board game ratings, complexity, mechanics and themes have changed over the years. In this post, we&#8217;ll take a closer look at complexity bias in <span class="caps">BGG</span>&nbsp;ratings.</p>
+<p>In <a href="./BGG-Analysis-Part-1.html">Part I</a>, I describe how I generated a dataset from BoardGameGeek and explored general trends in the rate of release, ratings and complexity. It also looked at the prevalence of different mechanics and themes throughout the hobby and how this has changed in the past 30 years. In this post, we&#8217;ll investigate complexity bias in <span class="caps">BGG</span>&nbsp;ratings.</p>
 <h1>Complexity bias in&nbsp;ratings</h1>
-<p>BoardGameGeek&#8217;s top 100 list is disproportionately dominated by big and complex games. This makes it less useful for a sizeable majority of board game players looking for good new games to play, since many of the games on that list will be inaccessible and daunting. This relationship between a game&#8217;s complexity and how highly rated it is on <span class="caps">BGG</span> is not just limited to the top 100. In fact, there is a pretty clear correlation between how complex a game is and how highly rated it is on BoardGameGeek, as shown&nbsp;below.</p>
+<p>BoardGameGeek&#8217;s top 100 list is a very visible &#8220;beacon&#8221; for the hobby and many players will use this list to make decisions about which games to try or buy. In that respect, it is comparable to the IMDb top 250 in the role it plays in shaping what the community perceives as the apex of Board Game experiences. However, one of the problems with the <span class="caps">BGG</span> top 100 is that it is disproportionately dominated by big and complex games. This makes it less useful for a sizeable majority of board game players looking for good new games to play, since many of the games on that list will look inaccessible and daunting. The relationship between a game&#8217;s complexity and how highly rated it is on <span class="caps">BGG</span> is not just limited to the top 100. In fact, there is a pretty clear correlation between how complex a game is and how highly rated it is on BoardGameGeek, as shown&nbsp;below.</p>
 <p><center><img alt="Rating vs weight" src="http://dvatvani.github.io/static/BGG-analysis/complexity-bias.png" /></center>
 <center><em>Note: The above graph only includes games with &gt; 100 votes for game weight</em></center></p>
 <p>The existence of this correlation in the <span class="caps">BGG</span> dataset makes it easier to understand why the top 100 is disproportionately populated with big, complex&nbsp;games.</p>
 <p>It is worth making a couple of comments based on the graph&nbsp;above:</p>
 <ol>
-<li>This graph does not necessarily mean that more complex board games are inherently better. While the graph above does show a clear (and statistically significant) relationship between perceived complexity and overall rating, we need to appreciate that there is a strong sampling bias present our dataset that leads to this result i.e. Complex board games disproportionately appeal to the <span class="caps">BGG</span> user&nbsp;base.</li>
-<li>A curious feature of the graph above is the tail of games of low complexity and low ratings at the bottom left of the plot. This &#8220;tail of spite&#8221; consists of relatively old mass-appeal games. Every single game in the &#8220;tail of spite&#8221; was released pre-1980, with many being considerably older than that. The names of these games are shown in the table&nbsp;below:</li>
+<li>This graph does not necessarily mean that more complex board games are inherently better. While the graph above does show a clear (and statistically significant) relationship between perceived complexity and overall rating, we need to appreciate that there is a strong sampling bias present in our dataset that leads to this result i.e. Complex board games disproportionately appeal to the <span class="caps">BGG</span> user&nbsp;base.</li>
+<li>A curious feature of the graph above is the tail of games of low complexity and low ratings at the bottom left of the plot. This &#8220;tail of spite&#8221; consists of relatively old mass-appeal games. Every single game in the tail of spite was released pre-1980, with many being considerably older than that. The games that form the tail of spite are shown in the table&nbsp;below:</li>
 </ol>
 <p><center></p>
 <table>
@@ -216,133 +216,46 @@
 </table>
 <p></center></p>
 <h1>Correcting for the complexity&nbsp;bias</h1>
-<p>I thought it would be interesting to see what the <span class="caps">BGG</span> top 10 or top 100 would be if the lighter games were given an equal opportunity of appearing at the top as some of the heavier&nbsp;games.</p>
 <p>Since the regression in the graph above reveals how games&#8217; ratings are related to complexity within the <span class="caps">BGG</span> dataset, we can artificially correct for the correlation by adjusting the game ratings to penalize complex games and reward simpler games. For the more mathematically inclined among you, I&#8217;m referring to the residuals of the regression between rating and&nbsp;complexity.</p>
-<p>A short illustration goes a long way to intuitively explain what the process does, so I&#8217;ve added a short animation to do just&nbsp;that.</p>
+<p>A short illustration goes a long way to intuitively explain what the process&nbsp;does.</p>
 <p><center>
 <img alt="Alt Text" src="http://dvatvani.github.io/static/BGG-analysis/manual_animation.gif" />
 </center></p>
-<p>Applying that artificial correction gives us a <code>complexity-bias-corrected</code> or <code>complexity-agnostic</code> rating for all games. Below is an interactive plot showing the rating vs complexity after the rating correction. Hover over any point to see the name of the game and the game&#8217;s new <span class="caps">BGG</span> rank and&nbsp;rating.</p>
+<p>Applying that artificial correction gives us a &#8220;complexity-agnostic&#8221; rating for all games. Below is an interactive plot showing the rating vs complexity after the rating correction. Hover over any point to see the name of the game and the game&#8217;s new <span class="caps">BGG</span> rank and&nbsp;rating.</p>
 <p><center>
 <iframe width="820" height="470" src="http://dvatvani.github.io/static/BGG-analysis/toolbar.html" frameborder="0" allowfullscreen>
 </iframe><br>
 <strong><em>Hover your mouse over (or tap if you&#8217;re on mobile) any point for more information about the game</em></strong>
 </center></p>
-<p>We can use these corrected ratings to re-rank all of the games and obtain a complexity-agnostic top 10 or top 100 list. Note that <span class="caps">BGG</span> use something called a Bayesian mean to rank their games instead of taking the raw average ratings. What this does is effectively give each game a certain number of additional &#8220;average&#8221; rating votes. This is designed to push games with a very low number of ratings towards the average to prevent the top games list being dominated by games with only a couple of perfect score ratings. I&#8217;ve used a similar approach, using the same Bayesian prior as <span class="caps">BGG</span> (Bayesian prior of about <code>5.5</code> with a weight of around <code>1,000</code> ratings). As a result, there may be some cases where games with a higher average rating end up having a lower rank than a game with a slightly lower average rating if the second has significantly more rating votes. The re-ranked <span class="caps">BGG</span> list using these corrected ratings have the complex games evenly spread throughout the ranked list of games rather than disproportionately skewed towards the top, thereby allowing some of the less complex great games to shine through to the top&nbsp;100.</p>
-<p>After applying the complexity-bias correction, the top 10 games&nbsp;are:</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th align="center">Corrected <span class="caps">BGG</span> rank</th>
-<th align="center">Original <span class="caps">BGG</span> rank</th>
-<th align="center">Name</th>
-<th align="center">Publication year</th>
-<th align="center">Weight (complexity)</th>
-<th align="center">Original <span class="caps">BGG</span> rating</th>
-<th>Corrected <span class="caps">BGG</span> rating</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">1</td>
-<td align="center">2</td>
-<td align="center">Pandemic Legacy: Season 1</td>
-<td align="center">2015</td>
-<td align="center">2.80</td>
-<td align="center">8.50</td>
-<td>7.94</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">38</td>
-<td align="center">Codenames</td>
-<td align="center">2015</td>
-<td align="center">1.35</td>
-<td align="center">7.73</td>
-<td>7.86</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">9</td>
-<td align="center">7 Wonders Duel</td>
-<td align="center">2015</td>
-<td align="center">2.24</td>
-<td align="center">8.01</td>
-<td>7.73</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">1</td>
-<td align="center">Gloomhaven</td>
-<td align="center">2017</td>
-<td align="center">3.77</td>
-<td align="center">8.50</td>
-<td>7.69</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">69</td>
-<td align="center">Crokinole</td>
-<td align="center">1876</td>
-<td align="center">1.28</td>
-<td align="center">7.55</td>
-<td>7.66</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td align="center">50</td>
-<td align="center">Patchwork</td>
-<td align="center">2014</td>
-<td align="center">1.71</td>
-<td align="center">7.66</td>
-<td>7.61</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">45</td>
-<td align="center">Ticket to Ride: 10th Anniversary</td>
-<td align="center">2014</td>
-<td align="center">1.95</td>
-<td align="center">7.69</td>
-<td>7.60</td>
-</tr>
-<tr>
-<td align="center">8</td>
-<td align="center">21</td>
-<td align="center">Mechs vs. Minions</td>
-<td align="center">2016</td>
-<td align="center">2.45</td>
-<td align="center">7.87</td>
-<td>7.55</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">67</td>
-<td align="center">Santorini</td>
-<td align="center">2016</td>
-<td align="center">1.76</td>
-<td align="center">7.57</td>
-<td>7.53</td>
-</tr>
-<tr>
-<td align="center">10</td>
-<td align="center">19</td>
-<td align="center">Mansions of Madness: Second Edition</td>
-<td align="center">2016</td>
-<td align="center">2.64</td>
-<td align="center">7.89</td>
-<td>7.50</td>
-</tr>
-</tbody>
-</table>
-<p><em>Note: The original <span class="caps">BGG</span> rank reflect the games&#8217; ranks as of Jan 2018, when the dataset obtained was from <span class="caps">BGG</span></em></p>
-<p></center></p>
-<p>Looking at this list, I still have some disagreements with it, but this looks much more reasonable to me than the original <span class="caps">BGG</span> top 10 list and I suspect that for most board game players looking to try out new good games, this list would look far more approachable, while still being filled with excellent&nbsp;games.</p>
-<p>Some of the games experienced a fairly substantial push up/down the rankings ladder as a result of the complexity bias correction. Some of the games that benefitted the most from this rating correction and have risen to the top 100 are <code>Skull</code>, <code>BANG! The Dice Game</code>, <code>Love Letter: Batman</code>, <code>No Thanks!</code>, <code>Time's Up!</code>, <code>Spyfall</code> and <code>Sushi Go!</code>. Conversely, some of the games that have been penalized the most are <code>Twilight Imperium (Third Edition)</code>, <code>Alchemists</code>, <code>War of the Ring (first edition)</code>, <code>A Game of Thrones: The Board Game (Second Edition)</code>, <code>Through the Ages: A Story of Civilization</code> and <code>Caverna: The Cave Farmers</code>.</p>
-<p>Below is an interactive table that allows you to navigate the full list of games. It also includes a search function to find the impact of the complexity-bias correction on specific&nbsp;games.</p>
+<p>We can use these corrected ratings to re-rank all of the games and obtain a complexity-agnostic top top 100 list. Note that <span class="caps">BGG</span> use something called a Bayesian mean to rank their games instead of taking the raw average ratings. What this does is effectively give each game a certain number of additional &#8220;average&#8221; rating votes. This is designed to push games with a very low number of ratings towards the average to prevent the top games list being dominated by games with only a couple of perfect score ratings. I&#8217;ve used a similar approach, using the same Bayesian prior as <span class="caps">BGG</span> (Bayesian prior of about <code>5.5</code> with a weight of around <code>1,000</code> ratings). As a result, there may be some cases where a game with a higher average rating end up having a lower rank than a game with a slightly lower average rating if the second has significantly more rating votes. The re-ranked <span class="caps">BGG</span> list using these corrected ratings has the complex games evenly spread throughout the ranked list of games rather than disproportionately skewed towards the top, thereby allowing some of the great, but less complex, games to shine through to the top&nbsp;100.</p>
+<p>I have applies the complexity-bias correction to all games with over 30 ratings. Below is an interactive table that allows you to navigate the full list. It also includes a search function to find the impact of the complexity-bias correction on specific&nbsp;games.</p>
 <p><object width="100%" height="700" type="text/html" data="http://dvatvani.github.io/static/BGG-analysis/data.html"></object>
-<center><em>Note: This table only includes games with &gt;= 30 rating votes</em></center></p>
+ <center><em>Note: This table only includes games with &gt;= 30 rating votes</em></center></p>
+<!&#8212; After applying the complexity-bias correction, the top 10 games are:
+
+<center>
+
+| Corrected <span class="caps">BGG</span> rank | Original <span class="caps">BGG</span> rank |                 Name                | Publication year | Weight (complexity) | Original <span class="caps">BGG</span> rating | Corrected <span class="caps">BGG</span> rating |
+|:&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;:|:&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-:|:&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-:|:&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;:|:&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-:|:&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-:|&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;|
+|          1         |         2         |      Pandemic Legacy: Season 1      |       2015       |         2.80        |         8.50        | 7.94                 |
+|          2         |         38        |              Codenames              |       2015       |         1.35        |         7.73        | 7.86                 |
+|          3         |         9         |            7 Wonders Duel           |       2015       |         2.24        |         8.01        | 7.73                 |
+|          4         |         1         |              Gloomhaven             |       2017       |         3.77        |         8.50        | 7.69                 |
+|          5         |         69        |              Crokinole              |       1876       |         1.28        |         7.55        | 7.66                 |
+|          6         |         50        |              Patchwork              |       2014       |         1.71        |         7.66        | 7.61                 |
+|          7         |         45        |   Ticket to Ride: 10th Anniversary  |       2014       |         1.95        |         7.69        | 7.60                 |
+|          8         |         21        |          Mechs vs. Minions          |       2016       |         2.45        |         7.87        | 7.55                 |
+|          9         |         67        |              Santorini              |       2016       |         1.76        |         7.57        | 7.53                 |
+|         10         |         19        | Mansions of Madness: Second Edition |       2016       |         2.64        |         7.89        | 7.50                 |
+
+_Note: The original <span class="caps">BGG</span> rank reflect the games&#8217; ranks as of Jan 2018, when the dataset obtained was from BGG_
+
+</center> &#8212;>
+
+<p>Some of the games experienced a fairly substantial push up/down the rankings ladder as a result of the complexity bias correction. Some of the games that benefitted the most from this rating correction and have risen to the top 100 are <code>Skull</code>, <code>BANG! The Dice Game</code>, <code>Love Letter: Batman</code>, <code>No Thanks!</code>, <code>Time's Up!</code>, <code>Spyfall</code> and <code>Sushi Go!</code>. Conversely, some of the games that have been penalized the most are <code>Twilight Imperium (Third Edition)</code>, <code>Alchemists</code>, <code>War of the Ring (first edition)</code>, <code>A Game of Thrones: The Board Game (Second Edition)</code>, <code>Through the Ages: A Story of Civilization</code> and <code>Caverna: The Cave Farmers</code>.</p>
+<p>Looking at the revised top 100 from the list above, I still have some reservations about it, but it looks much more reasonable to me than the original <span class="caps">BGG</span> top 100 list. I suspect that for most board game players looking to try out new good games, this list would look far more approachable, while still being filled with excellent&nbsp;games.</p>
+<p>I hope that you&#8217;ve enjoyed learning about the complexity bias inherent in the board game geek dataset and how we can correct for it. The discussion on whether or not complex games really are better is far from over, but this post provides a more welcoming take on the <span class="caps">BGG</span> top 100 for anyone looking for some of the lighter great&nbsp;games.</p>
+<p>If you&#8217;re interested in learning more about the board game dataset, you can find all of my analysis, including the code [here][notebook] in the form of a Jupyter Notebook&nbsp;(Python).</p>
 <hr />
 <p><em>Thanks to</em>:</p>
 <ul>
