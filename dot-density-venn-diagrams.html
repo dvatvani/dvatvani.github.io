@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
+
+
+    <link href="http://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+<meta name="author" content="Dinesh Vatvani" />
+<meta name="description" content="Using Voronoi diagrams and Lloyd’s algorithm to create dot density Venn diagrams with uniformly distributed pseudo-random point sampling" />
+<meta name="keywords" content="Python">
+<meta property="og:site_name" content="Dinesh Vatvani"/>
+<meta property="og:title" content="Making aesthetically pleasing dot density Venn diagrams"/>
+<meta property="og:description" content="Using Voronoi diagrams and Lloyd’s algorithm to create dot density Venn diagrams with uniformly distributed pseudo-random point sampling"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://dvatvani.github.io/dot-density-venn-diagrams.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-04-14 20:00:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://dvatvani.github.io/author/dinesh-vatvani.html">
+<meta property="article:section" content="Visualisation"/>
+<meta property="article:tag" content="Python"/>
+<meta property="og:image" content="/static/Logo/radial_barh.png">
+  <title>Dinesh Vatvani &ndash; Making aesthetically pleasing dot density Venn diagrams</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://dvatvani.github.io">
+        <img src="/static/Logo/radial_barh.png" alt="Dinesh Vatvani" title="Dinesh Vatvani">
+      </a>
+      <h1><a href="http://dvatvani.github.io">Dinesh Vatvani</a></h1>
+      <p>A Python and data analysis blog</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://dvatvani.github.io/pages/about.html#about">About</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-github-square" href="https://github.com/dvatvani" target="_blank"><i class="fa fa-github-square"></i></a></li>
+        <li><a class="sc-twitter-square" href="https://twitter.com/d_vatvani" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a class="sc-rss-square" href="http://dvatvani.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss-square"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="http://dvatvani.github.io">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="http://dvatvani.github.io/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="dot-density-venn-diagrams">Making aesthetically pleasing dot density Venn&nbsp;diagrams</h1>
+    <p>Posted on Sat 14 April 2018 in <a href="http://dvatvani.github.io/category/visualisation.html">Visualisation</a></p>
+  </header>
+  <div>
+    <h1>Introduction</h1>
+<p>Venn diagrams are a very common and intuitive way to visualise sets and relative population sizes of different cuts of data. From a data visualisation perspective, Venn diagrams are used in several different ways to present&nbsp;data:</p>
+<ul>
+<li>Euler diagrams: A qualitiative overview of which sets overlap with others, and which sets are subsets of others (Euler diagrams are technically not Venn diagrams, but I have included them here because these types of diagrams are colloquially still referred to by many as Venn&nbsp;diagrams)</li>
+</ul>
+<p><center>
+    <img src="http://dvatvani.github.io/static/Venn-diagrams/British_Isles_Euler_diagram.png" width="500" /></p>
+<p><em>Source: <a href="https://en.wiktionary.org/wiki/Euler_diagram">Wikipedia</a></em>
+  </center></p>
+<ul>
+<li>Labelled population sizes in the diagram: These are a straight forward way to present the data, but from a perceptual standpoint, our brains aren&#8217;t very good at intuitively processing this. It&#8217;s only marginally better than presenting the data in the form of a&nbsp;table</li>
+</ul>
+<p><center>
+    <img src="http://dvatvani.github.io/static/Venn-diagrams/population-size-labelled-venn-diagram.png" width="500" /></p>
+<p><em>source: <a href="https://www.geckoboard.com/learn/data-literacy/data-science-glossary/venn-diagram/">Geckoboard</a></em>
+  </center></p>
+<ul>
+<li>Area-proportional or scaled Venn diagram: These aim to scale the area of different regions of a Venn diagram so that they are proportional to the population of that segment. This can be quite a useful way to convey relative population sizes of the regions of the Venn or Euler diagrams, but geometric restrictions means that this can&#8217;t be accurately done with circles for cases with more than 2 overlapping sets (the number of degrees of freedom from altering relative size and distance between circles will be lower than the number of distinct regions in the Venn diagram for all cases with n&gt;2). There are ways around this problem using triangles or irregular shapes for the 3-set or higher case, but it is likely that you will run into geometric limitations when presenting information in this&nbsp;way</li>
+</ul>
+<p><center>
+    <img src="http://dvatvani.github.io/static/Venn-diagrams/Area_proportional_Venn.png" width="500" /></p>
+<p><em>source: <a href="https://stackoverflow.com/questions/8713994/venn-diagram-proportional-and-color-shading-with-semi-transparency">StackOverflow post</a></em>
+  </center></p>
+<ul>
+<li>Dot density Venn diagram: Another way to present more quantitative information is by populating the regions of the Venn diagram with icons or dots that represent the relative population of the region of the Venn diagram. This is a flexible way to present quantitative information that is also perceptually easy to&nbsp;process.</li>
+</ul>
+<p><center>
+    <img src="http://dvatvani.github.io/static/Venn-diagrams/dot-density-example.PNG" width="500" /></p>
+<p><em>source: <a href="http://robslink.com/SAS/democd59/venn_density.htm">Robert Allison&#8217;s website</a></em>
+  </center></p>
+<p>I generally like the latter as a visualisation approach because of its flexibility and perceptual interpretability. However, the way it is done is typically with randomly sampled points for each region or manually placed points in arbitrary locations within a region. I have always thought that these could look nicer if the points distribution within a region were approximately evenly spaced, so this blog post is my attempt at solving that&nbsp;problem.</p>
+<h1>Lloyd&#8217;s algorithm for pseudo-random&nbsp;sampling</h1>
+<p>Lloyd&#8217;s algorithm is designed to generate roughly evenly spaced points in space, so I&#8217;ll be using this as the key process for the pseudo-random sampling to create evenly distributed points. The way it works is heavily reliant on Voronoi tessellation. If you want to learn more about Voronoi tessellation, I can recommend <a href="http://datagenetics.com/blog/may12017/index.html">this DataGenetics post</a> introducing the&nbsp;concept.</p>
+<p>Lloyd&#8217;s algorithm starts with a set of randomly distributed points, and then recursively generates the Voronoi cells for that set of points and moves the points to the centroids of the Voronoi cells. Each iteration of this process increases the uniformity of the spacing between points. Each step is visualised&nbsp;below:</p>
+<ul>
+<li>
+<p>Start with a set of random points
+  <center>
+    <img src="http://dvatvani.github.io/static/Venn-diagrams/random_points.png" />
+  </center></p>
+</li>
+<li>
+<p>Determine the Voronoi tesselation for that set of points
+  <center>
+    <img src="http://dvatvani.github.io/static/Venn-diagrams/voronoi.png" />
+  </center></p>
+</li>
+<li>
+<p>Move each point (orange) to the centroid (blue) of its Voronoi cell
+  <center>
+    <img src="http://dvatvani.github.io/static/Venn-diagrams/lloyd_iteration.png" />
+  </center></p>
+</li>
+</ul>
+<p>We can see that this process increases the distance between points that are close&nbsp;together.</p>
+<p>This process can be done recursively to keep increasing the distance between points that are closest together until the system reaches an equilibrium point, thereby generating an approximately uniformly distributed set of points. The animation below shows the effect of cycling through <code>30</code> iterations of Lloyd&#8217;s&nbsp;algorithm</p>
+<p><center>
+  <img src="http://dvatvani.github.io/static/Venn-diagrams/animation.gif" width="500" />
+</center></p>
+<p>This approach can be applied to all regions in a dot density Venn diagram to turn the figure on the left into the figure on the&nbsp;right.</p>
+<p><center>
+  <img src="http://dvatvani.github.io/static/Venn-diagrams/unrelaxed_Venn.png" width="500" />
+  <img src="http://dvatvani.github.io/static/Venn-diagrams/Venn.png" width="500" />
+</center></p>
+<p>That looks much nicer to me and it doesn&#8217;t lose any perceptual accuracy. I think this might become my default choice for visualising population sizes in sets in the&nbsp;future.</p>
+<p>If you&#8217;re interested in generating similar graphs, the code I used wrote to generate the Lloyd-relaxed dot density Venn diagram can be found <a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/Venn-diagrams/Lloyd_relaxation_on_dot_density_diagrams.ipynb">here</a> in the form of a Jupyter Notebook&nbsp;(Python).</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://dvatvani.github.io/tag/python.html">Python</a>
+    </p>
+  </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dvatvani';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
+
+    <footer>
+        <p>&copy; Dinesh Vatvani </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75651339-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Making aesthetically pleasing dot density Venn diagrams",
+  "headline": "Making aesthetically pleasing dot density Venn diagrams",
+  "datePublished": "2018-04-14 20:00:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Dinesh Vatvani",
+    "url": "http://dvatvani.github.io/author/dinesh-vatvani.html"
+  },
+  "image": "/static/Logo/radial_barh.png",
+  "url": "http://dvatvani.github.io/dot-density-venn-diagrams.html",
+  "description": "Using Voronoi diagrams and Lloyd’s algorithm to create dot density Venn diagrams with uniformly distributed pseudo-random point sampling"
+}
+</script></body>
+</html>
