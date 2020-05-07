@@ -3,13 +3,13 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
 
 
-    <link href="http://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
+    <link href="https://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
 
 
 
@@ -24,11 +24,11 @@
 <meta property="og:title" content="An analysis of board games: Part III - More on mechanics and themes"/>
 <meta property="og:description" content="Short version for index and feeds"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://dvatvani.github.io/drafts/BGG-Analysis-Part-3.html"/>
+<meta property="og:url" content="https://dvatvani.github.io/drafts/BGG-Analysis-Part-3.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2016-02-28 19:30:00+00:00"/>
 <meta property="article:modified_time" content="2016-02-28 19:35:00+00:00"/>
-<meta property="article:author" content="http://dvatvani.github.io/author/dinesh-vatvani.html">
+<meta property="article:author" content="https://dvatvani.github.io/author/dinesh-vatvani.html">
 <meta property="article:section" content="Analysis"/>
 <meta property="article:tag" content="Board games"/>
 <meta property="og:image" content="/static/Logo/radial_barh.png">
@@ -37,14 +37,14 @@
 <body>
   <aside>
     <div>
-      <a href="http://dvatvani.github.io">
+      <a href="https://dvatvani.github.io">
         <img src="/static/Logo/radial_barh.png" alt="Dinesh Vatvani" title="Dinesh Vatvani">
       </a>
-      <h1><a href="http://dvatvani.github.io">Dinesh Vatvani</a></h1>
+      <h1><a href="https://dvatvani.github.io">Dinesh Vatvani</a></h1>
       <p>A Python and data analysis blog</p>
       <nav>
         <ul class="list">
-          <li><a href="http://dvatvani.github.io/pages/about.html#about">About</a></li>
+          <li><a href="https://dvatvani.github.io/pages/about.html#about">About</a></li>
         </ul>
       </nav>
       <ul class="social">
@@ -56,17 +56,17 @@
   </aside>
   <main>
     <nav>
-      <a href="http://dvatvani.github.io">Home</a>
+      <a href="https://dvatvani.github.io">Home</a>
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
-      <a href="http://dvatvani.github.io/feeds/all.atom.xml">Atom</a>
+      <a href="https://dvatvani.github.io/feeds/all.atom.xml">Atom</a>
     </nav>
 
 <article>
   <header>
     <h1 id="BGG-Analysis-Part-3">An analysis of board games: Part <span class="caps">III</span> - More on mechanics and&nbsp;themes</h1>
-    <p>Posted on Sun 28 February 2016 in <a href="http://dvatvani.github.io/category/analysis.html">Analysis</a></p>
+    <p>Posted on Sun 28 February 2016 in <a href="https://dvatvani.github.io/category/analysis.html">Analysis</a></p>
   </header>
   <div>
     <p>This is part <span class="caps">II</span> in my series on analysing BoardGameGeek data. Other parts can be found&nbsp;here:</p>
@@ -80,14 +80,14 @@
 <h1>Mechanics</h1>
 <h3>Ratings</h3>
 <p>One interesting thing we can do with the dataset we have obtained is train a multivariate regression model to predict game ratings based entirely on the mechanics present in a game. What this model generates is a set of parameters that tells us how much a game&#8217;s rating is expected to increase or decrease by, on average, due to the addition of that mechanic to the game. The results are shown in the plot below, with the black lines representing the 95% confidence intervals of the estimated impact of the inclusion of the mechanic in a game to its overall <span class="caps">BGG</span>&nbsp;rating.</p>
-<p><center><img alt="Mechanics ratings" src="http://dvatvani.github.io/static/BGG-analysis/mechanics-ratings.png" /></center></p>
+<p><center><img alt="Mechanics ratings" src="https://dvatvani.github.io/static/BGG-analysis/mechanics-ratings.png" /></center></p>
 <p>Based on this analysis of the <span class="caps">BGG</span> data, it appears that the mechanics most strongly associated with positive game ratings are <code>Worker Placement</code>, <code>Deck/Pool Building</code> and <code>Hex and Counter</code> whereas the mechanics most strongly associated with negative game ratings are <code>Roll / Spin and Move</code>, <code>Singing</code>, and <code>Rock-Paper-Scissors</code>.</p>
 <p>Since we looked at the mechanics that have increased in prevalence over the last couple of decades in part I of the analysis, an interesting and natural analysis to follow up on the results from the table above is to see if the mechanics that are associated with higher game ratings are also the ones that are becoming more prevalent. In other words, are game developers picking up on the mechanics that are associated with highly rated games and incorporating these&nbsp;preferentially?</p>
-<p><center><img alt="Mechanics growth vs rating" src="http://dvatvani.github.io/static/BGG-analysis/mechanic-growth-vs-rating.png" /></center></p>
+<p><center><img alt="Mechanics growth vs rating" src="https://dvatvani.github.io/static/BGG-analysis/mechanic-growth-vs-rating.png" /></center></p>
 <p>It looks like there is weak, but statistically significant relationship between the mechanics that are becoming more popular and the mechanics that are associated with high ratings (Pearson-R = <code>0.44</code>, p &lt; <code>0.01</code>). Most pertinently, the mechanic that is associated with the lowest game ratings (<code>Roll / Spin and move</code>) is also the mechanic that is being phased out of board games most rapidly. Mechanics that are associated with high game ratings that are becoming considerably more prevalent include <code>Deck / Pool Building</code> and <code>Worker Placement</code>. All in all, it&#8217;s probably to the benefit of the board gaming community that mechanics associated with high game ratings are becoming more prevalent since we can assume that these mechanics are inherently more engaging, interesting or in some  other way more enjoyable mechanics to have in&nbsp;games.</p>
 <h3>Co-occurance</h3>
 <p>One of the things I was looking forward to when I got my hands on this data is to look at which mechanics co-occur most often. This gives us an idea of which combinations of mechanics occur together more often than expected (considering how prevalent the individual mechanics are) and which combinations are under-represented (occur less often than the individual mechanics would suggest). This might be of more interest to game designers rather than players, since it&#8217;s a resource that might help designers identify mechanics they could incorporate into their game that fit with other mechanics already in place, but more interestingly, it could be a challenge for designers to try to create interesting games that marry together mechanics seldom seen together. Let&#8217;s have a look at the co-occurance&nbsp;table.</p>
-<p><center><img alt="Mechanics co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Mechanics_co-ocurrance.png" /></center></p>
+<p><center><img alt="Mechanics co-occurance" src="https://dvatvani.github.io/static/BGG-analysis/Mechanics_co-ocurrance.png" /></center></p>
 <p>From the co-occurance table above, the mechanics that most, and least often co-occur (relative to how much we&#8217;d expect them to co-occur by random distribution of mechanics, not in absolute terms), are shown in the tables&nbsp;below.</p>
 <p>Most co-occurring&nbsp;mechanics:</p>
 <p><center></p>
@@ -222,15 +222,15 @@
 <h1>Themes</h1>
 <h3>Ratings</h3>
 <p>Similar to what we did the mechanics, we can also look at which themes are associated with high and low game&nbsp;ratings.</p>
-<p><center><img alt="Themes ratings" src="http://dvatvani.github.io/static/BGG-analysis/themes-ratings.png" /></center></p>
+<p><center><img alt="Themes ratings" src="https://dvatvani.github.io/static/BGG-analysis/themes-ratings.png" /></center></p>
 <p>The top 11 themes most strongly associated with positive ratings include 10 historic war related themes, with the only non-war-related theme in the top 11 being <code>Trains</code>. Interestingly, the top war themes are specifically about historical wars. The modern equivalent of this theme: <code>Modern Warfare</code> is still associated with highly rated games, but is only about a quarter of the way down the list. People seem to really like board games based on historic wars.
 The bottom few are <code>Trivia</code>, <code>Music</code> and <code>Movies / TV / Radio theme</code>. The Fact that <code>Music</code> is at the bottom of this list isn&#8217;t all that surprising since we saw that <code>Singing</code> was one of the mechanics most strongly associated with poorly rated&nbsp;games.</p>
 <p>As we did with mechanics, we can also look at the relationship between the expected ratings associated with each theme and the change in prevalence of the themes. This should tell us whether themes that are considered &#8220;good&#8221; (in the sense that they are associated with highly rated games) are becoming more prevalent over time than other&nbsp;themes.</p>
-<p><center><img alt="Theme growth vs rating" src="http://dvatvani.github.io/static/BGG-analysis/themes-growth-vs-rating.png" /></center></p>
+<p><center><img alt="Theme growth vs rating" src="https://dvatvani.github.io/static/BGG-analysis/themes-growth-vs-rating.png" /></center></p>
 <p>Overall, there doesn&#8217;t appear to be any meaningful general relationship between the themes that are associated with highly rated games and the themes that are becoming more prevalent (Pearson-R = <code>0.08</code>, p = <code>0.58</code>). The only relationship of interest I can spot in this data is that the themes most strongly associated with poorly rated games (<code>Trivia</code>, <code>Music</code>, <code>Movies / TV / Radio theme</code>, <code>Electronic</code> and <code>Racing</code>) are all declining in prevalence reasonably quickly. Beyond that, the relationship becomes more&nbsp;unpredictable.</p>
 <h3>Co-occurance</h3>
 <p>The table of co-occurance of themes, analogous to the co-ocurrance of mechanics table shown earlier in this post, is shown&nbsp;below.</p>
-<p><center><img alt="Themes co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Themes_co-ocurrance.png" /></center></p>
+<p><center><img alt="Themes co-occurance" src="https://dvatvani.github.io/static/BGG-analysis/Themes_co-ocurrance.png" /></center></p>
 <p>Most co-occurring&nbsp;themes:</p>
 <p><center></p>
 <table>
@@ -362,7 +362,7 @@ The bottom few are <code>Trivia</code>, <code>Music</code> and <code>Movies / TV
 <p>This list of themes that don&#8217;t co-occur are slightly more interesting to me than the list of most co-occuring ones themes. It&#8217;s clear that Trivia games lend themselves to general knowledge, and as such there aren&#8217;t many specialist theme trivia games such as Fantasy trivia games, Fighting trivia games, Science fiction trivia games or World war <span class="caps">II</span> trivia games. Other themes that aren&#8217;t often seen together are Fantasy and Sports, Racing and Economic, World war <span class="caps">II</span> games that incorporate Fantasy or Animals elements, Science fiction games that incorporate Animals as a theme and World war <span class="caps">II</span> Sports games. If anyone is interested in trying to create an unusual and unique game, those are theme combinations worth&nbsp;trying.</p>
 <h3>Associated&nbsp;mechanics</h3>
 <p>A final co-occurance relationship worth looking at is the co-occurance of mechanics and themes. Some themes will lend themselves better to some mechanics than others. It&#8217;s interesting to see which theme-mechanic combinations work well and which don&#8217;t, or rather, which combinations appear together more often than expected and which&nbsp;don&#8217;t.</p>
-<p><center><img alt="Mechanics-Themes co-occurance" src="http://dvatvani.github.io/static/BGG-analysis/Mechanics-themes_co-ocurrance.png" /></center></p>
+<p><center><img alt="Mechanics-Themes co-occurance" src="https://dvatvani.github.io/static/BGG-analysis/Mechanics-themes_co-ocurrance.png" /></center></p>
 <p>Most&nbsp;co-occuring:</p>
 <p><center></p>
 <table>
@@ -525,7 +525,7 @@ Similarly, the weight rating is a single measure that&#8217;s supposed to encaps
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="http://dvatvani.github.io/tag/board-games.html">Board games</a>
+      <a href="https://dvatvani.github.io/tag/board-games.html">Board games</a>
     </p>
   </div>
 <div id="disqus_thread"></div>
@@ -570,10 +570,10 @@ Similarly, the weight rating is a single measure that&#8217;s supposed to encaps
   "author": {
     "@type": "Person",
     "name": "Dinesh Vatvani",
-    "url": "http://dvatvani.github.io/author/dinesh-vatvani.html"
+    "url": "https://dvatvani.github.io/author/dinesh-vatvani.html"
   },
   "image": "/static/Logo/radial_barh.png",
-  "url": "http://dvatvani.github.io/drafts/BGG-Analysis-Part-3.html",
+  "url": "https://dvatvani.github.io/drafts/BGG-Analysis-Part-3.html",
   "description": "Short version for index and feeds"
 }
 </script></body>

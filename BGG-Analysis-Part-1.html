@@ -3,13 +3,13 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="http://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
 
 
-    <link href="http://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
+    <link href="https://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
 
 
 
@@ -24,11 +24,11 @@
 <meta property="og:title" content="An analysis of board games: Part I - Introduction and general trends"/>
 <meta property="og:description" content="An analysis of general trends in the release rate ratings, complexity, mechanics and themes of board games using BoardGameGeek data"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://dvatvani.github.io/BGG-Analysis-Part-1.html"/>
+<meta property="og:url" content="https://dvatvani.github.io/BGG-Analysis-Part-1.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2018-03-05 01:45:00+00:00"/>
 <meta property="article:modified_time" content="2018-12-08 03:30:00+00:00"/>
-<meta property="article:author" content="http://dvatvani.github.io/author/dinesh-vatvani.html">
+<meta property="article:author" content="https://dvatvani.github.io/author/dinesh-vatvani.html">
 <meta property="article:section" content="Analysis"/>
 <meta property="article:tag" content="Board games"/>
 <meta property="og:image" content="/static/Logo/radial_barh.png">
@@ -37,14 +37,14 @@
 <body>
   <aside>
     <div>
-      <a href="http://dvatvani.github.io">
+      <a href="https://dvatvani.github.io">
         <img src="/static/Logo/radial_barh.png" alt="Dinesh Vatvani" title="Dinesh Vatvani">
       </a>
-      <h1><a href="http://dvatvani.github.io">Dinesh Vatvani</a></h1>
+      <h1><a href="https://dvatvani.github.io">Dinesh Vatvani</a></h1>
       <p>A Python and data analysis blog</p>
       <nav>
         <ul class="list">
-          <li><a href="http://dvatvani.github.io/pages/about.html#about">About</a></li>
+          <li><a href="https://dvatvani.github.io/pages/about.html#about">About</a></li>
         </ul>
       </nav>
       <ul class="social">
@@ -56,17 +56,17 @@
   </aside>
   <main>
     <nav>
-      <a href="http://dvatvani.github.io">Home</a>
+      <a href="https://dvatvani.github.io">Home</a>
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
-      <a href="http://dvatvani.github.io/feeds/all.atom.xml">Atom</a>
+      <a href="https://dvatvani.github.io/feeds/all.atom.xml">Atom</a>
     </nav>
 
 <article>
   <header>
     <h1 id="BGG-Analysis-Part-1">An analysis of board games: Part I - Introduction and general&nbsp;trends</h1>
-    <p>Posted on Mon 05 March 2018 in <a href="http://dvatvani.github.io/category/analysis.html">Analysis</a></p>
+    <p>Posted on Mon 05 March 2018 in <a href="https://dvatvani.github.io/category/analysis.html">Analysis</a></p>
   </header>
   <div>
     <p>This is part I in my series on analysing BoardGameGeek data. Other parts can be found&nbsp;here:</p>
@@ -82,12 +82,12 @@
 <p>For the analysis in this post, we&#8217;ll be focusing on base board games only, not&nbsp;expansions.</p>
 <h1>A note on sampling bias in the&nbsp;dataset</h1>
 <p>Before we delve into any any serious analysis, we should highlight that any patterns or observations found here reflect patterns observed within the boardgamegeek dataset. Depending on the context in the analysis, these observations may or may not be reflective of the board game industry as a whole, since the perspective and behaviour of boardgamegeek users will not always accurately represent all board game players. People who have a boardgamegeek account and actively log plays and rate games are very likely to be more invested and informed on board games compared to the average board game player. A good demonstration of this bias can be seen in the list of most owned games on&nbsp;boardgamegeek.</p>
-<p><center><img alt="Most popular games" src="http://dvatvani.github.io/static/BGG-analysis/Most_popular_board_games.png" /></center></p>
+<p><center><img alt="Most popular games" src="https://dvatvani.github.io/static/BGG-analysis/Most_popular_board_games.png" /></center></p>
 <p>Whilst the exact sales figures are hard to come by, it is generally agreed that the most popular (by ownership, not rating) board games include Chess, Monopoly, Risk, Scrabble, Pictionary, Cluedo, Trivial Pursuit, etc. (sources: <a href="http://minnesotasnewcountry.com/top-selling-board-games-of-all-time/">1</a>, <a href="https://www.insidermonkey.com/blog/11-most-sold-board-games-ever-373692/11/">2</a>, <a href="https://www.therichest.com/rich-list/most-popular/the-top-10-most-sold-board-games-ever/">3</a>, <a href="https://hobbylark.com/board-games/The-Top-Ten-Board-Games-Of-All-Time">4</a>). All of these games are under-represented in the <span class="caps">BGG</span> dataset due to the aforementioned bias. There will be many other cases in the analysis where this bias is likely having an effect, but I&#8217;ll address them as they&nbsp;come.</p>
 <h1>A golden age of board&nbsp;games</h1>
 <p>There has been a lot of discussion suggesting that we are currently in a board game golden age (sources: <a href="https://www.theguardian.com/technology/2016/sep/25/board-games-back-tabletop-gaming-boom-pandemic-flash-point">1</a>, <a href="https://boardgamegeek.com/thread/1679807/golden-age-board-gaming">2</a>, <a href="https://www.shutupandsitdown.com/videos/board-game-golden-age-talk/">3</a>). I thought it would be interesting to see if the data supports this&nbsp;view.</p>
 <h3>Board game publication rate over&nbsp;time</h3>
-<p><center><img alt="Growth in number of games published each year" src="http://dvatvani.github.io/static/BGG-analysis/game-release-rate-growth.png" /></center></p>
+<p><center><img alt="Growth in number of games published each year" src="https://dvatvani.github.io/static/BGG-analysis/game-release-rate-growth.png" /></center></p>
 <ul>
 <li>Historically, there has been a broadly exponential increase in board games coming out each&nbsp;year.</li>
 <li>Based on the exponential growth of board game publications observed so far, we expect the number of board games published over the course of a year to double every 12.6 years. This is the board games analogue of <a href="https://en.wikipedia.org/wiki/Moore%27s_law">Moore&#8217;s&nbsp;law</a></li>
@@ -97,31 +97,31 @@
 <li>Overall, whilst the number of new board games released per year currently appears to be very high, it is currently in near perfect alignment with what&#8217;s expected given the historic growth trends of the board game industry. There is nothing particularly unique or different about the <em>rate of release</em> of new board games to support the view that we&#8217;re currently in a board game golden age. However, the rate of release of board games is just one of many aspects that could lead people to believe that we&#8217;re in a board game golden age. We can have a look at some other factors&nbsp;too.</li>
 </ul>
 <h3>Board game ratings by publication&nbsp;year</h3>
-<p><center><img alt="Evolution of average game ratings by year" src="http://dvatvani.github.io/static/BGG-analysis/rating-by-year.png" /></center></p>
+<p><center><img alt="Evolution of average game ratings by year" src="https://dvatvani.github.io/static/BGG-analysis/rating-by-year.png" /></center></p>
 <p>This data suggests that board games have been getting steadily better since around 2002, but that there&#8217;s been a disproportionate improvement in in game ratings in the last couple of years. While the last couple of years certainly appears to have seen the release of great games such as Pandemic Legacy, Gloomhaven, Scythe, etc., it&#8217;s not clear to me what caused the games to get disproportionately better in the last couple of years. Perhaps the consumer market for board games increased in size noticeably, leading to more resources poured into game development, but unfortunately, I don&#8217;t have the data to test&nbsp;this.</p>
 <p>It&#8217;s also worth noting that there may be an element of ratings inflation present in this data i.e. the baseline rating for an average game has increased, because people might have perceived a rating of 5 to be average a decade ago, but now they might perceive a rating of 7 to be average, so average ratings could be increasing over time despite games not necessarily getting&nbsp;better.</p>
 <h1>Other industry trends over&nbsp;time</h1>
 <h3>Complexity</h3>
 <p>The &#8220;complexity&#8221; of a board game is a relatively loosely defined term, since it encompasses different types of learning and decision making characteristics involved in learning how to play as well as playing a game. To give a quick example, Chess/Go are relatively simple games in terms of their rules. In both cases, the rules can all be concisely explained and understood in a few minutes. However, getting a full grasp of all the strategies and tactics made possible by these simple rules can take a very long time as there is a considerable amount of complexity born from the number of different moves possible each turn as well as the fact that every move affects the available possible moves in future turns (i.e. turns are not independent). Boardgamegeek contains a &#8220;weight&#8221; score board games (rated by users) that provides a reduced, all-encompassing sense of the complexity of a game, based on users&#8217; perception. We can look at how the complexity scores of board games have evolved based on when games were released. I&#8217;ve focussed on games post 1995 since the dataset of games that have enough weight ratings before then starts to get a bit thin before&nbsp;then.</p>
-<p><center><img alt="Evolution of complexity over time" src="http://dvatvani.github.io/static/BGG-analysis/complexity-by-year.png" /></center></p>
+<p><center><img alt="Evolution of complexity over time" src="https://dvatvani.github.io/static/BGG-analysis/complexity-by-year.png" /></center></p>
 <p>It appears that board games have not only been getting better in terms of ratings, but also more complex since the mid 1990s. The trends in the complexity mirror the trends we see in overall ratings, with games appearing to have gotten steadily more complex since the early 2000s, and the last couple of years exhibiting a disproportionate growth in&nbsp;complexity.</p>
 <p>The parallels between the trends in overall ratings and complexity beg for a more direct comparison between them, but that&#8217;s a fairly substantial topic in itself, so I&#8217;ll address that in a future post of this series where the analysis has more room to&nbsp;breathe.</p>
 <h3>Mechanics</h3>
 <p>Mechanics are the basic constructs of rules or methods that allow you to interact with a board game to allow gameplay. These can be simple things such as dice rolling or drawing (e.g. Pictionary), to slightly more involved cases such as Card drafting or Route/Network building. I&#8217;ve listed the mechanics on <span class="caps">BGG</span> below by how often they&#8217;re found on board games. Many of the mechanics&#8217; names are intuitive, but some require more explanation. Descriptions and examples of all mechanics can be found <a href="https://boardgamegeek.com/wiki/page/mechanism">here</a></p>
 <p>Most popular&nbsp;mechanics</p>
-<p><center><img alt="Most popular mechanics" src="http://dvatvani.github.io/static/BGG-analysis/Most_popular_mechanics.png" /></center></p>
+<p><center><img alt="Most popular mechanics" src="https://dvatvani.github.io/static/BGG-analysis/Most_popular_mechanics.png" /></center></p>
 <p>Unsurprisingly, the top 2 are related to dice, which is often seen as an iconic staple of board&nbsp;games.</p>
 <p>We can also look at how mechanics prevalence has changed over the last couple of&nbsp;decades.</p>
-<p><center><img alt="Comparison of mechanics prevalence in the 1990s and 2010s" src="http://dvatvani.github.io/static/BGG-analysis/Mechanics_in_90s_and_10s.png" /></center></p>
+<p><center><img alt="Comparison of mechanics prevalence in the 1990s and 2010s" src="https://dvatvani.github.io/static/BGG-analysis/Mechanics_in_90s_and_10s.png" /></center></p>
 <p>There are several mechanics that have become more popular over the last couple of decades, but the most notable is <code>Hand management</code> (choosing which set of cards to keep in your hand and which to play/discard since some card combinations will be better than others and there may a limit on the number of cards you can keep in your hand. Examples of popular board games with the <code>Hand management</code> mechanic are <code>Settlers of Catan</code> and <code>Pandemic</code>). I don&#8217;t have any robust insight into why this might be the case, but it&#8217;s perhaps because it can incorporate interesting decision making elements into games without requiring much explanation or complicated rules. Once the function of the cards/sets of cards in your hand are understood, the intricacies of the trade-offs, risks and benefits of playing/discarding particular cards and managing your hand often become self evident. The theme of mechanics that force you to think and make decisions is also present in other mechanics on the rise such as <code>Variable player powers</code>, <code>Area control/Area influence</code>, <code>Card drafting</code>, <code>Deck building</code>, <code>Worker placement</code>, etc. On the other end of the spectrum, we have <code>Roll/Spin and move</code> mechanic (This is the mechanic present in <code>Monopoly</code> or <code>Snakes and ladders</code> in which the movement of a player&#8217;s token is decided by dice roll or the spin of a wheel) experiencing a huge decline. It&#8217;s perhaps unsurprising to see its decline since this mechanic requires little to no consideration or decision making at all, and is therefore a less engaging way to interact with a board&nbsp;game.</p>
 <p>It is also worth noting that there are many more mechanics on the rise than on the fall. This is because modern games are beginning to include more mechanics. The inclusion of more mechanics over time is consistent with the analysis earlier suggesting that games are becoming more complex with&nbsp;time.</p>
-<p><center><img alt="Increase in number of mechanics over time" src="http://dvatvani.github.io/static/BGG-analysis/mechanics_inflation.png" /></center></p>
+<p><center><img alt="Increase in number of mechanics over time" src="https://dvatvani.github.io/static/BGG-analysis/mechanics_inflation.png" /></center></p>
 <h3>Themes</h3>
 <p>The <span class="caps">BGG</span> classification taxonomy for games is a little odd. At the highest level, they contain a game <code>Type</code> classification (e.g. <code>Strategy</code>, <code>Thematic</code>, <code>Wargame</code>, <code>Party</code>, etc.). There aren&#8217;t very many classification types, and more than 75% of games on <span class="caps">BGG</span> don&#8217;t even contain a <code>Type</code> classification, so I won&#8217;t be analysing it in this post, but if you&#8217;re interested in looking of most prevalent game types, etc. they can be found in the raw analysis Jupyter notebook file. The next level in the taxonomy is <code>Category</code>. A cursory look at the values in this field will show that it&#8217;s a disorganised mix of themes, game &#8220;types&#8221; and mechanics (as an example, <code>Codenames</code> contains the Categories: <code>Party Game</code>, <code>Card Game</code>, <code>Word Game</code>, <code>Deduction</code>, <code>Spies/Secret Agents</code>). I&#8217;ve manually filtered the list of tags in the <code>Category</code> classification level down to only include themes, since they were the elements that appeared most consistently under the <code>Category</code> classification. <span class="caps">BGG</span> also contains further levels of classification taxonomy, but I&#8217;ll only be looking into themes derived from tags in the <code>Type</code> field for this&nbsp;analysis.</p>
 <p>The most popular themes in <span class="caps">BGG</span>&nbsp;are:</p>
-<p><center><img alt="Most popular themes" src="http://dvatvani.github.io/static/BGG-analysis/Most_popular_themes.png" /></center></p>
+<p><center><img alt="Most popular themes" src="https://dvatvani.github.io/static/BGG-analysis/Most_popular_themes.png" /></center></p>
 <p>Similar to the mechanics, we can also see which themes have become more/less popular over the last couple of&nbsp;decades.</p>
-<p><center><img alt="Comparison of themes prevalence in the 1990s and 2010s" src="http://dvatvani.github.io/static/BGG-analysis/Themes_in_90s_and_10s.png" /></center></p>
+<p><center><img alt="Comparison of themes prevalence in the 1990s and 2010s" src="https://dvatvani.github.io/static/BGG-analysis/Themes_in_90s_and_10s.png" /></center></p>
 <p>Looking at the most popular themes, there is a big shift occurring in the dominant themes present in games. In fact, 8 out of the top 10 most popular themes are either in the top 5 most rapidly rising or top 5 most rapidly declining lists, suggesting a strong and clear shift in the themes that engage the current generation of board game players. The themes that are on the rise include <code>Fantasy</code>, <code>Science fiction</code> and <code>Fighting</code>, whereas <code>Trivia</code>, <code>Movies / TV / Radio theme</code>, <code>Sports</code>, <code>Racing</code> and <code>Economic</code> are all on the decline. This seems to suggest that the themes that capture our imagination today are slightly less grounded in reality (at least compared to 20 years&nbsp;ago).</p>
 <p>More analysis on the <span class="caps">BGG</span> dataset can be found in <code>part II</code> (Coming soon) of this series of analysis posts, in which we explore the relationship between mechanics, themes and game&nbsp;ratings.</p>
 <p>I&#8217;ve left a lot of smaller bits of analysis that didn&#8217;t fit into the structure of this write-up, but if you&#8217;re interested in learning more about the board game dataset, you can find all of my analysis, including the code <a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/BGG-analysis/BGG_analysis.ipynb">here</a> in the form of a Jupyter Notebook&nbsp;(Python).</p>
@@ -142,7 +142,7 @@
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="http://dvatvani.github.io/tag/board-games.html">Board games</a>
+      <a href="https://dvatvani.github.io/tag/board-games.html">Board games</a>
     </p>
   </div>
 <div id="disqus_thread"></div>
@@ -187,10 +187,10 @@
   "author": {
     "@type": "Person",
     "name": "Dinesh Vatvani",
-    "url": "http://dvatvani.github.io/author/dinesh-vatvani.html"
+    "url": "https://dvatvani.github.io/author/dinesh-vatvani.html"
   },
   "image": "/static/Logo/radial_barh.png",
-  "url": "http://dvatvani.github.io/BGG-Analysis-Part-1.html",
+  "url": "https://dvatvani.github.io/BGG-Analysis-Part-1.html",
   "description": "An analysis of general trends in the release rate ratings, complexity, mechanics and themes of board games using BoardGameGeek data"
 }
 </script></body>

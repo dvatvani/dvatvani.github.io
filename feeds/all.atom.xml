@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Dinesh Vatvani</title><link href="http://dvatvani.github.io/" rel="alternate"></link><link href="http://dvatvani.github.io/feeds/all.atom.xml" rel="self"></link><id>http://dvatvani.github.io/</id><updated>2019-04-14T20:00:00+01:00</updated><entry><title>Making aesthetically pleasing dot density Venn diagrams</title><link href="http://dvatvani.github.io/dot-density-venn-diagrams.html" rel="alternate"></link><updated>2019-04-14T20:00:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2019-04-14:dot-density-venn-diagrams.html</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Dinesh Vatvani</title><link href="https://dvatvani.github.io/" rel="alternate"></link><link href="https://dvatvani.github.io/feeds/all.atom.xml" rel="self"></link><id>https://dvatvani.github.io/</id><updated>2019-04-14T20:00:00+01:00</updated><entry><title>Making aesthetically pleasing dot density Venn diagrams</title><link href="https://dvatvani.github.io/dot-density-venn-diagrams.html" rel="alternate"></link><updated>2019-04-14T20:00:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2019-04-14:dot-density-venn-diagrams.html</id><summary type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;Venn diagrams are a very common and intuitive way to visualise sets and relative population sizes of different cuts of data. From a data visualisation perspective, Venn diagrams are used in several different ways to present&amp;nbsp;data:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Euler diagrams: A qualitiative overview of which sets overlap with others, and which sets are subsets of others (Euler diagrams are technically not Venn diagrams, but I have included them here because these types of diagrams are colloquially still referred to by many as Venn&amp;nbsp;diagrams)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;center&gt;
-    &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/British_Isles_Euler_diagram.png" width="500" /&gt;&lt;/p&gt;
+    &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/British_Isles_Euler_diagram.png" width="500" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Source: &lt;a href="https://en.wiktionary.org/wiki/Euler_diagram"&gt;Wikipedia&lt;/a&gt;&lt;/em&gt;
   &lt;/center&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Labelled population sizes in the diagram: These are a straight forward way to present the data, but from a perceptual standpoint, our brains aren&amp;#8217;t very good at intuitively processing this. It&amp;#8217;s only marginally better than presenting the data in the form of a&amp;nbsp;table&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;center&gt;
-    &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/population-size-labelled-venn-diagram.png" width="500" /&gt;&lt;/p&gt;
+    &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/population-size-labelled-venn-diagram.png" width="500" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;source: &lt;a href="https://www.geckoboard.com/learn/data-literacy/data-science-glossary/venn-diagram/"&gt;Geckoboard&lt;/a&gt;&lt;/em&gt;
   &lt;/center&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Area-proportional or scaled Venn diagram: These aim to scale the area of different regions of a Venn diagram so that they are proportional to the population of that segment. This can be quite a useful way to convey relative population sizes of the regions of the Venn or Euler diagrams, but geometric restrictions means that this can&amp;#8217;t be accurately done with circles for cases with more than 2 overlapping sets (the number of degrees of freedom from altering relative size and distance between circles will be lower than the number of distinct regions in the Venn diagram for all cases with n&amp;gt;2). There are ways around this problem using triangles or irregular shapes for the 3-set or higher case, but it is likely that you will run into geometric limitations when presenting information in this&amp;nbsp;way&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;center&gt;
-    &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/Area_proportional_Venn.png" width="500" /&gt;&lt;/p&gt;
+    &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/Area_proportional_Venn.png" width="500" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;source: &lt;a href="https://stackoverflow.com/questions/8713994/venn-diagram-proportional-and-color-shading-with-semi-transparency"&gt;StackOverflow post&lt;/a&gt;&lt;/em&gt;
   &lt;/center&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Dot density Venn diagram: Another way to present more quantitative information is by populating the regions of the Venn diagram with icons or dots that represent the relative population of the region of the Venn diagram. This is a flexible way to present quantitative information that is also perceptually easy to&amp;nbsp;process.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;center&gt;
-    &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/dot-density-example.PNG" width="500" /&gt;&lt;/p&gt;
+    &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/dot-density-example.PNG" width="500" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;source: &lt;a href="http://robslink.com/SAS/democd59/venn_density.htm"&gt;Robert Allison&amp;#8217;s website&lt;/a&gt;&lt;/em&gt;
   &lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;I generally like the latter as a visualisation approach because of its flexibility and perceptual interpretability. However, the way it is done is typically with randomly sampled points for each region or manually placed points in arbitrary locations within a region. I have always thought that these could look nicer if the points distribution within a region were approximately evenly spaced, so this blog post is my attempt at solving that&amp;nbsp;problem.&lt;/p&gt;
@@ -37,34 +37,34 @@
 &lt;li&gt;
 &lt;p&gt;Start with a set of random points
   &lt;center&gt;
-    &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/random_points.png" /&gt;
+    &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/random_points.png" /&gt;
   &lt;/center&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Determine the Voronoi tesselation for that set of points
   &lt;center&gt;
-    &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/voronoi.png" /&gt;
+    &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/voronoi.png" /&gt;
   &lt;/center&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Move each point (orange) to the centroid (blue) of its Voronoi cell
   &lt;center&gt;
-    &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/lloyd_iteration.png" /&gt;
+    &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/lloyd_iteration.png" /&gt;
   &lt;/center&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;We can see that this process increases the distance between points that are close&amp;nbsp;together.&lt;/p&gt;
 &lt;p&gt;This process can be done recursively to keep increasing the distance between points that are closest together until the system reaches an equilibrium point, thereby generating an approximately uniformly distributed set of points. The animation below shows the effect of cycling through &lt;code&gt;30&lt;/code&gt; iterations of Lloyd&amp;#8217;s&amp;nbsp;algorithm&lt;/p&gt;
 &lt;p&gt;&lt;center&gt;
-  &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/animation.gif" width="500" /&gt;
+  &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/animation.gif" width="500" /&gt;
 &lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;This approach can be applied to all regions in a dot density Venn diagram to turn the figure on the left into the figure on the&amp;nbsp;right.&lt;/p&gt;
 &lt;p&gt;&lt;center&gt;
-  &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/unrelaxed_Venn.png" width="500" /&gt;
-  &lt;img src="http://dvatvani.github.io/static/Venn-diagrams/Venn.png" width="500" /&gt;
+  &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/unrelaxed_Venn.png" width="500" /&gt;
+  &lt;img src="https://dvatvani.github.io/static/Venn-diagrams/Venn.png" width="500" /&gt;
 &lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;That looks much nicer to me and it doesn&amp;#8217;t lose any perceptual accuracy. I think this might become my default choice for visualising population sizes in sets in the&amp;nbsp;future.&lt;/p&gt;
-&lt;p&gt;If you&amp;#8217;re interested in generating similar graphs, the code I used wrote to generate the Lloyd-relaxed dot density Venn diagram can be found &lt;a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/Venn-diagrams/Lloyd_relaxation_on_dot_density_diagrams.ipynb"&gt;here&lt;/a&gt; in the form of a Jupyter Notebook&amp;nbsp;(Python).&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>An analysis of board games: Part II - Complexity bias in BGG</title><link href="http://dvatvani.github.io/BGG-Analysis-Part-2.html" rel="alternate"></link><updated>2018-12-09T02:30:00+00:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2018-12-08:BGG-Analysis-Part-2.html</id><summary type="html">&lt;p&gt;This is part &lt;span class="caps"&gt;II&lt;/span&gt; in my series on analysing BoardGameGeek data. Other parts can be found&amp;nbsp;here:&lt;/p&gt;
+&lt;p&gt;If you&amp;#8217;re interested in generating similar graphs, the code I used wrote to generate the Lloyd-relaxed dot density Venn diagram can be found &lt;a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/Venn-diagrams/Lloyd_relaxation_on_dot_density_diagrams.ipynb"&gt;here&lt;/a&gt; in the form of a Jupyter Notebook&amp;nbsp;(Python).&lt;/p&gt;</summary><category term="Python"></category></entry><entry><title>An analysis of board games: Part II - Complexity bias in BGG</title><link href="https://dvatvani.github.io/BGG-Analysis-Part-2.html" rel="alternate"></link><updated>2018-12-09T02:30:00+00:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2018-12-08:BGG-Analysis-Part-2.html</id><summary type="html">&lt;p&gt;This is part &lt;span class="caps"&gt;II&lt;/span&gt; in my series on analysing BoardGameGeek data. Other parts can be found&amp;nbsp;here:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="./BGG-Analysis-Part-1.html"&gt;Part I: Introduction and general&amp;nbsp;trends&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Part &lt;span class="caps"&gt;II&lt;/span&gt;: Complexity bias in&amp;nbsp;BoardGameGeek&lt;/li&gt;
@@ -74,7 +74,7 @@
 &lt;p&gt;In &lt;a href="./BGG-Analysis-Part-1.html"&gt;Part I&lt;/a&gt;, I describe how I generated a dataset from BoardGameGeek and explored general trends in the rate of release, ratings and complexity. It also looked at the prevalence of different mechanics and themes throughout the hobby and how this has changed in the past 30 years. In this post, we&amp;#8217;ll investigate complexity bias in &lt;span class="caps"&gt;BGG&lt;/span&gt;&amp;nbsp;ratings.&lt;/p&gt;
 &lt;h1&gt;Complexity bias in&amp;nbsp;ratings&lt;/h1&gt;
 &lt;p&gt;BoardGameGeek&amp;#8217;s top 100 list is a very visible &amp;#8220;beacon&amp;#8221; for the hobby and many players will use this list to make decisions about which games to try or buy. It is comparable to the IMDb top 250 in the role it plays in shaping what the community perceives as the apex of Board Game experiences. However, one of the problems with the &lt;span class="caps"&gt;BGG&lt;/span&gt; top 100 is that it is disproportionately dominated by big and complex games. This makes it less useful for a sizeable majority of board game players looking for good new games to play, since many of the games on that list will look inaccessible and daunting. The relationship between a game&amp;#8217;s complexity and how highly rated it is on &lt;span class="caps"&gt;BGG&lt;/span&gt; is not just limited to the top 100. In fact, there is a pretty clear correlation between how complex a game is and how highly rated it is on BoardGameGeek, as shown&amp;nbsp;below.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Rating vs weight" src="http://dvatvani.github.io/static/BGG-analysis/complexity-bias.png" /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Rating vs weight" src="https://dvatvani.github.io/static/BGG-analysis/complexity-bias.png" /&gt;&lt;/center&gt;
 &lt;center&gt;&lt;em&gt;Note: The above graph only includes games with &amp;gt; 100 votes for game weight&lt;/em&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;The existence of this correlation in the &lt;span class="caps"&gt;BGG&lt;/span&gt; dataset makes it easier to understand why the top 100 is disproportionately populated with big, complex&amp;nbsp;games.&lt;/p&gt;
 &lt;p&gt;It is worth making a couple of comments based on the graph&amp;nbsp;above:&lt;/p&gt;
@@ -214,17 +214,17 @@
 &lt;p&gt;Since the regression in the graph above reveals how games&amp;#8217; ratings are related to complexity within the &lt;span class="caps"&gt;BGG&lt;/span&gt; dataset, we can artificially correct for the correlation by adjusting the game ratings to penalize complex games and reward simpler games. For the more mathematically inclined among you, I&amp;#8217;m referring to the residuals of the regression between rating and&amp;nbsp;complexity.&lt;/p&gt;
 &lt;p&gt;A short illustration goes a long way to intuitively explain what the process&amp;nbsp;does.&lt;/p&gt;
 &lt;p&gt;&lt;center&gt;
-&lt;img alt="Alt Text" src="http://dvatvani.github.io/static/BGG-analysis/manual_animation.gif" /&gt;
+&lt;img alt="Alt Text" src="https://dvatvani.github.io/static/BGG-analysis/manual_animation.gif" /&gt;
 &lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;Applying that artificial correction gives us a &amp;#8220;complexity-agnostic&amp;#8221; rating for all games. Below is an interactive plot showing the rating vs complexity after the rating correction. Hover over any point to see the name of the game and the game&amp;#8217;s new &lt;span class="caps"&gt;BGG&lt;/span&gt; rank and&amp;nbsp;rating.&lt;/p&gt;
 &lt;p&gt;&lt;center&gt;
-&lt;iframe width="820" height="470" src="http://dvatvani.github.io/static/BGG-analysis/toolbar.html" frameborder="0" allowfullscreen&gt;
+&lt;iframe width="820" height="470" src="https://dvatvani.github.io/static/BGG-analysis/toolbar.html" frameborder="0" allowfullscreen&gt;
 &lt;/iframe&gt;&lt;br&gt;
 &lt;strong&gt;&lt;em&gt;Hover your mouse over (or tap if you&amp;#8217;re on mobile) any point for more information about the game&lt;/em&gt;&lt;/strong&gt;
 &lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;We can use these corrected ratings to re-rank all of the games and obtain a complexity-agnostic top 100 list. Note that &lt;span class="caps"&gt;BGG&lt;/span&gt; use something called a Bayesian mean to rank their games instead of taking the raw average ratings. What this does is effectively give each game a certain number of additional &amp;#8220;average&amp;#8221; rating votes. This is designed to push games with a very low number of ratings towards the average to prevent the top games list being dominated by games with only a couple of perfect score ratings. I&amp;#8217;ve used a similar approach, using the same Bayesian prior as &lt;span class="caps"&gt;BGG&lt;/span&gt; (Bayesian prior of about &lt;code&gt;5.5&lt;/code&gt; with a weight of around &lt;code&gt;1,000&lt;/code&gt; ratings). As a result, there may be some cases where a game with a higher average rating end up having a lower rank than a game with a slightly lower average rating if the second has significantly more rating votes. The re-ranked &lt;span class="caps"&gt;BGG&lt;/span&gt; list using these corrected ratings has the complex games evenly spread throughout the ranked list of games rather than disproportionately skewed towards the top, thereby allowing some of the great, but less complex, games to shine through to the top&amp;nbsp;100.&lt;/p&gt;
 &lt;p&gt;I have applied the complexity-bias correction to all games with over 30 rating votes. Below is an interactive table that allows you to navigate the full list. It also includes a search function to find the impact of the complexity-bias correction on specific&amp;nbsp;games.&lt;/p&gt;
-&lt;p&gt;&lt;object width="100%" height="700" type="text/html" data="http://dvatvani.github.io/static/BGG-analysis/data.html"&gt;&lt;/object&gt;
+&lt;p&gt;&lt;object width="100%" height="700" type="text/html" data="https://dvatvani.github.io/static/BGG-analysis/data.html"&gt;&lt;/object&gt;
  &lt;center&gt;&lt;em&gt;Note: This table only includes games with &amp;gt;= 30 rating votes&lt;/em&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;Some of the games experienced a fairly substantial push up/down the rankings ladder as a result of the complexity bias correction. Some of the games that benefitted the most from this rating correction and have risen to the top 100 are &lt;code&gt;Skull&lt;/code&gt;, &lt;code&gt;BANG! The Dice Game&lt;/code&gt;, &lt;code&gt;Love Letter: Batman&lt;/code&gt;, &lt;code&gt;No Thanks!&lt;/code&gt;, &lt;code&gt;Time's Up!&lt;/code&gt;, &lt;code&gt;Spyfall&lt;/code&gt; and &lt;code&gt;Sushi Go!&lt;/code&gt;. Conversely, some of the games that have been penalized the most are &lt;code&gt;Twilight Imperium (Third Edition)&lt;/code&gt;, &lt;code&gt;Alchemists&lt;/code&gt;, &lt;code&gt;War of the Ring (first edition)&lt;/code&gt;, &lt;code&gt;A Game of Thrones: The Board Game (Second Edition)&lt;/code&gt;, &lt;code&gt;Through the Ages: A Story of Civilization&lt;/code&gt; and &lt;code&gt;Caverna: The Cave Farmers&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Looking at the revised top 100 from the list above, I still have some reservations about it, but it looks much more reasonable to me than the original &lt;span class="caps"&gt;BGG&lt;/span&gt; top 100 list. I suspect that for most board game players looking to try out new good games, this list would look far more approachable, while still being filled with excellent&amp;nbsp;games.&lt;/p&gt;
@@ -244,7 +244,7 @@
 &lt;li&gt;&lt;a href="https://www.shutupandsitdown.com/bgg100-100-81/"&gt;&lt;em&gt;Shut Up &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; Sit Down&amp;#8217;s take on the &lt;span class="caps"&gt;BGG&lt;/span&gt; top&amp;nbsp;100&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;a href="https://opinionatedgamers.com/2015/08/17/are-boardgames-getting-better-an-empirical-analysis/"&gt;&lt;em&gt;Are Boardgames Getting Better? An Empirical Analysis&lt;/em&gt;&lt;/a&gt; by &lt;a href="https://opinionatedgamers.com/"&gt;&lt;em&gt;Opinionated&amp;nbsp;Gamers&lt;/em&gt;&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;a href="https://boardgamegeek.com/blogpost/11991/numbers-bgg-rank-data-analysis"&gt;&lt;em&gt;By the Numbers - &lt;span class="caps"&gt;BGG&lt;/span&gt; Rank Data + Analysis&lt;/em&gt;&lt;/a&gt; by Oliver&amp;nbsp;Kiley&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Board games"></category></entry><entry><title>An analysis of board games: Part I - Introduction and general trends</title><link href="http://dvatvani.github.io/BGG-Analysis-Part-1.html" rel="alternate"></link><updated>2018-12-08T03:30:00+00:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2018-03-05:BGG-Analysis-Part-1.html</id><summary type="html">&lt;p&gt;This is part I in my series on analysing BoardGameGeek data. Other parts can be found&amp;nbsp;here:&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="Board games"></category></entry><entry><title>An analysis of board games: Part I - Introduction and general trends</title><link href="https://dvatvani.github.io/BGG-Analysis-Part-1.html" rel="alternate"></link><updated>2018-12-08T03:30:00+00:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2018-03-05:BGG-Analysis-Part-1.html</id><summary type="html">&lt;p&gt;This is part I in my series on analysing BoardGameGeek data. Other parts can be found&amp;nbsp;here:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Part I: Introduction and general&amp;nbsp;trends&lt;/li&gt;
 &lt;li&gt;&lt;a href="./BGG-Analysis-Part-2.html"&gt;Part &lt;span class="caps"&gt;II&lt;/span&gt;: Complexity bias in &lt;span class="caps"&gt;BGG&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
@@ -257,12 +257,12 @@
 &lt;p&gt;For the analysis in this post, we&amp;#8217;ll be focusing on base board games only, not&amp;nbsp;expansions.&lt;/p&gt;
 &lt;h1&gt;A note on sampling bias in the&amp;nbsp;dataset&lt;/h1&gt;
 &lt;p&gt;Before we delve into any any serious analysis, we should highlight that any patterns or observations found here reflect patterns observed within the boardgamegeek dataset. Depending on the context in the analysis, these observations may or may not be reflective of the board game industry as a whole, since the perspective and behaviour of boardgamegeek users will not always accurately represent all board game players. People who have a boardgamegeek account and actively log plays and rate games are very likely to be more invested and informed on board games compared to the average board game player. A good demonstration of this bias can be seen in the list of most owned games on&amp;nbsp;boardgamegeek.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Most popular games" src="http://dvatvani.github.io/static/BGG-analysis/Most_popular_board_games.png" /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Most popular games" src="https://dvatvani.github.io/static/BGG-analysis/Most_popular_board_games.png" /&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;Whilst the exact sales figures are hard to come by, it is generally agreed that the most popular (by ownership, not rating) board games include Chess, Monopoly, Risk, Scrabble, Pictionary, Cluedo, Trivial Pursuit, etc. (sources: &lt;a href="http://minnesotasnewcountry.com/top-selling-board-games-of-all-time/"&gt;1&lt;/a&gt;, &lt;a href="https://www.insidermonkey.com/blog/11-most-sold-board-games-ever-373692/11/"&gt;2&lt;/a&gt;, &lt;a href="https://www.therichest.com/rich-list/most-popular/the-top-10-most-sold-board-games-ever/"&gt;3&lt;/a&gt;, &lt;a href="https://hobbylark.com/board-games/The-Top-Ten-Board-Games-Of-All-Time"&gt;4&lt;/a&gt;). All of these games are under-represented in the &lt;span class="caps"&gt;BGG&lt;/span&gt; dataset due to the aforementioned bias. There will be many other cases in the analysis where this bias is likely having an effect, but I&amp;#8217;ll address them as they&amp;nbsp;come.&lt;/p&gt;
 &lt;h1&gt;A golden age of board&amp;nbsp;games&lt;/h1&gt;
 &lt;p&gt;There has been a lot of discussion suggesting that we are currently in a board game golden age (sources: &lt;a href="https://www.theguardian.com/technology/2016/sep/25/board-games-back-tabletop-gaming-boom-pandemic-flash-point"&gt;1&lt;/a&gt;, &lt;a href="https://boardgamegeek.com/thread/1679807/golden-age-board-gaming"&gt;2&lt;/a&gt;, &lt;a href="https://www.shutupandsitdown.com/videos/board-game-golden-age-talk/"&gt;3&lt;/a&gt;). I thought it would be interesting to see if the data supports this&amp;nbsp;view.&lt;/p&gt;
 &lt;h3&gt;Board game publication rate over&amp;nbsp;time&lt;/h3&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Growth in number of games published each year" src="http://dvatvani.github.io/static/BGG-analysis/game-release-rate-growth.png" /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Growth in number of games published each year" src="https://dvatvani.github.io/static/BGG-analysis/game-release-rate-growth.png" /&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Historically, there has been a broadly exponential increase in board games coming out each&amp;nbsp;year.&lt;/li&gt;
 &lt;li&gt;Based on the exponential growth of board game publications observed so far, we expect the number of board games published over the course of a year to double every 12.6 years. This is the board games analogue of &lt;a href="https://en.wikipedia.org/wiki/Moore%27s_law"&gt;Moore&amp;#8217;s&amp;nbsp;law&lt;/a&gt;&lt;/li&gt;
@@ -272,31 +272,31 @@
 &lt;li&gt;Overall, whilst the number of new board games released per year currently appears to be very high, it is currently in near perfect alignment with what&amp;#8217;s expected given the historic growth trends of the board game industry. There is nothing particularly unique or different about the &lt;em&gt;rate of release&lt;/em&gt; of new board games to support the view that we&amp;#8217;re currently in a board game golden age. However, the rate of release of board games is just one of many aspects that could lead people to believe that we&amp;#8217;re in a board game golden age. We can have a look at some other factors&amp;nbsp;too.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Board game ratings by publication&amp;nbsp;year&lt;/h3&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Evolution of average game ratings by year" src="http://dvatvani.github.io/static/BGG-analysis/rating-by-year.png" /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Evolution of average game ratings by year" src="https://dvatvani.github.io/static/BGG-analysis/rating-by-year.png" /&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;This data suggests that board games have been getting steadily better since around 2002, but that there&amp;#8217;s been a disproportionate improvement in in game ratings in the last couple of years. While the last couple of years certainly appears to have seen the release of great games such as Pandemic Legacy, Gloomhaven, Scythe, etc., it&amp;#8217;s not clear to me what caused the games to get disproportionately better in the last couple of years. Perhaps the consumer market for board games increased in size noticeably, leading to more resources poured into game development, but unfortunately, I don&amp;#8217;t have the data to test&amp;nbsp;this.&lt;/p&gt;
 &lt;p&gt;It&amp;#8217;s also worth noting that there may be an element of ratings inflation present in this data i.e. the baseline rating for an average game has increased, because people might have perceived a rating of 5 to be average a decade ago, but now they might perceive a rating of 7 to be average, so average ratings could be increasing over time despite games not necessarily getting&amp;nbsp;better.&lt;/p&gt;
 &lt;h1&gt;Other industry trends over&amp;nbsp;time&lt;/h1&gt;
 &lt;h3&gt;Complexity&lt;/h3&gt;
 &lt;p&gt;The &amp;#8220;complexity&amp;#8221; of a board game is a relatively loosely defined term, since it encompasses different types of learning and decision making characteristics involved in learning how to play as well as playing a game. To give a quick example, Chess/Go are relatively simple games in terms of their rules. In both cases, the rules can all be concisely explained and understood in a few minutes. However, getting a full grasp of all the strategies and tactics made possible by these simple rules can take a very long time as there is a considerable amount of complexity born from the number of different moves possible each turn as well as the fact that every move affects the available possible moves in future turns (i.e. turns are not independent). Boardgamegeek contains a &amp;#8220;weight&amp;#8221; score board games (rated by users) that provides a reduced, all-encompassing sense of the complexity of a game, based on users&amp;#8217; perception. We can look at how the complexity scores of board games have evolved based on when games were released. I&amp;#8217;ve focussed on games post 1995 since the dataset of games that have enough weight ratings before then starts to get a bit thin before&amp;nbsp;then.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Evolution of complexity over time" src="http://dvatvani.github.io/static/BGG-analysis/complexity-by-year.png" /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Evolution of complexity over time" src="https://dvatvani.github.io/static/BGG-analysis/complexity-by-year.png" /&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;It appears that board games have not only been getting better in terms of ratings, but also more complex since the mid 1990s. The trends in the complexity mirror the trends we see in overall ratings, with games appearing to have gotten steadily more complex since the early 2000s, and the last couple of years exhibiting a disproportionate growth in&amp;nbsp;complexity.&lt;/p&gt;
 &lt;p&gt;The parallels between the trends in overall ratings and complexity beg for a more direct comparison between them, but that&amp;#8217;s a fairly substantial topic in itself, so I&amp;#8217;ll address that in a future post of this series where the analysis has more room to&amp;nbsp;breathe.&lt;/p&gt;
 &lt;h3&gt;Mechanics&lt;/h3&gt;
 &lt;p&gt;Mechanics are the basic constructs of rules or methods that allow you to interact with a board game to allow gameplay. These can be simple things such as dice rolling or drawing (e.g. Pictionary), to slightly more involved cases such as Card drafting or Route/Network building. I&amp;#8217;ve listed the mechanics on &lt;span class="caps"&gt;BGG&lt;/span&gt; below by how often they&amp;#8217;re found on board games. Many of the mechanics&amp;#8217; names are intuitive, but some require more explanation. Descriptions and examples of all mechanics can be found &lt;a href="https://boardgamegeek.com/wiki/page/mechanism"&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Most popular&amp;nbsp;mechanics&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Most popular mechanics" src="http://dvatvani.github.io/static/BGG-analysis/Most_popular_mechanics.png" /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Most popular mechanics" src="https://dvatvani.github.io/static/BGG-analysis/Most_popular_mechanics.png" /&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;Unsurprisingly, the top 2 are related to dice, which is often seen as an iconic staple of board&amp;nbsp;games.&lt;/p&gt;
 &lt;p&gt;We can also look at how mechanics prevalence has changed over the last couple of&amp;nbsp;decades.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Comparison of mechanics prevalence in the 1990s and 2010s" src="http://dvatvani.github.io/static/BGG-analysis/Mechanics_in_90s_and_10s.png" /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Comparison of mechanics prevalence in the 1990s and 2010s" src="https://dvatvani.github.io/static/BGG-analysis/Mechanics_in_90s_and_10s.png" /&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;There are several mechanics that have become more popular over the last couple of decades, but the most notable is &lt;code&gt;Hand management&lt;/code&gt; (choosing which set of cards to keep in your hand and which to play/discard since some card combinations will be better than others and there may a limit on the number of cards you can keep in your hand. Examples of popular board games with the &lt;code&gt;Hand management&lt;/code&gt; mechanic are &lt;code&gt;Settlers of Catan&lt;/code&gt; and &lt;code&gt;Pandemic&lt;/code&gt;). I don&amp;#8217;t have any robust insight into why this might be the case, but it&amp;#8217;s perhaps because it can incorporate interesting decision making elements into games without requiring much explanation or complicated rules. Once the function of the cards/sets of cards in your hand are understood, the intricacies of the trade-offs, risks and benefits of playing/discarding particular cards and managing your hand often become self evident. The theme of mechanics that force you to think and make decisions is also present in other mechanics on the rise such as &lt;code&gt;Variable player powers&lt;/code&gt;, &lt;code&gt;Area control/Area influence&lt;/code&gt;, &lt;code&gt;Card drafting&lt;/code&gt;, &lt;code&gt;Deck building&lt;/code&gt;, &lt;code&gt;Worker placement&lt;/code&gt;, etc. On the other end of the spectrum, we have &lt;code&gt;Roll/Spin and move&lt;/code&gt; mechanic (This is the mechanic present in &lt;code&gt;Monopoly&lt;/code&gt; or &lt;code&gt;Snakes and ladders&lt;/code&gt; in which the movement of a player&amp;#8217;s token is decided by dice roll or the spin of a wheel) experiencing a huge decline. It&amp;#8217;s perhaps unsurprising to see its decline since this mechanic requires little to no consideration or decision making at all, and is therefore a less engaging way to interact with a board&amp;nbsp;game.&lt;/p&gt;
 &lt;p&gt;It is also worth noting that there are many more mechanics on the rise than on the fall. This is because modern games are beginning to include more mechanics. The inclusion of more mechanics over time is consistent with the analysis earlier suggesting that games are becoming more complex with&amp;nbsp;time.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Increase in number of mechanics over time" src="http://dvatvani.github.io/static/BGG-analysis/mechanics_inflation.png" /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Increase in number of mechanics over time" src="https://dvatvani.github.io/static/BGG-analysis/mechanics_inflation.png" /&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;h3&gt;Themes&lt;/h3&gt;
 &lt;p&gt;The &lt;span class="caps"&gt;BGG&lt;/span&gt; classification taxonomy for games is a little odd. At the highest level, they contain a game &lt;code&gt;Type&lt;/code&gt; classification (e.g. &lt;code&gt;Strategy&lt;/code&gt;, &lt;code&gt;Thematic&lt;/code&gt;, &lt;code&gt;Wargame&lt;/code&gt;, &lt;code&gt;Party&lt;/code&gt;, etc.). There aren&amp;#8217;t very many classification types, and more than 75% of games on &lt;span class="caps"&gt;BGG&lt;/span&gt; don&amp;#8217;t even contain a &lt;code&gt;Type&lt;/code&gt; classification, so I won&amp;#8217;t be analysing it in this post, but if you&amp;#8217;re interested in looking of most prevalent game types, etc. they can be found in the raw analysis Jupyter notebook file. The next level in the taxonomy is &lt;code&gt;Category&lt;/code&gt;. A cursory look at the values in this field will show that it&amp;#8217;s a disorganised mix of themes, game &amp;#8220;types&amp;#8221; and mechanics (as an example, &lt;code&gt;Codenames&lt;/code&gt; contains the Categories: &lt;code&gt;Party Game&lt;/code&gt;, &lt;code&gt;Card Game&lt;/code&gt;, &lt;code&gt;Word Game&lt;/code&gt;, &lt;code&gt;Deduction&lt;/code&gt;, &lt;code&gt;Spies/Secret Agents&lt;/code&gt;). I&amp;#8217;ve manually filtered the list of tags in the &lt;code&gt;Category&lt;/code&gt; classification level down to only include themes, since they were the elements that appeared most consistently under the &lt;code&gt;Category&lt;/code&gt; classification. &lt;span class="caps"&gt;BGG&lt;/span&gt; also contains further levels of classification taxonomy, but I&amp;#8217;ll only be looking into themes derived from tags in the &lt;code&gt;Type&lt;/code&gt; field for this&amp;nbsp;analysis.&lt;/p&gt;
 &lt;p&gt;The most popular themes in &lt;span class="caps"&gt;BGG&lt;/span&gt;&amp;nbsp;are:&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Most popular themes" src="http://dvatvani.github.io/static/BGG-analysis/Most_popular_themes.png" /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Most popular themes" src="https://dvatvani.github.io/static/BGG-analysis/Most_popular_themes.png" /&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;Similar to the mechanics, we can also see which themes have become more/less popular over the last couple of&amp;nbsp;decades.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img alt="Comparison of themes prevalence in the 1990s and 2010s" src="http://dvatvani.github.io/static/BGG-analysis/Themes_in_90s_and_10s.png" /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img alt="Comparison of themes prevalence in the 1990s and 2010s" src="https://dvatvani.github.io/static/BGG-analysis/Themes_in_90s_and_10s.png" /&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;Looking at the most popular themes, there is a big shift occurring in the dominant themes present in games. In fact, 8 out of the top 10 most popular themes are either in the top 5 most rapidly rising or top 5 most rapidly declining lists, suggesting a strong and clear shift in the themes that engage the current generation of board game players. The themes that are on the rise include &lt;code&gt;Fantasy&lt;/code&gt;, &lt;code&gt;Science fiction&lt;/code&gt; and &lt;code&gt;Fighting&lt;/code&gt;, whereas &lt;code&gt;Trivia&lt;/code&gt;, &lt;code&gt;Movies / TV / Radio theme&lt;/code&gt;, &lt;code&gt;Sports&lt;/code&gt;, &lt;code&gt;Racing&lt;/code&gt; and &lt;code&gt;Economic&lt;/code&gt; are all on the decline. This seems to suggest that the themes that capture our imagination today are slightly less grounded in reality (at least compared to 20 years&amp;nbsp;ago).&lt;/p&gt;
 &lt;p&gt;More analysis on the &lt;span class="caps"&gt;BGG&lt;/span&gt; dataset can be found in &lt;code&gt;part II&lt;/code&gt; (Coming soon) of this series of analysis posts, in which we explore the relationship between mechanics, themes and game&amp;nbsp;ratings.&lt;/p&gt;
 &lt;p&gt;I&amp;#8217;ve left a lot of smaller bits of analysis that didn&amp;#8217;t fit into the structure of this write-up, but if you&amp;#8217;re interested in learning more about the board game dataset, you can find all of my analysis, including the code &lt;a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/BGG-analysis/BGG_analysis.ipynb"&gt;here&lt;/a&gt; in the form of a Jupyter Notebook&amp;nbsp;(Python).&lt;/p&gt;
@@ -313,7 +313,7 @@
 &lt;li&gt;&lt;em&gt;&lt;a href="https://www.kaggle.com/mrpantherson/board-game-data#"&gt;&lt;em&gt;Boardgamegeek dataset on Kaggle&lt;/em&gt;&lt;/a&gt;, with multiple users&amp;#8217; analysis on the&amp;nbsp;dataset&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;a href="https://opinionatedgamers.com/2015/08/17/are-boardgames-getting-better-an-empirical-analysis/"&gt;&lt;em&gt;Are Boardgames Getting Better? An Empirical Analysis&lt;/em&gt;&lt;/a&gt; by &lt;a href="https://opinionatedgamers.com/"&gt;&lt;em&gt;Opinionated&amp;nbsp;Gamers&lt;/em&gt;&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;a href="https://boardgamegeek.com/blogpost/11991/numbers-bgg-rank-data-analysis"&gt;&lt;em&gt;By the Numbers - &lt;span class="caps"&gt;BGG&lt;/span&gt; Rank Data + Analysis&lt;/em&gt;&lt;/a&gt; by Oliver&amp;nbsp;Kiley&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Board games"></category></entry><entry><title>TV show episode ratings</title><link href="http://dvatvani.github.io/tv-show-episode-ratings.html" rel="alternate"></link><updated>2016-05-28T22:00:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2016-05-28:tv-show-episode-ratings.html</id><summary type="html">&lt;p&gt;This post is about a simple visualisation of the episode ratings of &lt;span class="caps"&gt;TV&lt;/span&gt; shows. The idea behind this is heavily borrowed from &lt;a href="http://graphtv.kevinformatics.com/"&gt;Graph &lt;span class="caps"&gt;TV&lt;/span&gt;&lt;/a&gt;. I use that site often and really like it, but the plots it generates are based on &lt;a href="http://www.imdb.com/"&gt;IMDb&lt;/a&gt; rating data. I&amp;#8217;ve always wanted something similar but using &lt;a href="https://trakt.tv/"&gt;Trakt.tv&lt;/a&gt; rating data instead, so I decided to write a script to do just&amp;nbsp;that. &lt;/p&gt;
+&lt;/ul&gt;</summary><category term="Board games"></category></entry><entry><title>TV show episode ratings</title><link href="https://dvatvani.github.io/tv-show-episode-ratings.html" rel="alternate"></link><updated>2016-05-28T22:00:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2016-05-28:tv-show-episode-ratings.html</id><summary type="html">&lt;p&gt;This post is about a simple visualisation of the episode ratings of &lt;span class="caps"&gt;TV&lt;/span&gt; shows. The idea behind this is heavily borrowed from &lt;a href="http://graphtv.kevinformatics.com/"&gt;Graph &lt;span class="caps"&gt;TV&lt;/span&gt;&lt;/a&gt;. I use that site often and really like it, but the plots it generates are based on &lt;a href="http://www.imdb.com/"&gt;IMDb&lt;/a&gt; rating data. I&amp;#8217;ve always wanted something similar but using &lt;a href="https://trakt.tv/"&gt;Trakt.tv&lt;/a&gt; rating data instead, so I decided to write a script to do just&amp;nbsp;that. &lt;/p&gt;
 &lt;p&gt;Below are the episode ratings for the top 10 most popular shows, according to Trakt.tv. The plots are interactive. You can hover over a point to get more information on the episode or pan/zoom on the data using the tools on the bottom left of each&amp;nbsp;plot. &lt;/p&gt;
 &lt;p&gt;I will likely create a small web app to make it easier to generate the plots online for any tv show at some stage in the future, but if anyone is interested in generating similar plots for other shows now, the Python code to generate the plots is available &lt;a href="https://github.com/dvatvani/trakt-ratings-trends"&gt;here on GitHub&lt;/a&gt;. A Jupyter notebook with the code can also be found &lt;a href="http://nbviewer.jupyter.org/github/dvatvani/trakt-ratings-trends/blob/master/trakt-ratings-trends.ipynb"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;style&gt;
@@ -343,7 +343,7 @@ table, th, td
 
 &lt;div id="fig_el43921586921842571185746"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/game_of_thrones.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/game_of_thrones.js"&gt;&lt;/script&gt;
 
 &lt;style&gt;
 
@@ -372,7 +372,7 @@ table, th, td
 
 &lt;div id="fig_el43921951669525390596189"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/breaking_bad.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/breaking_bad.js"&gt;&lt;/script&gt;
 
 &lt;style&gt;
 
@@ -401,7 +401,7 @@ table, th, td
 
 &lt;div id="fig_el43921573256326407222326"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/the_big_bang_theory.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/the_big_bang_theory.js"&gt;&lt;/script&gt;
 
 &lt;style&gt;
 
@@ -430,7 +430,7 @@ table, th, td
 
 &lt;div id="fig_el43922826681681423509412"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/the_walking_dead.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/the_walking_dead.js"&gt;&lt;/script&gt;
 
 &lt;style&gt;
 
@@ -459,7 +459,7 @@ table, th, td
 
 &lt;div id="fig_el43921932024407192895674"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/dexter.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/dexter.js"&gt;&lt;/script&gt;
 
 &lt;style&gt;
 
@@ -488,7 +488,7 @@ table, th, td
 
 &lt;div id="fig_el43921916642569335910854"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/how_i_met_your_mother.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/how_i_met_your_mother.js"&gt;&lt;/script&gt;
 
 &lt;style&gt;
 
@@ -517,7 +517,7 @@ table, th, td
 
 &lt;div id="fig_el43922452610884251329649"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/sherlock.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/sherlock.js"&gt;&lt;/script&gt;
 
 &lt;style&gt;
 
@@ -546,7 +546,7 @@ table, th, td
 
 &lt;div id="fig_el439222331763277133446"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/arrow.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/arrow.js"&gt;&lt;/script&gt;
 
 &lt;style&gt;
 
@@ -575,7 +575,7 @@ table, th, td
 
 &lt;div id="fig_el43921909720324799833593"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/homeland.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/homeland.js"&gt;&lt;/script&gt;
 
 &lt;style&gt;
 
@@ -604,11 +604,11 @@ table, th, td
 
 &lt;div id="fig_el43921571023769423801765"&gt;&lt;/div&gt;
 
-&lt;script type="text/javascript" src="http://dvatvani.github.io/static/tv-show-episode-ratings/friends.js"&gt;&lt;/script&gt;</summary><category term="Python"></category><category term="TV"></category></entry><entry><title>A Song of Ice and Fire : Chapter ratings</title><link href="http://dvatvani.github.io/ASOIAF-Chapter-ratings.html" rel="alternate"></link><updated>2016-04-10T23:12:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2016-04-10:ASOIAF-Chapter-ratings.html</id><summary type="html">&lt;p&gt;This post relates to Game of Thrones, or more specifically to the series of books the show is based on: A Song of Ice and&amp;nbsp;Fire. &lt;/p&gt;
+&lt;script type="text/javascript" src="https://dvatvani.github.io/static/tv-show-episode-ratings/friends.js"&gt;&lt;/script&gt;</summary><category term="Python"></category><category term="TV"></category></entry><entry><title>A Song of Ice and Fire : Chapter ratings</title><link href="https://dvatvani.github.io/ASOIAF-Chapter-ratings.html" rel="alternate"></link><updated>2016-04-10T23:12:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2016-04-10:ASOIAF-Chapter-ratings.html</id><summary type="html">&lt;p&gt;This post relates to Game of Thrones, or more specifically to the series of books the show is based on: A Song of Ice and&amp;nbsp;Fire. &lt;/p&gt;
 &lt;p&gt;The website &lt;a href="http://towerofthehand.com/"&gt;Tower of the Hand&lt;/a&gt; contains ratings for each chapter in the series of books. Chapters&amp;#8217; ratings are generated by users. Each chapter has ratings from typically around 150 people so there will still be a reasonable amount of uncertainty around each chapter rating, but there is still enough information in here to give us broad ideas about the overall progression in how interesting the books are, the most interesting books and the most interesting &lt;span class="caps"&gt;POV&lt;/span&gt;&amp;nbsp;characters.&lt;/p&gt;
 &lt;p&gt;Let&amp;#8217;s start by having a quick overview of the progression of chapter ratings across the entire&amp;nbsp;series.&lt;/p&gt;
 &lt;h1&gt;Chapter ratings in the entire&amp;nbsp;series&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="Chapter ratings in all books" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_all_books_-_chapter_ratings.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chapter ratings in all books" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_all_books_-_chapter_ratings.png" /&gt;&lt;/p&gt;
 &lt;p&gt;This overview suggests&amp;nbsp;that:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A Game of Thrones is fairly consistent in its chapter&amp;nbsp;ratings&lt;/li&gt;
@@ -620,14 +620,14 @@ table, th, td
 &lt;p&gt;Having read the books, I&amp;#8217;m inclined to agree with the overview provided by the ratings so&amp;nbsp;far.&lt;/p&gt;
 &lt;p&gt;Let&amp;#8217;s break the chapters down by book to have a slightly closer look at the&amp;nbsp;ratings. &lt;/p&gt;
 &lt;h1&gt;Chapter ratings by&amp;nbsp;book&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="Chapter ratings in AGOT" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_AGOT_-_chapter_ratings.png" /&gt;
-&lt;img alt="Chapter ratings in ACOK" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_ACOK_-_chapter_ratings.png" /&gt;
-&lt;img alt="Chapter ratings in ASOS" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_ASOS_-_chapter_ratings.png" /&gt;
-&lt;img alt="Chapter ratings in AFFC" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_AFFC_-_chapter_ratings.png" /&gt;
-&lt;img alt="Chapter ratings in ADWD" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_ADWD_-_chapter_ratings.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chapter ratings in AGOT" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_AGOT_-_chapter_ratings.png" /&gt;
+&lt;img alt="Chapter ratings in ACOK" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_ACOK_-_chapter_ratings.png" /&gt;
+&lt;img alt="Chapter ratings in ASOS" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_ASOS_-_chapter_ratings.png" /&gt;
+&lt;img alt="Chapter ratings in AFFC" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_AFFC_-_chapter_ratings.png" /&gt;
+&lt;img alt="Chapter ratings in ADWD" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/ASOIAF_-_ADWD_-_chapter_ratings.png" /&gt;&lt;/p&gt;
 &lt;h1&gt;Chapter ratings by &lt;span class="caps"&gt;POV&lt;/span&gt;&amp;nbsp;character&lt;/h1&gt;
 &lt;p&gt;It can be interesting to break down the chapter ratings by the point of view characters to see how the various plot lines progress in terms of maintaining reader&amp;nbsp;interest.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Chapter ratings by POV character" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_ratings_by_POV_character_-_all_books.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chapter ratings by POV character" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_ratings_by_POV_character_-_all_books.png" /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Daenerys&lt;/strong&gt; : With the exception of one strong chapter, Daenerys&amp;#8217; chapters in the final book are not very&amp;nbsp;good.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Ned&lt;/strong&gt; : As we all know, he was a short lived character, but his chapters were consistently&amp;nbsp;great&lt;/li&gt;
@@ -636,8 +636,8 @@ table, th, td
 &lt;li&gt;&lt;strong&gt;Theon/Reek&lt;/strong&gt; : One of the few consistently solid &lt;span class="caps"&gt;POV&lt;/span&gt; characters in &lt;code&gt;ADWD&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;Chapter rating distributions by&amp;nbsp;book&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="Chapter ratings distribution by book - violin" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_book_-_violin.png" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Chapter ratings distribution by book - box" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_book_-_box.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chapter ratings distribution by book - violin" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_book_-_violin.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chapter ratings distribution by book - box" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_book_-_box.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;center&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -681,10 +681,10 @@ The overall book ratings on &lt;a href="https://www.goodreads.com/series/43790-a
 Personally, my views on the quality of the books are more aligned with the Goodreads ratings, but it&amp;#8217;s likely because the overall experience of a book is not well represented by the average of its&amp;nbsp;chapters.&lt;/p&gt;
 &lt;h1&gt;Chapter rating distributions by &lt;span class="caps"&gt;POV&lt;/span&gt;&amp;nbsp;character&lt;/h1&gt;
 &lt;p&gt;We can also have a look at the distributions of chapter ratings in each book to see which of the &lt;span class="caps"&gt;POV&lt;/span&gt; characters have the better&amp;nbsp;chapters.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Chapter ratings distribution by POV - violin" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_POV_character_-_violin.png" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Chapter ratings distribution by POV - box" src="http://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_POV_character_-_box.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chapter ratings distribution by POV - violin" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_POV_character_-_violin.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chapter ratings distribution by POV - box" src="https://dvatvani.github.io/static/ASOIAF-Chapter-ratings/Chapter_rating_distributions_by_POV_character_-_box.png" /&gt;&lt;/p&gt;
 &lt;p&gt;The distributions are ranked by average chapter rating, with the highest average on the left. The top few &lt;span class="caps"&gt;POV&lt;/span&gt; characters are all characters with a single &lt;span class="caps"&gt;POV&lt;/span&gt; chapter so far. From the characters that have multiple &lt;span class="caps"&gt;POV&lt;/span&gt; chapters, Ned Stark has the most interesting chapters. It goes some way to explain why he&amp;#8217;s such a fan favourite&amp;nbsp;character.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;If you have any ideas about what might be interesting to do with this dataset, let me know in the comments. The Jupyter notebook that was used to generate all the plots in this blog post can be found &lt;a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/ASOIAF-Chapter-ratings/ASOIAF_chapter_ratings.ipynb"&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</summary><category term="Python"></category><category term="Game of Thrones"></category></entry><entry><title>Solving the 8 Queens problem with python</title><link href="http://dvatvani.github.io/8-Queens.html" rel="alternate"></link><updated>2016-03-28T00:45:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2016-03-28:8-Queens.html</id><summary type="html">&lt;p&gt;This is my approach to solving the 8 Queens puzzle with&amp;nbsp;Python. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If you have any ideas about what might be interesting to do with this dataset, let me know in the comments. The Jupyter notebook that was used to generate all the plots in this blog post can be found &lt;a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/ASOIAF-Chapter-ratings/ASOIAF_chapter_ratings.ipynb"&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</summary><category term="Python"></category><category term="Game of Thrones"></category></entry><entry><title>Solving the 8 Queens problem with python</title><link href="https://dvatvani.github.io/8-Queens.html" rel="alternate"></link><updated>2016-03-28T00:45:00+01:00</updated><author><name>Dinesh Vatvani</name></author><id>tag:dvatvani.github.io,2016-03-28:8-Queens.html</id><summary type="html">&lt;p&gt;This is my approach to solving the 8 Queens puzzle with&amp;nbsp;Python. &lt;/p&gt;
 &lt;p&gt;For anyone unfamiliar with the 8 Queens puzzle, it is the problem of placing eight queens on a standard (8x8) chessboard such that no queen is in a position that can attack any other. This post will have the solutions to the puzzle, so if you&amp;#8217;d like to attempt to solve it on your own, now would be a good time to stop reading this&amp;nbsp;post.&lt;/p&gt;
 &lt;p&gt;I was first made aware of the existence of this puzzle in a pub one evening with some friends. One of my friends started trying to solve the puzzle manually and found a solution in about 10 minutes. This inspired me to attempt to tackle the problem with Python to see if I would have been able to find a solution faster. I took me around 15 minutes to solve the puzzle using python, but found 92 solutions (there are 12 if you eliminate symmetrically related&amp;nbsp;solutions). &lt;/p&gt;
 &lt;p&gt;This original code I wrote to solve the problem looked like&amp;nbsp;this:&lt;/p&gt;
@@ -725,9 +725,9 @@ Personally, my views on the quality of the books are more aligned with the Goodr
 &lt;p&gt;I&amp;#8217;ve since expanded it to make it easier to understand, abstracting some useful functions and added some code to remove equivalent solutions and help visualise the solutions, but the code above contains the main logic that runs at the heart of the approach I took. The expanded version of the code can be found &lt;a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/8-Queens/8_Queens_problem.ipynb"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Let&amp;#8217;s break it down a little bit to explain what&amp;#8217;s&amp;nbsp;happening. &lt;/p&gt;
 &lt;p&gt;We know that no two queens can attack each other. This means that there must be 1 queen per row. Similarly, there must be 1 queen per column. In this approach, we&amp;#8217;re going to take 8 queens, assign them to the rows 1-8 and determine what columns they must each be in in order for the puzzle criteria to be satisfied. Since there are 8 queens and 8 column positions, there are 40,320 (nPr with n=r=8) ways to arrange 8 queens on a chessboard such that there is one queen per row and 1 queen per column. Since we already know what none of the queens will be attacking any other horizontally or vertically, all we need to do is to check each of the 40,320 arrangements to see if any queen is diagonally threatening any other. This takes about a second to run in total (1.06 seconds on my mid-range 5-year-old Desktop computer) for all 40,320 possible queen arrangements and returns 92 solutions that fit the criteria of having no queen attacking any other. Some of these will be symmetrically related. For example, here are 8 solutions from the set of 92 that are related to each other through 90 or 180 degree rotations; or mirror planes (i.e. they are horizontal, vertical or diagonal mirror images of each&amp;nbsp;other).&lt;/p&gt;
-&lt;p&gt;&lt;img alt="symmetry_equivalent_solutions_example" src="http://dvatvani.github.io/static/8-Queens/symmetry_equivalent_solutions.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="symmetry_equivalent_solutions_example" src="https://dvatvani.github.io/static/8-Queens/symmetry_equivalent_solutions.png" /&gt;&lt;/p&gt;
 &lt;p&gt;When we remove the solutions that are related, we are left with the 12 unique solutions for the 8x8 board case, shown&amp;nbsp;below:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="unique_solutions" src="http://dvatvani.github.io/static/8-Queens/unique_solutions.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="unique_solutions" src="https://dvatvani.github.io/static/8-Queens/unique_solutions.png" /&gt;&lt;/p&gt;
 &lt;p&gt;The Jupyter notebook containing the current version of the code is available &lt;a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/8-Queens/8_Queens_problem.ipynb"&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Thanks to my&amp;nbsp;friends:&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
