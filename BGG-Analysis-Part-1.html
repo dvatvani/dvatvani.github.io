@@ -3,10 +3,10 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/font-awesome.min.css">
 
 
     <link href="https://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
@@ -40,11 +40,11 @@
       <a href="https://dvatvani.github.io">
         <img src="/static/Logo/radial_barh.png" alt="Dinesh Vatvani" title="Dinesh Vatvani">
       </a>
-      <h1><a href="https://dvatvani.github.io">Dinesh Vatvani</a></h1>
+      <h1><a href="/">Dinesh Vatvani</a></h1>
       <p>A Python and data analysis blog</p>
       <nav>
         <ul class="list">
-          <li><a href="https://dvatvani.github.io/pages/about.html#about">About</a></li>
+          <li><a href="/pages/about.html#about">About</a></li>
         </ul>
       </nav>
       <ul class="social">
@@ -56,7 +56,7 @@
   </aside>
   <main>
     <nav>
-      <a href="https://dvatvani.github.io">Home</a>
+      <a href="/">Home</a>
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
@@ -66,7 +66,7 @@
 <article>
   <header>
     <h1 id="BGG-Analysis-Part-1">An analysis of board games: Part I - Introduction and general&nbsp;trends</h1>
-    <p>Posted on Mon 05 March 2018 in <a href="https://dvatvani.github.io/category/analysis.html">Analysis</a></p>
+    <p>Posted on Mon 05 March 2018 in <a href="/category/analysis.html">Analysis</a></p>
   </header>
   <div>
     <p>This is part I in my series on analysing BoardGameGeek data. Other parts can be found&nbsp;here:</p>
@@ -82,7 +82,7 @@
 <p>For the analysis in this post, we&#8217;ll be focusing on base board games only, not&nbsp;expansions.</p>
 <h1>A note on sampling bias in the&nbsp;dataset</h1>
 <p>Before we delve into any any serious analysis, we should highlight that any patterns or observations found here reflect patterns observed within the boardgamegeek dataset. Depending on the context in the analysis, these observations may or may not be reflective of the board game industry as a whole, since the perspective and behaviour of boardgamegeek users will not always accurately represent all board game players. People who have a boardgamegeek account and actively log plays and rate games are very likely to be more invested and informed on board games compared to the average board game player. A good demonstration of this bias can be seen in the list of most owned games on&nbsp;boardgamegeek.</p>
-<p><center><img alt="Most popular games" src="https://dvatvani.github.io/static/BGG-analysis/Most_popular_board_games.png" /></center></p>
+<p><center><img alt="Most popular games" src="/static/BGG-analysis/Most_popular_board_games.png" /></center></p>
 <p>Whilst the exact sales figures are hard to come by, it is generally agreed that the most popular (by ownership, not rating) board games include Chess, Monopoly, Risk, Scrabble, Pictionary, Cluedo, Trivial Pursuit, etc. (sources: <a href="http://minnesotasnewcountry.com/top-selling-board-games-of-all-time/">1</a>, <a href="https://www.insidermonkey.com/blog/11-most-sold-board-games-ever-373692/11/">2</a>, <a href="https://www.therichest.com/rich-list/most-popular/the-top-10-most-sold-board-games-ever/">3</a>, <a href="https://hobbylark.com/board-games/The-Top-Ten-Board-Games-Of-All-Time">4</a>). All of these games are under-represented in the <span class="caps">BGG</span> dataset due to the aforementioned bias. There will be many other cases in the analysis where this bias is likely having an effect, but I&#8217;ll address them as they&nbsp;come.</p>
 <h1>A golden age of board&nbsp;games</h1>
 <p>There has been a lot of discussion suggesting that we are currently in a board game golden age (sources: <a href="https://www.theguardian.com/technology/2016/sep/25/board-games-back-tabletop-gaming-boom-pandemic-flash-point">1</a>, <a href="https://boardgamegeek.com/thread/1679807/golden-age-board-gaming">2</a>, <a href="https://www.shutupandsitdown.com/videos/board-game-golden-age-talk/">3</a>). I thought it would be interesting to see if the data supports this&nbsp;view.</p>
@@ -109,7 +109,7 @@
 <h3>Mechanics</h3>
 <p>Mechanics are the basic constructs of rules or methods that allow you to interact with a board game to allow gameplay. These can be simple things such as dice rolling or drawing (e.g. Pictionary), to slightly more involved cases such as Card drafting or Route/Network building. I&#8217;ve listed the mechanics on <span class="caps">BGG</span> below by how often they&#8217;re found on board games. Many of the mechanics&#8217; names are intuitive, but some require more explanation. Descriptions and examples of all mechanics can be found <a href="https://boardgamegeek.com/wiki/page/mechanism">here</a></p>
 <p>Most popular&nbsp;mechanics</p>
-<p><center><img alt="Most popular mechanics" src="https://dvatvani.github.io/static/BGG-analysis/Most_popular_mechanics.png" /></center></p>
+<p><center><img alt="Most popular mechanics" src="/static/BGG-analysis/Most_popular_mechanics.png" /></center></p>
 <p>Unsurprisingly, the top 2 are related to dice, which is often seen as an iconic staple of board&nbsp;games.</p>
 <p>We can also look at how mechanics prevalence has changed over the last couple of&nbsp;decades.</p>
 <p><center><img alt="Comparison of mechanics prevalence in the 1990s and 2010s" src="https://dvatvani.github.io/static/BGG-analysis/Mechanics_in_90s_and_10s.png" /></center></p>
@@ -142,7 +142,7 @@
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://dvatvani.github.io/tag/board-games.html">Board games</a>
+      <a href="/tag/board-games.html">Board games</a>
     </p>
   </div>
 <div id="disqus_thread"></div>

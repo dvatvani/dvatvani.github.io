@@ -3,10 +3,10 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="https://dvatvani.github.io/theme/stylesheet/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/font-awesome.min.css">
 
 
     <link href="https://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
@@ -41,11 +41,11 @@
       <a href="https://dvatvani.github.io">
         <img src="/static/Logo/radial_barh.png" alt="Dinesh Vatvani" title="Dinesh Vatvani">
       </a>
-      <h1><a href="https://dvatvani.github.io">Dinesh Vatvani</a></h1>
+      <h1><a href="/">Dinesh Vatvani</a></h1>
       <p>A Python and data analysis blog</p>
       <nav>
         <ul class="list">
-          <li><a href="https://dvatvani.github.io/pages/about.html#about">About</a></li>
+          <li><a href="/pages/about.html#about">About</a></li>
         </ul>
       </nav>
       <ul class="social">
@@ -57,7 +57,7 @@
   </aside>
   <main>
     <nav>
-      <a href="https://dvatvani.github.io">Home</a>
+      <a href="/">Home</a>
       <a href="/archives.html">Archives</a>
       <a href="/categories.html">Categories</a>
       <a href="/tags.html">Tags</a>
@@ -67,7 +67,7 @@
 <article>
   <header>
     <h1 id="8-Queens">Solving the 8 Queens problem with&nbsp;python</h1>
-    <p>Posted on Mon 28 March 2016 in <a href="https://dvatvani.github.io/category/problem-solving.html">Problem solving</a></p>
+    <p>Posted on Mon 28 March 2016 in <a href="/category/problem-solving.html">Problem solving</a></p>
   </header>
   <div>
     <p>This is my approach to solving the 8 Queens puzzle with&nbsp;Python. </p>
@@ -111,9 +111,9 @@
 <p>I&#8217;ve since expanded it to make it easier to understand, abstracting some useful functions and added some code to remove equivalent solutions and help visualise the solutions, but the code above contains the main logic that runs at the heart of the approach I took. The expanded version of the code can be found <a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/8-Queens/8_Queens_problem.ipynb">here</a>.</p>
 <p>Let&#8217;s break it down a little bit to explain what&#8217;s&nbsp;happening. </p>
 <p>We know that no two queens can attack each other. This means that there must be 1 queen per row. Similarly, there must be 1 queen per column. In this approach, we&#8217;re going to take 8 queens, assign them to the rows 1-8 and determine what columns they must each be in in order for the puzzle criteria to be satisfied. Since there are 8 queens and 8 column positions, there are 40,320 (nPr with n=r=8) ways to arrange 8 queens on a chessboard such that there is one queen per row and 1 queen per column. Since we already know what none of the queens will be attacking any other horizontally or vertically, all we need to do is to check each of the 40,320 arrangements to see if any queen is diagonally threatening any other. This takes about a second to run in total (1.06 seconds on my mid-range 5-year-old Desktop computer) for all 40,320 possible queen arrangements and returns 92 solutions that fit the criteria of having no queen attacking any other. Some of these will be symmetrically related. For example, here are 8 solutions from the set of 92 that are related to each other through 90 or 180 degree rotations; or mirror planes (i.e. they are horizontal, vertical or diagonal mirror images of each&nbsp;other).</p>
-<p><img alt="symmetry_equivalent_solutions_example" src="https://dvatvani.github.io/static/8-Queens/symmetry_equivalent_solutions.png" /></p>
+<p><img alt="symmetry_equivalent_solutions_example" src="/static/8-Queens/symmetry_equivalent_solutions.png" /></p>
 <p>When we remove the solutions that are related, we are left with the 12 unique solutions for the 8x8 board case, shown&nbsp;below:</p>
-<p><img alt="unique_solutions" src="https://dvatvani.github.io/static/8-Queens/unique_solutions.png" /></p>
+<p><img alt="unique_solutions" src="/static/8-Queens/unique_solutions.png" /></p>
 <p>The Jupyter notebook containing the current version of the code is available <a href="http://nbviewer.jupyter.org/github/dvatvani/dvatvani.github.io/blob/master/static/8-Queens/8_Queens_problem.ipynb">here</a></p>
 <p><em>Thanks to my&nbsp;friends:</em></p>
 <ul>
@@ -123,8 +123,8 @@
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://dvatvani.github.io/tag/python.html">Python</a>
-      <a href="https://dvatvani.github.io/tag/puzzles.html">Puzzles</a>
+      <a href="/tag/python.html">Python</a>
+      <a href="/tag/puzzles.html">Puzzles</a>
     </p>
   </div>
 <div id="disqus_thread"></div>
