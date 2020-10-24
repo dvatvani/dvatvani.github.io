@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/stylesheet/font-awesome.min.css">
+
+
+    <link href="https://dvatvani.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Dinesh Vatvani Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+<meta name="author" content="Dinesh Vatvani" />
+<meta name="description" content="Analysis of a WhatsApp chat log" />
+<meta name="keywords" content="Qantified-Self, WhatsApp">
+<meta property="og:site_name" content="Dinesh Vatvani"/>
+<meta property="og:title" content="Analysis of a WhatsApp chat log"/>
+<meta property="og:description" content="Analysis of a WhatsApp chat log"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://dvatvani.github.io/drafts/whatsapp-analysis.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-10-24 08:00:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://dvatvani.github.io/author/dinesh-vatvani.html">
+<meta property="article:section" content="Analysis"/>
+<meta property="article:tag" content="Qantified-Self"/>
+<meta property="article:tag" content="WhatsApp"/>
+<meta property="og:image" content="/static/Logo/radial_barh.png">
+  <title>Dinesh Vatvani &ndash; Analysis of a WhatsApp chat log</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://dvatvani.github.io">
+        <img src="/static/Logo/radial_barh.png" alt="Dinesh Vatvani" title="Dinesh Vatvani">
+      </a>
+      <h1><a href="/">Dinesh Vatvani</a></h1>
+      <p>A Python and data analysis blog</p>
+      <nav>
+        <ul class="list">
+          <li><a href="/pages/about.html#about">About</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-github-square" href="https://github.com/dvatvani" target="_blank"><i class="fa fa-github-square"></i></a></li>
+        <li><a class="sc-twitter-square" href="https://twitter.com/d_vatvani" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+        <li><a class="sc-rss-square" href="http://dvatvani.github.io/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss-square"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="https://dvatvani.github.io/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="whatsapp-analysis">Analysis of a WhatsApp chat&nbsp;log</h1>
+    <p>Posted on Sat 24 October 2020 in <a href="/category/analysis.html">Analysis</a></p>
+  </header>
+  <div>
+    <h1>Introduction</h1>
+<p>With the ever-increasing role of technology and software services in our modern lives, we&#8217;re passively creating an increasingly large digital footprint. Our browsers store our history by default. Our favourite map apps store our location history by default. Our banks keep records of our transactions. Our phones and smart-watches keep track of the number of footsteps we take every day along with heart rate, and various other bits of biometric data. Youtube, Netflix, Spotify, Amazon video and similar services all keep track our media consumption history. There are also many other apps or services that keep track of a myriad of other interesting habits and behaviours. I personally enjoy downloading copies of my digital footprint and analysing them. I think there&#8217;s a lot that can be learned from examining my own behaviours and patterns to help me reflect on some unconscious choices I&#8217;m making and help me obtain a better and more objective understanding of myself. It also serves as a useful digital diary since I can automatically collate data from several sources nightly to give me a fairly good data-driven summary of what I was doing on any given day. To that end, I&#8217;ve written several scripts across the past 6 years to download and analyse my digital footprint from a range of different&nbsp;sources.</p>
+<p>In this blog post, I&#8217;ll be talking about specifically about the output from a script I wrote to analyse WhatsApp chat logs. You can run this analysis on your own chat logs by running the Python Notebooks found <a href="https://dvatvani.github.io/static/8-Queens/8_Queens_problem.ipynb">here</a>, or via a Streamlit WebApp I created that can be found <a href="https://dvatvani.github.io/static/8-Queens/8_Queens_problem.ipynb">here</a>. There are more detailed instructions on how to replicate this work on your own chat logs <a href="#replicate">towards the end of this blog post</a>.</p>
+<h1>Sample analysis&nbsp;results</h1>
+<p>Here are the results from an analysis of an anonymised chat log I&#8217;m part of (with permission from the relevant group chat members) to showcase some interesting things that could be done with WhatsApp chat log data and the types of insights that could be gained relatively easily with some basic Natural Language Processing (<span class="caps">NLP</span>).</p>
+<h3>Summary&nbsp;table</h3>
+<p><code>4,955</code> total messages from 4 people, from <code>2016-12-07</code> to <code>2020-10-20</code> </p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Isambard</th>
+<th align="center">Lysander</th>
+<th align="center">Perseus</th>
+<th align="center">Seraphina</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Contribution</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Total N messages</td>
+<td align="center">1,921</td>
+<td align="center">942</td>
+<td align="center">1,035</td>
+<td align="center">1,057</td>
+</tr>
+<tr>
+<td align="center">Total N words</td>
+<td align="center">19,979</td>
+<td align="center">12,325</td>
+<td align="center">14,062</td>
+<td align="center">11,390</td>
+</tr>
+<tr>
+<td align="center">Total N characters</td>
+<td align="center">101,607</td>
+<td align="center">63,472</td>
+<td align="center">72,766</td>
+<td align="center">57,491</td>
+</tr>
+<tr>
+<td align="center"><strong>Message type</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Text</td>
+<td align="center">94.4%</td>
+<td align="center">96.3%</td>
+<td align="center">92.2%</td>
+<td align="center">94.1%</td>
+</tr>
+<tr>
+<td align="center">Media</td>
+<td align="center">2.2%</td>
+<td align="center">2.7%</td>
+<td align="center">5.1%</td>
+<td align="center">3.8%</td>
+</tr>
+<tr>
+<td align="center">Link</td>
+<td align="center">3.4%</td>
+<td align="center">1.0%</td>
+<td align="center">2.7%</td>
+<td align="center">2.1%</td>
+</tr>
+<tr>
+<td align="center"><strong>Message  content</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Sentences per message</td>
+<td align="center">1.40</td>
+<td align="center">1.57</td>
+<td align="center">1.38</td>
+<td align="center">1.41</td>
+</tr>
+<tr>
+<td align="center">Words per message</td>
+<td align="center">11.1</td>
+<td align="center">13.6</td>
+<td align="center">14.8</td>
+<td align="center">11.6</td>
+</tr>
+<tr>
+<td align="center">Characters per message</td>
+<td align="center">54.1</td>
+<td align="center">69.2</td>
+<td align="center">74.1</td>
+<td align="center">56.5</td>
+</tr>
+<tr>
+<td align="center">Messages containing emoji</td>
+<td align="center">2.9%</td>
+<td align="center">0.2%</td>
+<td align="center">0.2%</td>
+<td align="center">2.5%</td>
+</tr>
+<tr>
+<td align="center">Messages containing profanity</td>
+<td align="center">1.9%</td>
+<td align="center">0.0%</td>
+<td align="center">5.6%</td>
+<td align="center">0.4%</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>The summary table is already a pretty useful overview of the chat log, but we can visualise the data and delve slightly deeper into the patterns in the chat&nbsp;log.</p>
+<h3>Message&nbsp;types</h3>
+<p>We can start with some plots on the types of messages sent to visualise who favours media messages (audio, video, images, or gifs) and who tends to share external links in the&nbsp;chat</p>
+<p><center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/message_types.svg" width="700px">
+</center></p>
+<h3>Message&nbsp;contribution</h3>
+<p>We can plot the overall message contribution from each&nbsp;person.</p>
+<p><center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/n_messages_and_avg_length.svg" width="700px">
+<br>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/sentences_per_message.svg" width="550px">
+<br>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/word_counts.svg" width="550px">
+</center></p>
+<p>The last plot above contains a few notable literary works to contextualise word counts better. I&#8217;ve included a longer list of reference literary works in the code that generates this plot, so you will likely see a different set of reference works for context if you choose to re-run this analysis on your own chat logs appropriate to the magnitude of word counts in the chat log being&nbsp;analysed.</p>
+<h3>Contribution over&nbsp;time</h3>
+<p>We can also look at when the each person has contributed to the conversation. This can be done as either a calendar&nbsp;view&#8230;</p>
+<p><center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/calmap-Isambard.svg" width="550px">
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/calmap-Lysander.svg" width="550px">
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/calmap-Perseus.svg" width="550px">
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/calmap-Seraphina.svg" width="550px">
+</center></p>
+<p>&#8230;or can also be viewed as a timeseries
+<center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/activity_timeseries.svg" width="550px">
+<br>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/activity_timerseries_stacked_area.svg" width="550px">
+</center></p>
+<p>The last plot can be represented as a relative plot rather than an absolute plot if want to see who has been contributing more/less relative to everyone else over time.
+<center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/relative_activity_timerseries.svg" width="550px">
+</center></p>
+<p>Another thing we can do with the timeseries data that could be of interest is group the activity by day of week and time of day to look at daily and weekly patterns.
+<center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/activity_by_day_of_week.svg" width="550px">
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/activity_by_time_of_day.svg" width="550px">
+</center>
+Note that the curves in the <code>Activity by time of day</code> plot are measured every minute across the 24 hours and smoothed with a Gaussian convolution. The smooth curves are not an artifact of&nbsp;interpolation.</p>
+<h3>Conversation&nbsp;Dynamics</h3>
+<p>We can gain some insight into the group conversation dynamics by looking at who tends to respond to each user. This doesn&#8217;t take into account the content of the message to infer which message is being responded to. It is based purely on who the previous message was from every time a message is sent. As such, it can include replies to oneself if someone sends an uninterrupted chain of messages.
+<center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/response_matrix.svg" width="550px">
+</center></p>
+<h3>Grammatical and linguistic&nbsp;preferences</h3>
+<p>Most of the analysis above looks at patterns in when people message and a very rough overview of the nature of the messages. It can also be insightful to examine the content of the messages more thoroughly to identify people&#8217;s grammatical and linguistic preferences. Below are a few examples of the types in insights that can be obtained by parsing and analysing the content of the&nbsp;messages.</p>
+<p>Let&#8217;s start by looking at the use of punctuation, emoticons (Emoji) and profanity.
+<center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/punctuation_use.svg" width="550px">
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/emoticon_use.svg" width="550px">
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/profanity_use.svg" width="700px">
+<p style="font-size: 12px;">Note: Profanity detection is done using the <a href="https://github.com/vzhou842/profanity-check">profanity-check</a>&nbsp;library</p>
+</center></p>
+<p>We can also look at the distribution of word lengths from each person.
+<center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/word_length_distribution.svg" width="700px">
+</center>
+In this instance it turns out not vary all that much across users, largely due to the composition of the group, but that is not always the&nbsp;case. </p>
+<p>An interesting analysis we can perform is to compare the relative usage frequency of different words from each user against the natural prevalence rate of those words in the English language (based on occurrence in the web on websites in English) to find the words that each user uses disproportionately often.
+<center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/characteristic_words.svg">
+</center>
+Using the same concept of words&#8217; natural prevalence rate in English-language websites above, we can determine the average log(natural prevalence frequency) of all words used by each person. This is a measure for how obscure/niche the words used by each person is, with a lower average log(frequency) indicating more frequent use of rare words.
+<center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/avg_word_prevalence.svg" width="550px">
+</center>
+The plot above can be interpreted as some proxy for vocabulary complexity/specificity. An interesting measure to accompany that is vocabulary breadth. To do that, we can plot the cumulative unique word count against cumulative total word count for each&nbsp;user. </p>
+<p><center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/word_count_curves.svg" width="550px">
+</center></p>
+<p>Early in the conversation, we expect most words used to be new. As the conversation continues, we expect the number of unique words to slowly tail-off as many of the words used in the conversation will be repeated words. Theoretically, if the conversation goes on infinitely long and the topics of conversation covered in the chat are exhaustive, we expect this curve to asymptote towards a value that represents some approximation of the scope of each person&#8217;s total vocabulary size. The plot above displays the early part of that curve. In practice, most WhatsApp conversations will be far too small to reach the vocabulary size asymptote, and will often have limited topics of conversation covered. Moreover, many people will likely modulate the tone and complexity of the language they choose to use in casual WhatsApp conversations in ways that make it unrepresentative of their true vocabulary breadth. These curves have been left in the analysis because I believe they are interesting, but it is important to emphasize that they are only broadly indicative of each person&#8217;s vocabulary scope specifically as observed in the particular chat log which, for many reasons, will not be representative of their true overall vocabulary&nbsp;size.</p>
+<p>Finally, we can look into how similar the observed vocabulary is between the participants of the group. This can be done by taking all unique words used by each person and comparing it to the unique words used by every other person. The vocabulary similarity between 2 people can be defined as the number of words they use in common divided by total number of words used by either person, and is known as the Jaccard index (in set notation, it&#8217;s defined by |A∩B|/|A∪B|, where A and B are the sets of words used by each person). 
+<center>
+<img alt="" src="https://dvatvani.github.io/static/whatsapp-analysis/vocabulary_similarity_matrix.svg" width="550px">
+</center></p>
+<h1>Potential areas for future&nbsp;development</h1>
+<p><span class="caps">NLP</span> is a rich and expansive field and there is plenty more that could be done with this dataset using <span class="caps">NLP</span> tools and techniques. Some ideas for potential future developments could&nbsp;be:</p>
+<ul>
+<li>Automatic topic of conversation detection, to pick out who tends to favour discussions on particular topics and mapping when in time different topics get&nbsp;discussed</li>
+<li>The comparison of vocabulary similarity between people could be improved (currently using Jaccard Similarity based on a unique words used by each&nbsp;person)</li>
+<li>Linguistic style profiles could be added by assessing vocabulary similarity or prose style similarity to external text datasets e.g. Gossip magazines, tabloid newspapers, broad-sheet newspapers, tech magazines, Victorian novels, scientific journal publications, legal documents,&nbsp;etc. </li>
+</ul>
+<p>I may come back to implement these in the future, but if anyone would like to try to train any of these models, please let me know in the comments or <span class="caps">DM</span> me on Twitter. I&#8217;d be more than happy to collaborate or review pull requests on&nbsp;GitHub.</p>
+<h1 id='replicate'>Generate your own chat log&nbsp;reports</h1>
+
+<p>If you&#8217;d like to analyse your own chat logs and create images like ones above, then follow the instructions&nbsp;below.</p>
+<h3>Extracting a WhatsApp chat&nbsp;log</h3>
+<p>In order to generate your own report, you&#8217;ll first need to export your own chat log from WhatsApp. These instructions are for exporting a chat log from an android device. Doing it from an iOS device should be similar, but if in doubt, I&#8217;m sure there will be other instructions online telling you how to export a WhatsApp chat log from&nbsp;iOS. </p>
+<p>Open any conversation on WhatsApp, click on the kebab icon (3 vertical dots icon on the top right of the conversation screen), then <code>More...</code> and <code>Export chat</code>. This should bring up a prompt on whether you want to export with or without media. Export the chat log without media. When the export is ready, it should bring up another selection of which app to use to deal with the files. Either select a file browser to save the files or any email client app and send the exported chat log to yourself. The export may contain multiple files. The one of interest will be named something like &#8220;WhatsApp chat with {group_name}.txt&#8221;. We&#8217;ll be using this in the next&nbsp;step</p>
+<h3>Analysing the chat&nbsp;log</h3>
+<p>If you&#8217;re comfortable with running Python scripts and notebooks, then the Python notebook that I used for the analysis above can be found <a href="https://dvatvani.github.io/static/8-Queens/8_Queens_problem.ipynb">here</a>. Clone the repository, install the dependencies (listed in the requirements.txt file), then place your chat log in the <code>chat_logs</code> folder and run the notebook. Remember to update the chat log file name in the notebook to the one you just added there. Once the script is finished running, the plots will be visible in-line in the notebook, but all plots are also saved in the outputs folder under a subfolder name that corresponds to the chat log&nbsp;name.</p>
+<p>If you&#8217;re <span class="caps">NOT</span> comfortable with running python scripts on your own, then I&#8217;ve set up a minimalist WebApp where you can upload or drag and drop your WhatsApp chat log and it will process it for you. It&#8217;s hosted on a free-tier of a cloud service and shared among all readers, so may be quite slow, depending on how many people are using it at any given time. Also, none of your data will be stored, so save a local copy of the output if you&#8217;d like to keep hold of it or want to share it with anyone. Attempting to share a link to the results by copying the <span class="caps">URL</span> will not work (since they would require a copy of the output to be&nbsp;saved).</p>
+<p><em>Thanks&nbsp;to:</em></p>
+<ul>
+<li><em>[<span class="caps">REDACTED</span>]</em> : For letting me use an anonymised version of our group chat in this blog&nbsp;post.</li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/qantified-self.html">Qantified-Self</a>
+      <a href="/tag/whatsapp.html">WhatsApp</a>
+    </p>
+  </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dvatvani';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
+
+    <footer>
+        <p>&copy; Dinesh Vatvani </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75651339-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "Analysis of a WhatsApp chat log",
+  "headline": "Analysis of a WhatsApp chat log",
+  "datePublished": "2020-10-24 08:00:00+01:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Dinesh Vatvani",
+    "url": "https://dvatvani.github.io/author/dinesh-vatvani.html"
+  },
+  "image": "/static/Logo/radial_barh.png",
+  "url": "https://dvatvani.github.io/drafts/whatsapp-analysis.html",
+  "description": "Analysis of a WhatsApp chat log"
+}
+</script></body>
+</html>
