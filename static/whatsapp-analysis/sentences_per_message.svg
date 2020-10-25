@@ -96,7 +96,7 @@ z
      <g id="line2d_2"/>
      <g id="text_2">
       <!-- 1.1 -->
-      <g style="fill:#242121;" transform="translate(107.556978 311.320312)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(109.550481 311.320312)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-49"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-46"/>
        <use x="74.599991" xlink:href="#SourceSansPro-Regular-49"/>
@@ -134,7 +134,7 @@ L 4 0
 z
 " id="SourceSansPro-Regular-50"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(164.029581 311.320312)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(168.016588 311.320312)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-49"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-46"/>
        <use x="74.599991" xlink:href="#SourceSansPro-Regular-50"/>
@@ -190,7 +190,7 @@ Q 28 -1.203125 23.59375 -1.203125
 z
 " id="SourceSansPro-Regular-51"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(220.502184 311.320312)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(226.482694 311.320312)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-49"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-46"/>
        <use x="74.599991" xlink:href="#SourceSansPro-Regular-51"/>
@@ -225,7 +225,7 @@ L 46.90625 24.203125
 z
 " id="SourceSansPro-Regular-52"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(276.974787 311.320312)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(284.9488 311.320312)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-49"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-46"/>
        <use x="74.599991" xlink:href="#SourceSansPro-Regular-52"/>
@@ -272,7 +272,7 @@ Q 27.59375 -1.203125 23.40625 -1.203125
 z
 " id="SourceSansPro-Regular-53"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(333.44739 311.320312)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(343.414907 311.320312)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-49"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-46"/>
        <use x="74.599991" xlink:href="#SourceSansPro-Regular-53"/>
@@ -324,7 +324,7 @@ Q 41.796875 61.09375 44.5 58.203125
 z
 " id="SourceSansPro-Regular-54"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(389.919993 311.320312)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(401.881013 311.320312)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-49"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-46"/>
        <use x="74.599991" xlink:href="#SourceSansPro-Regular-54"/>
@@ -845,34 +845,34 @@ z
     </g>
    </g>
    <g id="patch_3">
-    <path clip-path="url(#p4177bf2113)" d="M -507.42603 284.775581 
-L 270.996118 284.775581 
-L 270.996118 233.817442 
-L -507.42603 233.817442 
+    <path clip-path="url(#p1aa1ab25f0)" d="M -527.361063 284.775581 
+L 259.541248 284.775581 
+L 259.541248 233.817442 
+L -527.361063 233.817442 
 z
 " style="fill:#2ca02c;"/>
    </g>
    <g id="patch_4">
-    <path clip-path="url(#p4177bf2113)" d="M -507.42603 221.077907 
-L 280.947705 221.077907 
-L 280.947705 170.119767 
-L -507.42603 170.119767 
+    <path clip-path="url(#p1aa1ab25f0)" d="M -527.361063 221.077907 
+L 283.360345 221.077907 
+L 283.360345 170.119767 
+L -527.361063 170.119767 
 z
 " style="fill:#1f77b4;"/>
    </g>
    <g id="patch_5">
-    <path clip-path="url(#p4177bf2113)" d="M -507.42603 157.380233 
-L 287.163359 157.380233 
-L 287.163359 106.422093 
-L -507.42603 106.422093 
+    <path clip-path="url(#p1aa1ab25f0)" d="M -527.361063 157.380233 
+L 302.916407 157.380233 
+L 302.916407 106.422093 
+L -527.361063 106.422093 
 z
 " style="fill:#d62728;"/>
    </g>
    <g id="patch_6">
-    <path clip-path="url(#p4177bf2113)" d="M -507.42603 93.682558 
-L 376.979713 93.682558 
-L 376.979713 42.724419 
-L -507.42603 42.724419 
+    <path clip-path="url(#p1aa1ab25f0)" d="M -527.361063 93.682558 
+L 376.030426 93.682558 
+L 376.030426 42.724419 
+L -527.361063 42.724419 
 z
 " style="fill:#ff7f0e;"/>
    </g>
@@ -1398,7 +1398,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p4177bf2113">
+  <clipPath id="p1aa1ab25f0">
    <rect height="273.9" width="363.9" x="57.3" y="26.8"/>
   </clipPath>
  </defs>

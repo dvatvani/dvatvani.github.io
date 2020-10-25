@@ -1139,7 +1139,7 @@ z
     </g>
    </g>
    <g id="patch_3">
-    <path clip-path="url(#pd63d46af1d)" d="M 57.3 272.531395 
+    <path clip-path="url(#p295cc3139b)" d="M 57.3 272.531395 
 L 72.65088 272.531395 
 L 72.65088 223.99186 
 L 57.3 223.99186 
@@ -1147,7 +1147,7 @@ z
 " style="fill:#ff7f0e;"/>
    </g>
    <g id="patch_4">
-    <path clip-path="url(#pd63d46af1d)" d="M 57.3 211.856977 
+    <path clip-path="url(#p295cc3139b)" d="M 57.3 211.856977 
 L 84.053723 211.856977 
 L 84.053723 163.317442 
 L 57.3 163.317442 
@@ -1155,7 +1155,7 @@ z
 " style="fill:#2ca02c;"/>
    </g>
    <g id="patch_5">
-    <path clip-path="url(#pd63d46af1d)" d="M 57.3 151.182558 
+    <path clip-path="url(#p295cc3139b)" d="M 57.3 151.182558 
 L 292.907783 151.182558 
 L 292.907783 102.643023 
 L 57.3 102.643023 
@@ -1163,7 +1163,7 @@ z
 " style="fill:#d62728;"/>
    </g>
    <g id="patch_6">
-    <path clip-path="url(#pd63d46af1d)" d="M 57.3 90.50814 
+    <path clip-path="url(#p295cc3139b)" d="M 57.3 90.50814 
 L 403.871429 90.50814 
 L 403.871429 41.968605 
 L 57.3 41.968605 
@@ -1528,7 +1528,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pd63d46af1d">
+  <clipPath id="p295cc3139b">
    <rect height="260.9" width="363.9" x="57.3" y="26.8"/>
   </clipPath>
  </defs>

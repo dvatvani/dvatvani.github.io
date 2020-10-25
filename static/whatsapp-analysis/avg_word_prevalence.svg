@@ -55,7 +55,7 @@ L 17.703125 0
 z
 " id="SourceSansPro-Regular-55"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(55.471962 287.164062)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(54.667751 287.164062)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-8722"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-55"/>
       </g>
@@ -106,7 +106,7 @@ Q 41.796875 61.09375 44.5 58.203125
 z
 " id="SourceSansPro-Regular-54"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(106.642709 287.164062)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(105.953385 287.164062)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-8722"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-54"/>
       </g>
@@ -152,7 +152,7 @@ Q 27.59375 -1.203125 23.40625 -1.203125
 z
 " id="SourceSansPro-Regular-53"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(157.813455 287.164062)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(157.239019 287.164062)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-8722"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-53"/>
       </g>
@@ -186,7 +186,7 @@ L 46.90625 24.203125
 z
 " id="SourceSansPro-Regular-52"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(208.984202 287.164062)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(208.524652 287.164062)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-8722"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-52"/>
       </g>
@@ -241,7 +241,7 @@ Q 28 -1.203125 23.59375 -1.203125
 z
 " id="SourceSansPro-Regular-51"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(260.154948 287.164062)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(259.810286 287.164062)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-8722"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-51"/>
       </g>
@@ -278,7 +278,7 @@ L 4 0
 z
 " id="SourceSansPro-Regular-50"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(311.325695 287.164062)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(311.09592 287.164062)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-8722"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-50"/>
       </g>
@@ -304,7 +304,7 @@ L 7.90625 0
 z
 " id="SourceSansPro-Regular-49"/>
       </defs>
-      <g style="fill:#242121;" transform="translate(362.496441 287.164062)scale(0.1 -0.1)">
+      <g style="fill:#242121;" transform="translate(362.381554 287.164062)scale(0.1 -0.1)">
        <use xlink:href="#SourceSansPro-Regular-8722"/>
        <use x="49.699997" xlink:href="#SourceSansPro-Regular-49"/>
       </g>
@@ -1315,7 +1315,7 @@ z
     </g>
    </g>
    <g id="patch_3">
-    <path clip-path="url(#pac6283572f)" d="M 418.6375 262.023765 
+    <path clip-path="url(#p009a508545)" d="M 418.6375 262.023765 
 L 74.506548 262.023765 
 L 74.506548 215.559811 
 L 418.6375 215.559811 
@@ -1323,25 +1323,25 @@ z
 " style="fill:#1f77b4;"/>
    </g>
    <g id="patch_4">
-    <path clip-path="url(#pac6283572f)" d="M 418.6375 203.943823 
-L 77.211441 203.943823 
-L 77.211441 157.479869 
+    <path clip-path="url(#p009a508545)" d="M 418.6375 203.943823 
+L 77.131839 203.943823 
+L 77.131839 157.479869 
 L 418.6375 157.479869 
 z
 " style="fill:#2ca02c;"/>
    </g>
    <g id="patch_5">
-    <path clip-path="url(#pac6283572f)" d="M 418.6375 145.863881 
-L 79.261647 145.863881 
-L 79.261647 99.399927 
+    <path clip-path="url(#p009a508545)" d="M 418.6375 145.863881 
+L 77.959915 145.863881 
+L 77.959915 99.399927 
 L 418.6375 99.399927 
 z
 " style="fill:#ff7f0e;"/>
    </g>
    <g id="patch_6">
-    <path clip-path="url(#pac6283572f)" d="M 418.6375 87.783939 
-L 81.642824 87.783939 
-L 81.642824 41.319985 
+    <path clip-path="url(#p009a508545)" d="M 418.6375 87.783939 
+L 81.693905 87.783939 
+L 81.693905 41.319985 
 L 418.6375 41.319985 
 z
 " style="fill:#d62728;"/>
@@ -1903,7 +1903,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pac6283572f">
+  <clipPath id="p009a508545">
    <rect height="249.74375" width="361.3375" x="57.3" y="26.8"/>
   </clipPath>
  </defs>

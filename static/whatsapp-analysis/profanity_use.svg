@@ -1060,7 +1060,7 @@ z
     </g>
    </g>
    <g id="patch_3">
-    <path clip-path="url(#pda312e692f)" d="M 57.3 306.438372 
+    <path clip-path="url(#p5c9a8a2eea)" d="M 57.3 306.438372 
 L 57.3 306.438372 
 L 57.3 251.201163 
 L 57.3 251.201163 
@@ -1068,7 +1068,7 @@ z
 " style="fill:#ff7f0e;"/>
    </g>
    <g id="patch_4">
-    <path clip-path="url(#pda312e692f)" d="M 57.3 237.39186 
+    <path clip-path="url(#p5c9a8a2eea)" d="M 57.3 237.39186 
 L 75.338091 237.39186 
 L 75.338091 182.154651 
 L 57.3 182.154651 
@@ -1076,7 +1076,7 @@ z
 " style="fill:#d62728;"/>
    </g>
    <g id="patch_5">
-    <path clip-path="url(#pda312e692f)" d="M 57.3 168.345349 
+    <path clip-path="url(#p5c9a8a2eea)" d="M 57.3 168.345349 
 L 147.20762 168.345349 
 L 147.20762 113.10814 
 L 57.3 113.10814 
@@ -1084,7 +1084,7 @@ z
 " style="fill:#1f77b4;"/>
    </g>
    <g id="patch_6">
-    <path clip-path="url(#pda312e692f)" d="M 57.3 99.298837 
+    <path clip-path="url(#p5c9a8a2eea)" d="M 57.3 99.298837 
 L 271.871429 99.298837 
 L 271.871429 44.061628 
 L 57.3 44.061628 
@@ -1309,7 +1309,7 @@ z
     </g>
    </g>
    <g id="patch_12">
-    <path clip-path="url(#p7e0e84ba49)" d="M 339.9 306.438372 
+    <path clip-path="url(#p7b6145449c)" d="M 339.9 306.438372 
 L 339.9 306.438372 
 L 339.9 251.201163 
 L 339.9 251.201163 
@@ -1317,7 +1317,7 @@ z
 " style="fill:#ff7f0e;"/>
    </g>
    <g id="patch_13">
-    <path clip-path="url(#p7e0e84ba49)" d="M 339.9 237.39186 
+    <path clip-path="url(#p7b6145449c)" d="M 339.9 237.39186 
 L 353.927031 237.39186 
 L 353.927031 182.154651 
 L 339.9 182.154651 
@@ -1325,7 +1325,7 @@ z
 " style="fill:#d62728;"/>
    </g>
    <g id="patch_14">
-    <path clip-path="url(#p7e0e84ba49)" d="M 339.9 168.345349 
+    <path clip-path="url(#p7b6145449c)" d="M 339.9 168.345349 
 L 419.448406 168.345349 
 L 419.448406 113.10814 
 L 339.9 113.10814 
@@ -1333,7 +1333,7 @@ z
 " style="fill:#1f77b4;"/>
    </g>
    <g id="patch_15">
-    <path clip-path="url(#p7e0e84ba49)" d="M 339.9 99.298837 
+    <path clip-path="url(#p7b6145449c)" d="M 339.9 99.298837 
 L 554.471429 99.298837 
 L 554.471429 44.061628 
 L 339.9 44.061628 
@@ -1787,10 +1787,10 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pda312e692f">
+  <clipPath id="p5c9a8a2eea">
    <rect height="296.9" width="225.3" x="57.3" y="26.8"/>
   </clipPath>
-  <clipPath id="p7e0e84ba49">
+  <clipPath id="p7b6145449c">
    <rect height="296.9" width="225.3" x="339.9" y="26.8"/>
   </clipPath>
  </defs>
